@@ -1,0 +1,5 @@
+|pipelined_processor
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+
+
