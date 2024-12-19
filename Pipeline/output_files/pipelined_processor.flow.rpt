@@ -1,5 +1,5 @@
 Flow report for pipelined_processor
-Thu Dec 19 11:14:37 2024
+Thu Dec 19 12:22:26 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 19 11:14:37 2024          ;
+; Flow Status                        ; Successful - Thu Dec 19 12:22:26 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/19/2024 11:14:10 ;
+; Start date & time ; 12/19/2024 12:22:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pipelined_processor ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 20670390657237.173459605000464         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 20670390657237.173460012101040         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -86,6 +86,8 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
+; MISC_FILE                           ; datapath/instractionMemory_bb.v        ; --            ; --          ; --                                ;
+; MISC_FILE                           ; datapath/DataMemory_bb.v               ; --            ; --          ; --                                ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
@@ -98,12 +100,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4715 MB             ; 00:00:15                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 5130 MB             ; 00:00:04                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4687 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4732 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4631 MB             ; 00:00:00                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4707 MB             ; 00:00:15                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 5130 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4687 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4758 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4635 MB             ; 00:00:00                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
