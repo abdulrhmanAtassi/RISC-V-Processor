@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pipelined_processor
-Thu Dec 19 12:22:13 2024
+Fri Dec 20 02:07:50 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 19 12:22:13 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 20 02:07:50 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -148,24 +148,29 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+---------------------+---------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                          ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
-; pipelined_processor.v            ; yes             ; User Verilog HDL File  ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; pipelined_processor.v            ; yes             ; User Verilog HDL File  ; C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -251,39 +256,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Dec 19 12:22:01 2024
+    Info: Processing started: Fri Dec 20 02:07:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipelined_processor -c pipelined_processor
+Warning (125092): Tcl Script File datapath/instractionMemory.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE datapath/instractionMemory.qip
+Warning (125092): Tcl Script File datapath/DataMemory.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE datapath/DataMemory.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20029): Only one processor detected - disabling parallel compilation
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/datamemory.v
+    Info (12023): Found entity 1: DataMemory File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/instractionmemory.v
+    Info (12023): Found entity 1: instractionMemory File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file pipelined_processor.v
-    Info (12023): Found entity 1: pipelined_processor File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file stages/if_stage.v
-    Info (12023): Found entity 1: if_stage File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/stages/if_stage.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file hazards/hazard_unit.v
-    Info (12023): Found entity 1: hazard_unit File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/hazards/hazard_unit.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file tb/tb_pipelined_processor.v
-    Info (12023): Found entity 1: tb_pipelined_processor File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/tb/tb_pipelined_processor.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file datapath/mux2x1.v
-    Info (12023): Found entity 1: Mux2x1 File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/datapath/Mux2x1.v Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file tb/mux2x1_tb.v
-    Info (12023): Found entity 1: Mux2x1_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/tb/Mux2x1_tb.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file datapath/instractionmemory.v
-    Info (12023): Found entity 1: instractionMemory File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/datapath/instractionMemory.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file datapath/datamemory.v
-    Info (12023): Found entity 1: DataMemory File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/datapath/DataMemory.v Line: 40
+    Info (12023): Found entity 1: pipelined_processor File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 1
+Warning (12019): Can't analyze file -- file stages/if_stage.v is missing
+Warning (12019): Can't analyze file -- file hazards/hazard_unit.v is missing
+Warning (12019): Can't analyze file -- file tb/tb_pipelined_processor.v is missing
+Warning (12019): Can't analyze file -- file datapath/Mux2x1.v is missing
+Warning (12019): Can't analyze file -- file tb/Mux2x1_tb.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/mux2x1.v
+    Info (12023): Found entity 1: Mux2x1 File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/mux2x1_tb.v
+    Info (12023): Found entity 1: Mux2x1_tb File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/Mux2x1_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/pc.v
+    Info (12023): Found entity 1: PC File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/pc_tb.v
+    Info (12023): Found entity 1: PC_tb File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/PC_tb.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/pc_adder.v
+    Info (12023): Found entity 1: PC_Adder File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/pc_adder_tb.v
+    Info (12023): Found entity 1: PC_Adder_tb File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/PC_Adder_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/stages/fetch_stage.v
+    Info (12023): Found entity 1: fetch_stage File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/fetch_stage_tb.v
+    Info (12023): Found entity 1: fetch_stage_tb File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v Line: 1
 Info (12127): Elaborating entity "pipelined_processor" for the top level hierarchy
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 2
-    Warning (15610): No output dependent on input pin "reset" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 4
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 2
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 4
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4719 megabytes
-    Info: Processing ended: Thu Dec 19 12:22:13 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:15
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4742 megabytes
+    Info: Processing ended: Fri Dec 20 02:07:50 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:10
 
 
