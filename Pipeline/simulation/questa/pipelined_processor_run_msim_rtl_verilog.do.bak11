@@ -5,7 +5,12 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v}
 vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v}
+vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
 
 vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v}
 

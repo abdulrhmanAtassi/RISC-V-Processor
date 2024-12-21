@@ -43,7 +43,7 @@ module PC_tb;
         rst = 0;
 
         pc_in = 32'd300;
-      #10 $display("Test case 3 failed: pc_out = %d, expected = 300", pc_out);
+      #10 $display("Test case 3: pc_out = %d, expected = 300", pc_out);
 
         $stop; 
     end

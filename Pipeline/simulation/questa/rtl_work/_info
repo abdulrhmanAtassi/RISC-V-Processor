@@ -1,0 +1,197 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/simulation/questa
+T_opt
+!s110 1734813956
+V5zW6@TI=SFh:cW;ZFbP4T1
+04 14 4 work fetch_stage_tb fast 0
+=1-3868937d8084-67672903-3cf-6dac
+R0
+!s12b OEM100
+!s124 OEM25U6 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vfetch_stage
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+Z3 !s110 1734813954
+!i10b 1
+!s100 O@^:CmHLX0]CecZ2?WdXK0
+Ijcn:]FkhT6La[FzB40SeU2
+R1
+w1734813381
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+!i122 5
+L0 1 72
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z6 !s108 1734813954.000000
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfetch_stage_tb
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v
+R3
+!i10b 1
+!s100 O6Lm?a5`OaZi22IgM[bID2
+IlK:4zA`H<nhzR>EgHdFa13
+R1
+w1734813610
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v
+!i122 6
+L0 3 63
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vinstractionMemory
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v
+Z8 !s110 1734813953
+!i10b 1
+!s100 XP58;?L@8U@>J[aDa7:dU3
+II^G[1Y^7Ak9O[Fm[?17F;3
+R1
+w1734643125
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v
+!i122 0
+L0 40 61
+R4
+R5
+r1
+!s85 0
+31
+!s108 1734813952.000000
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v|
+!i113 0
+R7
+Z9 !s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+ninstraction@memory
+vMux2x1
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
+R8
+!i10b 1
+!s100 z1eTL_17G7kZ_D8n=QL[M0
+IEVaag_]dm23IYQ6S3H2G:3
+R1
+w1734775463
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
+!i122 2
+L0 1 15
+R4
+R5
+r1
+!s85 0
+31
+Z10 !s108 1734813953.000000
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
+!i113 0
+R7
+R9
+R2
+n@mux2x1
+vPC
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v
+R3
+!i10b 1
+!s100 TCiT`ca5^NT]mAhd`kG043
+IFB1aLUz@g74IXL=6l`XS80
+R1
+w1734810280
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v
+!i122 3
+L0 1 16
+R4
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v|
+!i113 0
+R7
+R9
+R2
+n@p@c
+vPC_Adder
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+R3
+!i10b 1
+!s100 3omg?TY[F[2baJ?4Xj2dj0
+IClCM]Z7odnSXc<zF69]1a2
+R1
+w1734643841
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+!i122 4
+L0 1 8
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
+!i113 0
+R7
+R9
+R2
+n@p@c_@adder
+vpipelined_processor
+2C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v
+R8
+!i10b 1
+!s100 P`VN09YBgBXjWBLi]acL53
+I>2^8M`fD?:;UghSz`Fj4a0
+R1
+w1734771477
+8C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v
+FC:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v
+!i122 1
+L0 1 27
+R4
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline|C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2

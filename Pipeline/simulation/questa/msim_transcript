@@ -1,5 +1,145 @@
 # Reading pref.tcl
-# ** License Issue: License request for intelqsim feature failed
-# ** License Issue: Invalid host. (C:\intelFPGA_lite\23.1std\licenses\LR-207341_License.dat)
-# ** Error: Failure to checkout 'intelqsim' license feature.
-# Unable to checkout a viewer license necessary for use of the Questa Intel FPGA Edition graphical user interface.  Vsim is closing.
+# //  Questa Intel FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying c:/intelfpga_lite/23.1std/questa_fe/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:52 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v 
+# -- Compiling module instractionMemory
+# 
+# Top level modules:
+# 	instractionMemory
+# End time: 23:45:53 on Dec 21,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:53 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 23:45:53 on Dec 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:53 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 23:45:53 on Dec 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:53 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 23:45:54 on Dec 21,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:54 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 23:45:54 on Dec 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:54 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 23:45:54 on Dec 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb {C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:45:54 on Dec 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb" C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v 
+# -- Compiling module fetch_stage_tb
+# 
+# Top level modules:
+# 	fetch_stage_tb
+# End time: 23:45:54 on Dec 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  fetch_stage_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" fetch_stage_tb 
+# Start time: 23:45:55 on Dec 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.fetch_stage_tb(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.Mux2x1(fast)
+# Loading work.PC(fast)
+# Loading work.instractionMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.PC_Adder(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'address'. The port definition is at: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/datapath/instractionMemory.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /fetch_stage_tb/uut/IMEM File: C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 40
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=                   0 | clk=0 | rst=1 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000000 | PCD=00000000 | PCPlus4D=00000000
+# Time=                5000 | clk=1 | rst=1 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000000 | PCD=00000000 | PCPlus4D=00000000
+# Time=               10000 | clk=0 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000000 | PCD=00000000 | PCPlus4D=00000000
+# Time=               15000 | clk=1 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000000 | PCD=00000000 | PCPlus4D=00000004
+# Time=               20000 | clk=0 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000000 | PCD=00000000 | PCPlus4D=00000004
+# Time=               25000 | clk=1 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000001 | PCD=00000004 | PCPlus4D=00000008
+# Time=               30000 | clk=0 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000001 | PCD=00000004 | PCPlus4D=00000008
+# Time=               35000 | clk=1 | rst=0 | PCSrcD=0 | JalD=0 | PCTargetD=00000000 | InstrD=00000001 | PCD=00000008 | PCPlus4D=0000000c
+# Time=               40000 | clk=0 | rst=0 | PCSrcD=0 | JalD=1 | PCTargetD=00000020 | InstrD=00000001 | PCD=00000008 | PCPlus4D=0000000c
+# Time=               45000 | clk=1 | rst=0 | PCSrcD=0 | JalD=1 | PCTargetD=00000020 | InstrD=00000005 | PCD=0000000c | PCPlus4D=00000010
+# Time=               50000 | clk=0 | rst=0 | PCSrcD=0 | JalD=1 | PCTargetD=00000020 | InstrD=00000005 | PCD=0000000c | PCPlus4D=00000010
+# Time=               55000 | clk=1 | rst=0 | PCSrcD=0 | JalD=1 | PCTargetD=00000020 | InstrD=00000009 | PCD=00000020 | PCPlus4D=00000024
+# Time=               60000 | clk=0 | rst=0 | PCSrcD=1 | JalD=0 | PCTargetD=00000010 | InstrD=00000009 | PCD=00000020 | PCPlus4D=00000024
+# Time=               65000 | clk=1 | rst=0 | PCSrcD=1 | JalD=0 | PCTargetD=00000010 | InstrD=0000000d | PCD=00000020 | PCPlus4D=00000024
+# Time=               70000 | clk=0 | rst=0 | PCSrcD=1 | JalD=0 | PCTargetD=00000010 | InstrD=0000000d | PCD=00000020 | PCPlus4D=00000024
+# Time=               75000 | clk=1 | rst=0 | PCSrcD=1 | JalD=0 | PCTargetD=00000010 | InstrD=00000000 | PCD=00000010 | PCPlus4D=00000014
+# ** Note: $finish    : C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v(56)
+#    Time: 80 ns  Iteration: 0  Instance: /fetch_stage_tb
+# 1
+# Break in Module fetch_stage_tb at C:/Users/sarah/Desktop/RISC-V/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v line 56
+# End time: 23:51:52 on Dec 21,2024, Elapsed time: 0:05:57
+# Errors: 0, Warnings: 2

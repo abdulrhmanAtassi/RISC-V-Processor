@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module fetch_stage_tb;
 
     // Testbench signals
@@ -7,11 +9,8 @@ module fetch_stage_tb;
     reg JalD;
     reg [31:0] PCTargetD;
     wire [31:0] InstrD;
-    wire [31:0] PCD, PCPlus4D;
-
-    // Clock generation
-    initial clk = 0;
-    always #5 clk = ~clk; // 10 ns clock period
+    wire [31:0] PCD;
+    wire [31:0] PCPlus4D;
 
     // Instantiate the fetch_stage module
     fetch_stage uut (
@@ -25,68 +24,42 @@ module fetch_stage_tb;
         .PCPlus4D(PCPlus4D)
     );
 
-    // Simulated instruction memory (stub)
-    reg [31:0] instruction_memory [0:15]; // Small instruction memory for testing
-
-    initial begin
-        // Initialize instruction memory
-        instruction_memory[0] = 32'h00000001; // Sample instruction 1
-        instruction_memory[1] = 32'h00000002; // Sample instruction 2
-        instruction_memory[2] = 32'h00000003; // Sample instruction 3
-        instruction_memory[3] = 32'h00000004; // Sample instruction 4
+    // Clock generation
+    always begin
+        #5 clk = ~clk;  // Toggle clock every 5 ns
     end
 
-    // Override instruction memory (stub the IMEM in fetch_stage)
-    assign uut.IMEM.q = instruction_memory[uut.IMEM.adress[3:0]];
-
-    // Testbench procedure
+    // Initial block for simulation setup
     initial begin
-        // Initial conditions
-        rst = 1;
+        // Initialize signals
+        clk = 0;
+        rst = 1;  // Start with reset active
         PCSrcD = 0;
         JalD = 0;
-        PCTargetD = 0;
+        PCTargetD = 32'h00000000;
 
-        // Reset phase
-        #10 rst = 0; // Apply reset
-        #10 rst = 1; // Release reset
+        // Release reset after some time
+        #10 rst = 0;
 
-        // Test case 1: Normal PC increment (PC + 4)
-        #10;
-        PCSrcD = 0;
-        JalD = 0;
-        #20; // Wait two clock cycles
+        // Test a simple PC increment (PC + 4)
+        #10 PCSrcD = 0; JalD = 0; PCTargetD = 32'h00000000;  // PC should increment by 4
+        #10 PCSrcD = 0; JalD = 0; PCTargetD = 32'h00000000;  // Continue incrementing
 
-        // Test case 2: Branch/jump to PCTargetD
-        #10;
-        PCSrcD = 1;
-        PCTargetD = 32'h00000010; // Set target PC
-        #20;
-        PCSrcD = 0; // Return to normal increment
+        // Test a jump (JalD = 1)
+        #10 PCSrcD = 0; JalD = 1; PCTargetD = 32'h00000020;  // Jump to address 0x20
+        #10 PCSrcD = 0; JalD = 1; PCTargetD = 32'h00000020;  // Continue jump
 
-        // Test case 3: JalD (simulating jump and link)
-        #10;
-        JalD = 1;
-        PCTargetD = 32'h00000020; // Set jump address
-        #20;
-        JalD = 0; // Return to normal increment
-
-        // Test case 4: Random instruction checks
-        #10;
-        PCTargetD = 32'h00000004; // Address to fetch specific instruction
-        PCSrcD = 1;
-        #20;
+        // Test a branch (PCSrcD = 1)
+        #10 PCSrcD = 1; JalD = 0; PCTargetD = 32'h00000010;  // Branch to address 0x10
 
         // End simulation
-        $finish;
+        #20 $finish;
     end
 
-    // Monitor signals
+    // Monitoring output (optional, for debugging)
     initial begin
-        $monitor(
-            "Time=%0t | clk=%b | rst=%b | PCSrcD=%b | JalD=%b | PCTargetD=%h | InstrD=%h | PCD=%h | PCPlus4D=%h",
-            $time, clk, rst, PCSrcD, JalD, PCTargetD, InstrD, PCD, PCPlus4D
-        );
+        $monitor("Time=%t | clk=%b | rst=%b | PCSrcD=%b | JalD=%b | PCTargetD=%h | InstrD=%h | PCD=%h | PCPlus4D=%h",
+                 $time, clk, rst, PCSrcD, JalD, PCTargetD, InstrD, PCD, PCPlus4D);
     end
 
 endmodule
