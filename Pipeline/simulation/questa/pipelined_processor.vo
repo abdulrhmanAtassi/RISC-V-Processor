@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
-// DATE "12/22/2024 21:31:35"
+// DATE "12/22/2024 22:07:23"
 
 // 
 // Device: Altera 10M08DAF484C8G Package FBGA484
@@ -30,11 +30,14 @@
 `timescale 1 ps/ 1 ps
 
 module pipelined_processor (
-	clock);
-input 	clock;
+	clk,
+	reset);
+input 	clk;
+input 	reset;
 
 // Design Ports Information
-// clock	=>  Location: PIN_E13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_T1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// reset	=>  Location: PIN_AA7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -48,7 +51,8 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \clock~input_o ;
+wire \clk~input_o ;
+wire \reset~input_o ;
 wire \~QUARTUS_CREATED_GND~I_combout ;
 wire \~QUARTUS_CREATED_UNVM~~busy ;
 wire \~QUARTUS_CREATED_ADC1~~eoc ;
@@ -59,7 +63,7 @@ hard_block auto_generated_inst(
 	.devclrn(devclrn),
 	.devoe(devoe));
 
-// Location: LCCOMB_X11_Y24_N24
+// Location: LCCOMB_X11_Y12_N16
 fiftyfivenm_lcell_comb \~QUARTUS_CREATED_GND~I (
 // Equation(s):
 // \~QUARTUS_CREATED_GND~I_combout  = GND
@@ -76,16 +80,28 @@ defparam \~QUARTUS_CREATED_GND~I .lut_mask = 16'h0000;
 defparam \~QUARTUS_CREATED_GND~I .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: IOIBUF_X24_Y25_N22
-fiftyfivenm_io_ibuf \clock~input (
-	.i(clock),
+// Location: IOIBUF_X0_Y4_N1
+fiftyfivenm_io_ibuf \clk~input (
+	.i(clk),
 	.ibar(gnd),
 	.nsleep(vcc),
-	.o(\clock~input_o ));
+	.o(\clk~input_o ));
 // synopsys translate_off
-defparam \clock~input .bus_hold = "false";
-defparam \clock~input .listen_to_nsleep_signal = "false";
-defparam \clock~input .simulate_z_as = "z";
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .listen_to_nsleep_signal = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X13_Y0_N8
+fiftyfivenm_io_ibuf \reset~input (
+	.i(reset),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\reset~input_o ));
+// synopsys translate_off
+defparam \reset~input .bus_hold = "false";
+defparam \reset~input .listen_to_nsleep_signal = "false";
+defparam \reset~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: UNVM_X0_Y11_N40

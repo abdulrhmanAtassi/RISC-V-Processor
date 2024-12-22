@@ -1,25 +1,27 @@
 module pipelined_processor(
-    input clock // Declare clock as input
+    input clk,
+    input reset
 );
+    // Instantiate pipeline stages and interconnect logic here
+// Control signals
+    wire PCSrcD;
+    wire JalD;
 
-    // Registers
-    reg [7:0] address;
+    // Data signals
+    wire [31:0] PCTargetD;
+    wire [31:0] InstrD;
+    wire [31:0] PCD;
+    wire [31:0] PCPlus4D;
 
-    // Outputs
-    wire [31:0] q;
-
-    // Instantiate instructionMemory
-    InstructionMemory uut (
-        .address(address),
-        .clken(1'b1), // Constant enable
-        .clock(clock),
-        .q(q)
+    // Instantiate fetch stage
+    fetch_stage fetch_stage_inst (
+        .clk(clk),
+        .rst(rst),
+        .PCSrcD(PCSrcD),
+        .JalD(JalD),
+        .PCTargetD(PCTargetD),
+        .InstrD(InstrD),
+        .PCD(PCD),
+        .PCPlus4D(PCPlus4D)
     );
-
-    // Optionally, you can add a clock-based process to modify `address`
-    always @(posedge clock) begin
-        // Example: increment address
-        address <= address + 1;
-    end
-
-endmodule
+ endmodule

@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Sun Dec 22 21:31:25 2024
+Analysis & Synthesis Status : Successful - Sun Dec 22 22:07:13 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : pipelined_processor
 Top-level Entity Name : pipelined_processor
@@ -7,7 +7,7 @@ Total logic elements : 0
     Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 1
+Total pins : 2
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
