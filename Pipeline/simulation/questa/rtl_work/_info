@@ -10,312 +10,311 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/simulation/questa
+Z1 dC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/simulation/questa
 T_opt
-!s110 1734940967
-Vk=@Cdz;P1]2l4U3[QECY;3
-04 14 4 work ControlUnit_tb fast 0
-=1-12ccb34ae0d5-67691927-120-2c40
+!s110 1734956975
+V3nH?8Y9hH6ScMOA<Fn34:2
+04 15 4 work decode_stage_tb fast 0
+=1-3868937d8084-676957af-157-594c
 R0
 !s12b OEM100
-!s124 OEM25U2 
+!s124 OEM25U7 
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
 vControlUnit
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
-Z3 !s110 1734940966
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
+Z3 !s110 1734956974
 !i10b 1
 !s100 PQ]A8KT1a:n0BQT48ZMA53
-IPJJMk@:X43BGLSPU=^XiL3
+IlFbCoPjZT]D<]EHVBh8?61
 R1
-w1734940941
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
+Z4 w1734949739
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
 !i122 8
 L0 1 236
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2023.3;77
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z6 !s108 1734940966.000000
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
+Z7 !s108 1734956973.000000
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
 !i113 0
-Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z8 !s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 n@control@unit
-vControlUnit_tb
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v
-R3
-!i10b 1
-!s100 ?;^?W]FiTI0Dg<2E>=6@<0
-IlkBLejjU4GXfA1LQ4YRSh2
-R1
-w1734940000
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v
-!i122 11
-L0 3 204
-R4
-R5
-r1
-!s85 0
-31
-R6
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v|
-!i113 0
-R7
-!s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-n@control@unit_tb
 vdecode_stage
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
 R3
 !i10b 1
-!s100 o0aA>;EDS]BU;7WnQ_jz21
-IUUb`4L^9iga011k36`74M2
+!s100 HB=N4^JCn00Q@mFiZYc621
+IJLI@F=nAA5__3_PFVm]I22
 R1
-w1734940064
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
+w1734956924
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
 !i122 9
-L0 1 82
-R4
+L0 1 182
 R5
+R6
 r1
 !s85 0
 31
-R6
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v|
+Z10 !s108 1734956974.000000
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v|
 !i113 0
-R7
-Z9 !s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vdecode_stage_tb
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
+R3
+!i10b 1
+!s100 UEVaYikWmT?BE;6z[3=m?3
+Izn_UGP[kU]lkJg^9KdmfJ3
+R1
+w1734955564
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
+!i122 11
+L0 3 136
+R5
+R6
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v|
+!i113 0
+R8
+!s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vEqReg
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
-Z10 !s110 1734940965
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
+Z12 !s110 1734956973
 !i10b 1
 !s100 d968HGL]XaZzoOMCK;iQf0
-I1[oB<DmgNGA2F?cLZ<Y@k1
+IZVcgKCSKCWMzY]DTYlOjk3
 R1
-w1734901974
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
+R4
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
 !i122 6
 L0 1 13
-R4
 R5
+R6
 r1
 !s85 0
 31
-Z11 !s108 1734940965.000000
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v|
+!i113 0
 R8
+R9
 R2
 n@eq@reg
 vfetch_stage
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
-R10
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+R12
 !i10b 1
 !s100 4EcFjlzcjTE=@R3SU8jJ>1
-I=WeUSa6VgI:_Aa=lWRg_d2
+INd8h<GmnMD6R9U0H[`fi[3
 R1
-Z12 w1734896166
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+Z13 w1734949682
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v
 !i122 5
 L0 1 72
-R4
 R5
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
-!i113 0
 R7
-R9
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
+!i113 0
+R8
+R11
 R2
 vInstructionMemory
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
-Z13 !s110 1734940964
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
+R12
 !i10b 1
 !s100 X]dfMBk<8`2WaYez@5m7L2
-I6E2F>Q;B952Kb`27lW@V60
+IXKo13I?K84K:8I6E]HN7^1
 R1
-w1734891123
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
+w1734949400
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
 !i122 1
 L0 40 64
-R4
 R5
+R6
 r1
 !s85 0
 31
-Z14 !s108 1734940964.000000
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
+!i113 0
 R8
+R9
 R2
 n@instruction@memory
 vMux2x1
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
-R13
-!i10b 1
-!s100 z1eTL_17G7kZ_D8n=QL[M0
-IZQX<7HP58@<[_DBP;P?VN3
-R1
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
 R12
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
-!i122 2
-L0 1 15
+!i10b 1
+!s100 TiXYDUd7R@fTfhcXo]5:K0
+I]QN78F2Fn99lMiI5JP;XG1
+R1
 R4
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
+!i122 2
+L0 1 10
 R5
+R6
 r1
 !s85 0
 31
-R14
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
+!i113 0
 R8
+R9
 R2
 n@mux2x1
 vPC
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v
-R10
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v
+R12
 !i10b 1
 !s100 TCiT`ca5^NT]mAhd`kG043
-Ia9YLg5G1nIAQPJ=[6@S=k1
+IgXB@1`930S<7Fi?H1UONo3
 R1
-R12
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v
+R13
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v
 !i122 3
 L0 1 16
-R4
 R5
+R6
 r1
 !s85 0
 31
-R14
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v|
+!i113 0
 R8
+R9
 R2
 n@p@c
 vPC_Adder
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
-R10
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+R12
 !i10b 1
 !s100 3omg?TY[F[2baJ?4Xj2dj0
-IaSo_NDj844g2:B5:NUWPf0
+If]j@=JFI5Cn[e:C;ATzR70
 R1
-R12
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+R13
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
 !i122 4
 L0 1 8
-R4
 R5
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
+!i113 0
 R8
+R9
 R2
 n@p@c_@adder
 vpipelined_processor
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
-R13
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v
+R12
 !i10b 1
 !s100 ]HR^QgFo]_]V0_P<5oP`D1
-I<HC3i<f_5A9KzX[=]PGn10
+IYekJAFLnbZRD=ebU:;FMR3
 R1
-w1734896798
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
+R4
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v
 !i122 0
 L0 1 69
-R4
 R5
+R6
 r1
 !s85 0
 31
-R14
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v|
+!s108 1734956972.000000
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v|
 !i113 0
-R7
-!s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+!s92 -vlog01compat -work work +incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vRegisterFile
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
-R10
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
+R12
 !i10b 1
 !s100 `SKJJ@MDOb[a]K1ko0aX:3
-I<3K`iRLUjj2fIg5;l9kR=2
+IZH31@aa^lcamzEaQFD`7b2
 R1
-w1734901239
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
+R4
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
 !i122 7
 L0 1 36
-R4
 R5
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v|
-!i113 0
 R7
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v|
+!i113 0
 R8
+R9
 R2
 n@register@file
 vsign_extension
-2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
+2C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
 R3
 !i10b 1
-!s100 6XlGCjo9@_Dnadn0VD@V=2
-IO]]aQoEmn[I3YNmm:fMn91
+!s100 =eThJ`z5G6]2J]VNciV8O0
+IODGAnmZj[PEU>emU9dCk:3
 R1
-w1734896868
-8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
-FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
+w1734956919
+8C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
+FC:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
 !i122 10
 L0 1 34
-R4
 R5
+R6
 r1
 !s85 0
 31
-R6
-!s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
+R10
+!s107 C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath|C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
 !i113 0
-R7
 R8
+R9
 R2
