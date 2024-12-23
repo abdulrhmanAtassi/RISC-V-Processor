@@ -66,7 +66,7 @@ module decode_stage_tb;
 
     // Initialize and apply test vectors
     initial begin
-        @(posedge clk);
+    
         // Initialize Inputs
         rst = 1;
         RegWriteEnW = 0;

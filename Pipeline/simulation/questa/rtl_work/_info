@@ -12,10 +12,10 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 dD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/simulation/questa
 T_opt
-!s110 1734982585
-Vd`ISYckJ3hcj_?1DO2nLg1
+!s110 1734984496
+V?YZiAT?P:8EX_TndBzKPj3
 04 15 4 work decode_stage_tb fast 0
-=1-12ccb34ae0d5-6769bbb9-d9-2788
+=1-12ccb34ae0d5-6769c32f-392-37bc
 R0
 !s12b OEM100
 !s124 OEM25U7 
@@ -25,7 +25,7 @@ n@_opt
 OL;O;2023.3;77
 vControlUnit
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v
-Z3 !s110 1734982583
+Z3 !s110 1734984494
 !i10b 1
 !s100 hW5TcL@aW]0k8?dL3>IRU3
 I7lRSiZk7XbfK7j>fakhS@0
@@ -40,7 +40,7 @@ Z5 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z6 !s108 1734982583.000000
+Z6 !s108 1734984494.000000
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v|
 !i113 0
@@ -50,7 +50,7 @@ R2
 n@control@unit
 vdecode_stage
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v
-Z9 !s110 1734982584
+R3
 !i10b 1
 !s100 ll7XhGj:G8zZJ<D;z6ZCC0
 IJ4U9LYFCQD3R>^E36K_0k2
@@ -70,16 +70,16 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v|
 !i113 0
 R7
-Z10 !s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vdecode_stage_tb
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
-R9
+!s110 1734984495
 !i10b 1
-!s100 YjU3WEGoc=khfgJ]id;Dd3
-IVaJ8mA19Pl<bmV@i5NCCz2
+!s100 YD3iROhzjj[6h[hem@QPU2
+I139>o@KPYWQ:kU><lCLHW0
 R1
-w1734982572
+w1734984447
 8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
 FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v
 !i122 11
@@ -89,7 +89,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1734982584.000000
+R6
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v|
 !i113 0
@@ -103,7 +103,7 @@ R3
 !s100 d968HGL]XaZzoOMCK;iQf0
 I1[oB<DmgNGA2F?cLZ<Y@k1
 R1
-Z12 w1734948518
+Z10 w1734948518
 8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
 FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v
 !i122 6
@@ -138,16 +138,16 @@ R5
 r1
 !s85 0
 31
-R6
+Z11 !s108 1734984493.000000
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v|
 !i113 0
 R7
-R10
+R9
 R2
 vInstructionMemory
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v
-Z13 !s110 1734982582
+Z12 !s110 1734984493
 !i10b 1
 !s100 X]dfMBk<8`2WaYez@5m7L2
 I6E2F>Q;B952Kb`27lW@V60
@@ -162,7 +162,7 @@ R5
 r1
 !s85 0
 31
-Z14 !s108 1734982582.000000
+R11
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v|
 !i113 0
@@ -172,12 +172,12 @@ R2
 n@instruction@memory
 vMux2x1
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
-R3
+R12
 !i10b 1
 !s100 TiXYDUd7R@fTfhcXo]5:K0
 I_zg2dLhnT[gomc?NN[j9L2
 R1
-R12
+R10
 8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
 FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v
 !i122 2
@@ -187,7 +187,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v|
 !i113 0
@@ -197,7 +197,7 @@ R2
 n@mux2x1
 vPC
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v
-R3
+R12
 !i10b 1
 !s100 80GidP@c8jT?7O2XW:[@K1
 IJ4OI_9DE9lc;XMoM16[6=3
@@ -212,7 +212,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v|
 !i113 0
@@ -222,7 +222,7 @@ R2
 n@p@c
 vPC_Adder
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v
-R3
+R12
 !i10b 1
 !s100 SDBTG7jKGA>j6a:kk85MJ2
 IC8;^c2Za=[658KV:0D_?n3
@@ -237,7 +237,7 @@ R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v|
 !i113 0
@@ -247,12 +247,12 @@ R2
 n@p@c_@adder
 vpipelined_processor
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
-R13
+R12
 !i10b 1
 !s100 ]HR^QgFo]_]V0_P<5oP`D1
 I<HC3i<f_5A9KzX[=]PGn10
 R1
-R12
+R10
 8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
 FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v
 !i122 0
@@ -262,7 +262,7 @@ R5
 r1
 !s85 0
 31
-R14
+R11
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v|
 !i113 0
@@ -276,7 +276,7 @@ R3
 !s100 `SKJJ@MDOb[a]K1ko0aX:3
 I<3K`iRLUjj2fIg5;l9kR=2
 R1
-R12
+R10
 8D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
 FD:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v
 !i122 7
@@ -296,7 +296,7 @@ R2
 n@register@file
 vsign_extension
 2D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v
-R9
+R3
 !i10b 1
 !s100 =eThJ`z5G6]2J]VNciV8O0
 Im5?k<Rnn>K]UD6K`A]lN>3
@@ -311,7 +311,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath|D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v|
 !i113 0
