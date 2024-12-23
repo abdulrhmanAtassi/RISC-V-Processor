@@ -12,7 +12,7 @@ module ControlUnit(
     output reg ALUSrc,
     output reg BranchType,
     output reg JALR,
-    output reg [1:0] ImmSrc,
+    output reg [2:0] ImmSrc,
     output reg [2:0] alu_op,
     output reg [1:0] MemSize,
     output reg [1:0] LoadSize
@@ -29,10 +29,11 @@ parameter [2:0] ALU_OP_SLL = 3'b110;
 parameter [2:0] ALU_OP_SRL = 3'b111;
 
 // -------------------- Immediate Types ------------------------
-parameter [1:0] IMM_I  = 2'b00;
-parameter [1:0] IMM_S  = 2'b01;
-parameter [1:0] IMM_SB = 2'b10;
-parameter [1:0] IMM_U  = 2'b11;
+parameter [2:0] IMM_I  = 3'b000;
+parameter [2:0] IMM_S  = 3'b001;
+parameter [2:0] IMM_SB = 3'b010;
+parameter [2:0] IMM_U  = 3'b011;
+parameter [2:0] IMM_UJ  = 3'b100;
 
 // -------------------- Opcodes -------------------------------
 parameter [6:0] OP_R    = 7'h33;  // R-type (addw, and, or, sub, etc.)
@@ -164,7 +165,7 @@ always @(*) begin
             JAL        = 1;
             RegWriteEn = 1;
             MemtoReg   = 1;
-            ImmSrc     = IMM_U;
+            ImmSrc     = IMM_UJ;
         end
 
         // ------------

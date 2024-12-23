@@ -44,11 +44,10 @@ module fetch_stage (
     );
 
     // PC Adder: Calculate PC + 4 (for sequential PC)
-    PC_Adder pc_add (
-        .in(PCF),               // Current PC
-        .out(PCPlus4F)          // PC + 4 (next instruction address)
-    );
-
+			PC_Adder pc_add (
+			 .in(PCF),          // Connects to input port 'in'
+			 .out(PCPlus4F)     // Connects to output port 'out'
+		);
     // Pipeline registers for fetch stage
     always @(posedge clk or posedge rst) begin
         if (rst) begin

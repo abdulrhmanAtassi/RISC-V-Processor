@@ -1,7 +1,7 @@
 module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
                     RegWriteEnE,MemtoRegE, JALE, MemReadEnE, MemWriteEnE, ALUOpE,
-						  ALUSrcE, MemSizeE, LoadSizeE, PCSF, ImmE, RdE, PCPlus4E,ReadData1E,
-						  ReadData2E, PCTargetD);
+                    ALUSrcE, MemSizeE, LoadSizeE, PCSF, ImmE, RdE, PCPlus4E,ReadData1E,
+                    ReadData2E, PCTargetD);
 	
     // Declaring I/O
     input clk, rst, RegWriteEnW;
@@ -16,13 +16,13 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     output [63:0] ImmE, ReadData1E, ReadData2E, PCPlus4E, PCTargetD;
 
     // Declare Interim Wires
-	 wire RegWriteEnD, MemtoRegD, JALD, MemReadEnD, MemWriteEnD, PCSD, ALUSrcD;
-	 wire [1:0] MemSizeD, LoadSizeD;
-	 wire [2:0] ALUOpD;
-	 wire [4:0] RdD;
-	 wire [63:0] ImmD, ReadData1D, ReadData2D, PCPlus4D;
+    wire RegWriteEnD, MemtoRegD, JALD, MemReadEnD, MemWriteEnD, PCSD, ALUSrcD;
+    wire [1:0] MemSizeD, LoadSizeD;
+    wire [2:0] ALUOpD;
+    wire [4:0] RdD;
+	wire [63:0] ImmD, ReadData1D, ReadData2D;
     wire IsBranch, BranchType, JALR, BranchResult;
-    wire [1:0] ImmSrc;
+    wire [2:0] ImmSrc;
     wire [63:0] AdderInput;
 
     // Declaration of Interim Register
@@ -41,6 +41,7 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     wire [4:0] rs1    = InstrD[19:15];
     wire [4:0] rs2    = InstrD[24:20];
     wire [4:0] rd     = InstrD[11:7];
+    
 
     // ---------------
     // CONTROL UNIT
@@ -49,7 +50,6 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
         .op(opcode),
         .funct7(funct7),
         .funct3(funct3),
-
         .RegWriteEn(RegWriteEnD),
         .MemtoReg(MemtoRegD),
         .JAL(JALD),
@@ -102,7 +102,7 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     // ---------------
     // BRANCH DECISION
     // ---------------
-    assign PCSF = IsBranch & BranchResult;
+    assign PCSD = IsBranch & BranchResult;
     
     // ---------------
     // SELECT ADDER INPUT FOR PC TARGET
@@ -120,44 +120,44 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     // PC TARGET
     //    For JALR, ensure LSB is cleared
     // ---------------
-			wire [63:0] raw_jalr_addr = ImmE + AdderInput;
-			wire [63:0] jalr_addr     = {raw_jalr_addr[63:1], 1'b0}; // Clear LSB
+    wire [63:0] raw_jalr_addr = ImmE + AdderInput;
+    wire [63:0] jalr_addr     = {raw_jalr_addr[63:1], 1'b0}; // Clear LSB
 
     assign PCTargetD = (JALR) ? jalr_addr : (ImmE + AdderInput);
-
+    //assign RdD = rd;
 always @(posedge clk or posedge rst) begin
     if (rst) begin
-        RegWriteEnD_R = 0;
-        MemtoRegD_R = 0;
-        JALD_R = 0;
-        MemReadEnD_R = 0;
-        MemWriteEnD_R = 0;
-        PCSD_R = 0;
-        ALUSrcD_R = 0;
-        MemSizeD_R = 2'b0;
-        LoadSizeD_R = 2'b0;
-        ALUOpD_R = 3'b0;
-        RdD_R = 5'b0;
-        ImmD_R = 64'b0;
-        ReadData1D_R = 64'b0;
-        ReadData2D_R = 64'b0;
-        PCPlus4D_R = 64'b0;
+        RegWriteEnD_R <= 0;
+        MemtoRegD_R <= 0;
+        JALD_R <= 0;
+        MemReadEnD_R <= 0;
+        MemWriteEnD_R <= 0;
+        PCSD_R <= 0;
+        ALUSrcD_R <= 0;
+        MemSizeD_R <= 2'b0;
+        LoadSizeD_R <= 2'b0;
+        ALUOpD_R <= 3'b0;
+        RdD_R <= 5'b0;
+        ImmD_R <= 64'b0;
+        ReadData1D_R <= 64'b0;
+        ReadData2D_R <= 64'b0;
+        PCPlus4D_R <= 64'b0;
     end else begin
-        RegWriteEnD_R = RegWriteEnD;
-        MemtoRegD_R = MemtoRegD;
-        JALD_R = JALD;
-        MemReadEnD_R = MemReadEnD;
-        MemWriteEnD_R = MemWriteEnD;
-        PCSD_R = PCSD;
-        ALUSrcD_R = ALUSrcD;
-        MemSizeD_R = MemSizeD;
-        LoadSizeD_R = LoadSizeD;
-        ALUOpD_R = ALUOpD;
-        RdD_R = RdD;
-        ImmD_R = ImmD;
-        ReadData1D_R = ReadData1D;
-        ReadData2D_R = ReadData2D;
-        PCPlus4D_R = PCPlus4D;
+        RegWriteEnD_R <= RegWriteEnD;
+        MemtoRegD_R <= MemtoRegD;
+        JALD_R <= JALD;
+        MemReadEnD_R <= MemReadEnD;
+        MemWriteEnD_R <= MemWriteEnD;
+        PCSD_R <= PCSD;
+        ALUSrcD_R <= ALUSrcD;
+        MemSizeD_R <= MemSizeD;
+        LoadSizeD_R <= LoadSizeD;
+        ALUOpD_R <= ALUOpD;
+        RdD_R <= rd;
+        ImmD_R <= ImmD;
+        ReadData1D_R <= ReadData1D;
+        ReadData2D_R <= ReadData2D;
+        PCPlus4D_R <= PCPlus4D;
     end
 end
 
@@ -167,7 +167,7 @@ end
 		assign JALE = JALD_R;
 		assign MemReadEnE = MemReadEnD_R;
 		assign MemWriteEnE = MemWriteEnD_R;
-		assign PCSE = PCSD_R;
+		assign PCSF = PCSD_R;
 		assign ALUSrcE = ALUSrcD_R;
 		assign MemSizeE = MemSizeD_R;
 		assign LoadSizeE = LoadSizeD_R;
