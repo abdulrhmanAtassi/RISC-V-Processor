@@ -3,22 +3,22 @@ module fetch_stage (
     input rst,                  // Reset signal
     input PCSrcD,               // PC Source control (for branches/jumps)
     input JalD,                 // Jump signal (for jump link)
-    input [31:0] PCTargetD,     // Target address for branching/jumping
+    input [63:0] PCTargetD,     // Target address for branching/jumping
     output [31:0] InstrD,       // Instruction at current PC
-    output [31:0] PCD,          // Current PC value
-    output [31:0] PCPlus4D      // PC + 4 value
+    output [63:0] PCD,          // Current PC value
+    output [63:0] PCPlus4D      // PC + 4 value
 );
 
     // Declaring internal wires
-    wire [31:0] PC_F, PCF, PCPlus4F;
+    wire [63:0] PC_F, PCF, PCPlus4F;
     wire [31:0] InstrF;
 
     // Registers for pipeline stage
     reg [31:0] InstrF_reg;
-    reg [31:0] PCF_reg, PCPlus4F_reg;
+    reg [63:0] PCF_reg, PCPlus4F_reg;
 
     // PC Mux: Select either PC + 4 or PCTargetD based on branch/jump control signals
-    Mux2x1 pc_mux (
+    Mux2x1 #(64) pc_mux (
         .a(PCPlus4F),           // Next sequential PC (PC + 4)
         .b(PCTargetD),          // Target PC for branch/jump
         .sel(PCSrcD | JalD),    // Select signal for branch/jump
@@ -38,7 +38,7 @@ module fetch_stage (
 
     // Instruction Memory: Fetch instruction at the current PC
     InstructionMemory IMEM (
-        .address(PCF[31:2]),          // Address input (current PC)
+        .address(PCF[63:2]),          // Address input (current PC)
         .clock(clk),            // Clock signal
         .q(InstrF)              // Instruction output
     );
@@ -54,8 +54,8 @@ module fetch_stage (
         if (rst) begin
             // Reset the pipeline registers
             InstrF_reg <= 32'h00000000;
-            PCF_reg <= 32'h00000000;
-            PCPlus4F_reg <= 32'h00000000;
+            PCF_reg <= 64'h00000000;
+            PCPlus4F_reg <= 64'h00000000;
         end else begin
             // Update pipeline registers with the current values
             InstrF_reg <= InstrF;

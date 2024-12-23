@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pipelined_processor
-Mon Dec 23 12:54:35 2024
+Mon Dec 23 16:24:50 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -25,9 +25,12 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  17. Port Connectivity Checks: "decode_stage:decode_stage_inst|sign_extension:SE"
  18. Port Connectivity Checks: "decode_stage:decode_stage_inst"
  19. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 20. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|PC:Program_Counter"
+ 21. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|Mux2x1:pc_mux"
+ 22. Port Connectivity Checks: "fetch_stage:fetch_stage_inst"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -54,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 23 12:54:35 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 23 16:24:50 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -289,7 +292,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+----------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                           ;
 +----------------+-------+----------------------------------------------------------------+
-; size           ; 32    ; Signed Integer                                                 ;
+; size           ; 64    ; Signed Integer                                                 ;
 +----------------+-------+----------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -468,14 +471,46 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"                                                                                                                                 ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; address ; Input ; Warning  ; Input port expression (30 bits) is wider than the input port (8 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; clken   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"                                                                                                                                  ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input  ; Warning  ; Input port expression (62 bits) is wider than the input port (8 bits) it drives.  The 54 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; q       ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (64 bits) it drives.  The 32 most-significant bit(s) in the port expression will be connected to GND.           ;
+; clken   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                       ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fetch_stage:fetch_stage_inst|PC:Program_Counter"                                                                                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; pc_in  ; Input  ; Warning  ; Input port expression (64 bits) is wider than the input port (32 bits) it drives.  The 32 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; pc_out ; Output ; Warning  ; Output or bidir port (32 bits) is smaller than the port expression (64 bits) it drives.  The 32 most-significant bit(s) in the port expression will be connected to GND.            ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fetch_stage:fetch_stage_inst|Mux2x1:pc_mux"                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[63..32] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fetch_stage:fetch_stage_inst"                                                                                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                               ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PCTargetD ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCTargetD[63..32]" will be connected to GND. ;
+; InstrD    ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "InstrD[63..32]" have no fanouts                         ;
+; PCD       ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "PCD[63..32]" have no fanouts                            ;
+; PCPlus4D  ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "PCPlus4D[63..32]" have no fanouts                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -505,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Dec 23 12:54:24 2024
+    Info: Processing started: Mon Dec 23 16:24:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipelined_processor -c pipelined_processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -586,7 +621,39 @@ Info (12128): Elaborating entity "RegisterFile" for hierarchy "decode_stage:deco
 Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(18): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 18
 Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 83
 Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 93
-Info (12128): Elaborating entity "Mux2x1" for hierarchy "decode_stage:decode_stage_inst|Mux2x1:adderSrc" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 110
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[63]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[62]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[61]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[60]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[59]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[58]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[57]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[56]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[55]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[54]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[53]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[52]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[51]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[50]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[49]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[48]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[47]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[46]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[45]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[44]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[43]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[42]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[41]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[40]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[39]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[38]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[37]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[36]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[35]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[34]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[33]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
+    Warning (12110): Net "fetch_stage:fetch_stage_inst|PCF[32]" is missing source, defaulting to GND File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 13
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[0]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 36
@@ -621,7 +688,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[29]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 674
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[30]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 696
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[31]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 718
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (17049): 30 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -631,10 +698,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4754 megabytes
-    Info: Processing ended: Mon Dec 23 12:54:35 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
+    Info: Peak virtual memory: 4746 megabytes
+    Info: Processing ended: Mon Dec 23 16:24:51 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:19
 
 
