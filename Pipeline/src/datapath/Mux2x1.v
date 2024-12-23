@@ -1,15 +1,10 @@
-module Mux2x1(
-    input wire [31:0] a,     
-    input wire [31:0] b,    
-    input wire sel,         
-    output reg [31:0] y     
+module Mux2x1 #(parameter size = 32) (
+    input [size - 1:0] a, b, // Inputs with parameterized width
+    input sel,                     // Selection signal
+    output [size - 1:0] y      // Output with parameterized width
 );
 
-    always @(*) begin
-        if (sel == 1'b1)
-            y = b;
-        else
-            y = a; 
-    end
+    // Logic: Select input based on 's'
+    assign y = ~sel ? a : b;
 
 endmodule
