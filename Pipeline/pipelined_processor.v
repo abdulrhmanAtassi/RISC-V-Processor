@@ -117,6 +117,31 @@ module pipelined_processor (
         .LoadSizeM(LoadSizeM)
     );
 
+    // Instantiate memory stage
+    memory_stage memory_stage_inst (
+    .clk(clk),
+    .rst(reset),
+    .RegWriteEnM(RegWriteEnM),
+    .MemtoRegM(MemtoRegM),
+    .JALM(JALM),
+    .MemReadEnM(MemReadEnM),
+    .MemWriteEnM(MemWriteEnM),
+    .MemSizeM(MemSizeM),
+    .LoadSizeM(LoadSizeM),
+    .RdM(RdM),
+    .PcPlus4M(PcPlus4M),
+    .ReadData2M(ReadData2M),
+    .ALUResultM(ALUResultM),
+    .RegWriteEnW(RegWriteEnW),
+    .MemtoRegW(MemtoRegW),
+    .JALW(JALW),
+    .PcPlus4W(PcPlus4W),
+    .ALUResultW(ALUResultW),
+    .ReadDataW(ReadDataW),
+    .RdW(RdW)
+);
+
+
     // Instantiate writeback stage
     writeback_stage writeback_stage_inst (
         .clk(clk),

@@ -73,6 +73,33 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RegisterFile_tb -section_
 set_global_assignment -name EDA_TEST_BENCH_NAME ControlUnit_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ControlUnit_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ControlUnit_tb -section_id ControlUnit_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME decode_stage_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id decode_stage_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME decode_stage_tb -section_id decode_stage_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_ALU_Control -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_ALU_Control
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ALU_Control -section_id tb_ALU_Control
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_ALU -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_ALU
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ALU -section_id tb_ALU
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_execution_stage -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_execution_stage
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_execution_stage -section_id tb_execution_stage
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/InstractionMemory_tb.v -section_id InstractionMemory_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/fetch_stage_tb.v -section_id fetch_stage_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/RegisterFile_tb.v -section_id RegisterFile_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/ControlUnit_tb.v -section_id ControlUnit_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/decode_stage_tb.v -section_id decode_stage_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_ALU_Control.v -section_id tb_ALU_Control
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_ALU.v -section_id tb_ALU
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_execution_stage.v -section_id tb_execution_stage
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_writeback -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_writeback
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_writeback -section_id tb_writeback
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_writeback.v -section_id tb_writeback
+set_global_assignment -name MIF_FILE src/datapath/DataMemory.mif
+set_global_assignment -name VERILOG_FILE src/datapath/DataMemory.v
+set_global_assignment -name VERILOG_FILE src/stages/memory_stage.v
 set_global_assignment -name VERILOG_FILE src/tb/decode_stage_tb.v
 set_global_assignment -name VERILOG_FILE pipelined_processor.v
 set_global_assignment -name MIF_FILE src/datapath/Instruction.mif
@@ -95,37 +122,14 @@ set_global_assignment -name VERILOG_FILE src/stages/decode_stage.v
 set_global_assignment -name VERILOG_FILE src/datapath/sign_extension.v
 set_global_assignment -name VERILOG_FILE src/tb/sign_extension_tb.v
 set_global_assignment -name VERILOG_FILE src/tb/ControlUnit_tb.v
-set_global_assignment -name EDA_TEST_BENCH_NAME decode_stage_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id decode_stage_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME decode_stage_tb -section_id decode_stage_tb
 set_global_assignment -name VERILOG_FILE src/stages/execution_stage.v
 set_global_assignment -name VERILOG_FILE src/datapath/ALU_Control.v
 set_global_assignment -name VERILOG_FILE src/datapath/ALU.v
 set_global_assignment -name VERILOG_FILE src/tb/tb_ALU_Control.v
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_ALU_Control -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_ALU_Control
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ALU_Control -section_id tb_ALU_Control
 set_global_assignment -name VERILOG_FILE src/tb/tb_ALU.v
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_ALU -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_ALU
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ALU -section_id tb_ALU
 set_global_assignment -name VERILOG_FILE src/tb/tb_execution_stage.v
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_execution_stage -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_execution_stage
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_execution_stage -section_id tb_execution_stage
 set_global_assignment -name VERILOG_FILE src/datapath/Mux4x1.v
 set_global_assignment -name VERILOG_FILE src/stages/writeback_stage.v
 set_global_assignment -name VERILOG_FILE src/tb/tb_writeback.v
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/InstractionMemory_tb.v -section_id InstractionMemory_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/fetch_stage_tb.v -section_id fetch_stage_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/RegisterFile_tb.v -section_id RegisterFile_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/ControlUnit_tb.v -section_id ControlUnit_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/decode_stage_tb.v -section_id decode_stage_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_ALU_Control.v -section_id tb_ALU_Control
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_ALU.v -section_id tb_ALU
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_execution_stage.v -section_id tb_execution_stage
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_writeback -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_writeback
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_writeback -section_id tb_writeback
-set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_writeback.v -section_id tb_writeback
+set_global_assignment -name QIP_FILE src/datapath/DataMemory.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

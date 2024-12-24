@@ -1,1 +1,0 @@
-Info (10281): Verilog HDL Declaration information at execution_stage.v(13): object "PCPlus4E" differs only in case from object "PcPlus4E" in the same scope File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 13
