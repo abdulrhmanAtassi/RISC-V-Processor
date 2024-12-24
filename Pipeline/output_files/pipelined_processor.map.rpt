@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pipelined_processor
-Mon Dec 23 22:30:41 2024
+Tue Dec 24 18:57:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 23 22:30:41 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 18:57:17 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -159,45 +159,50 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+---------------------+---------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+---------+
-; pipelined_processor.v            ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v            ;         ;
-; src/datapath/Instruction.mif     ; yes             ; User Memory Initialization File  ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Instruction.mif     ;         ;
-; src/datapath/InstructionMemory.v ; yes             ; User Wizard-Generated File       ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v ;         ;
-; src/datapath/Mux2x1.v            ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v            ;         ;
-; src/datapath/PC.v                ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v                ;         ;
-; src/datapath/PC_Adder.v          ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v          ;         ;
-; src/stages/fetch_stage.v         ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v         ;         ;
-; src/datapath/EqReg.v             ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v             ;         ;
-; src/datapath/RegisterFile.v      ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v      ;         ;
-; src/datapath/ControlUnit.v       ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v       ;         ;
-; src/stages/decode_stage.v        ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v        ;         ;
-; src/datapath/sign_extension.v    ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc           ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
-; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc               ;         ;
-; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc               ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc             ;         ;
-; db/altsyncram_2v91.tdf           ; yes             ; Auto-Generated Megafunction      ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf           ;         ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; pipelined_processor.v            ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v            ;         ;
+; src/datapath/Instruction.mif     ; yes             ; User Memory Initialization File  ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Instruction.mif     ;         ;
+; src/datapath/InstructionMemory.v ; yes             ; User Wizard-Generated File       ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v ;         ;
+; src/datapath/Mux2x1.v            ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v            ;         ;
+; src/datapath/PC.v                ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v                ;         ;
+; src/datapath/PC_Adder.v          ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v          ;         ;
+; src/stages/fetch_stage.v         ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v         ;         ;
+; src/datapath/EqReg.v             ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v             ;         ;
+; src/datapath/RegisterFile.v      ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v      ;         ;
+; src/datapath/ControlUnit.v       ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v       ;         ;
+; src/stages/decode_stage.v        ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v        ;         ;
+; src/datapath/sign_extension.v    ; yes             ; User Verilog HDL File            ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_2v91.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf           ;         ;
++----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -507,61 +512,65 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Dec 23 22:30:28 2024
+    Info: Processing started: Tue Dec 24 18:56:56 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipelined_processor -c pipelined_processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20029): Only one processor detected - disabling parallel compilation
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/decode_stage_tb.v
-    Info (12023): Found entity 1: decode_stage_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v Line: 3
+    Info (12023): Found entity 1: decode_stage_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/decode_stage_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file pipelined_processor.v
-    Info (12023): Found entity 1: pipelined_processor File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 1
+    Info (12023): Found entity 1: pipelined_processor File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/instructionmemory.v
-    Info (12023): Found entity 1: InstructionMemory File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 40
+    Info (12023): Found entity 1: InstructionMemory File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/instractionmemory_tb.v
-    Info (12023): Found entity 1: InstractionMemory_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/InstractionMemory_tb.v Line: 2
+    Info (12023): Found entity 1: InstractionMemory_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/InstractionMemory_tb.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/mux2x1.v
-    Info (12023): Found entity 1: Mux2x1 File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v Line: 1
+    Info (12023): Found entity 1: Mux2x1 File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/pc.v
-    Info (12023): Found entity 1: PC File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 1
+    Info (12023): Found entity 1: PC File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/pc_adder.v
-    Info (12023): Found entity 1: PC_Adder File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v Line: 1
+    Info (12023): Found entity 1: PC_Adder File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/stages/fetch_stage.v
-    Info (12023): Found entity 1: fetch_stage File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 1
+    Info (12023): Found entity 1: fetch_stage File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/fetch_stage_tb.v
-    Info (12023): Found entity 1: fetch_stage_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v Line: 3
+    Info (12023): Found entity 1: fetch_stage_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/fetch_stage_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/mux2x1_tb.v
-    Info (12023): Found entity 1: Mux2x1_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/Mux2x1_tb.v Line: 3
+    Info (12023): Found entity 1: Mux2x1_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/Mux2x1_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/pc_adder_tb.v
-    Info (12023): Found entity 1: PC_Adder_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/PC_Adder_tb.v Line: 1
+    Info (12023): Found entity 1: PC_Adder_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/PC_Adder_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/pc_tb.v
-    Info (12023): Found entity 1: PC_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/PC_tb.v Line: 3
+    Info (12023): Found entity 1: PC_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/PC_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/eqreg.v
-    Info (12023): Found entity 1: EqReg File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v Line: 1
+    Info (12023): Found entity 1: EqReg File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/EqReg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/registerfile.v
-    Info (12023): Found entity 1: RegisterFile File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 1
+    Info (12023): Found entity 1: RegisterFile File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/controlunit.v
-    Info (12023): Found entity 1: ControlUnit File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 1
+    Info (12023): Found entity 1: ControlUnit File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/eqreg_tb.v
-    Info (12023): Found entity 1: EqReg_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/EqReg_tb.v Line: 3
+    Info (12023): Found entity 1: EqReg_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/EqReg_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/registerfile_tb.v
-    Info (12023): Found entity 1: RegisterFile_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/RegisterFile_tb.v Line: 3
+    Info (12023): Found entity 1: RegisterFile_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/RegisterFile_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file src/stages/decode_stage.v
-    Info (12023): Found entity 1: decode_stage File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 1
+    Info (12023): Found entity 1: decode_stage File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/sign_extension.v
-    Info (12023): Found entity 1: sign_extension File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 1
+    Info (12023): Found entity 1: sign_extension File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/sign_extension_tb.v
-    Info (12023): Found entity 1: sign_extension_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/sign_extension_tb.v Line: 1
+    Info (12023): Found entity 1: sign_extension_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/sign_extension_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/controlunit_tb.v
-    Info (12023): Found entity 1: ControlUnit_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v Line: 3
+    Info (12023): Found entity 1: ControlUnit_tb File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/datamemory.v
+    Info (12023): Found entity 1: DataMemory File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file src/stages/memory_stage.v
+    Info (12023): Found entity 1: memory_stage File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/memory_stage.v Line: 1
 Info (12127): Elaborating entity "pipelined_processor" for the top level hierarchy
-Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 43
-Info (12128): Elaborating entity "Mux2x1" for hierarchy "fetch_stage:fetch_stage_inst|Mux2x1:pc_mux" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 26
-Info (12128): Elaborating entity "PC" for hierarchy "fetch_stage:fetch_stage_inst|PC:Program_Counter" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 37
-Warning (10230): Verilog HDL assignment warning at PC.v(10): truncated value with size 364 to match size of target (64) File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 10
-Info (12128): Elaborating entity "InstructionMemory" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 44
-Info (12128): Elaborating entity "altsyncram" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
-Info (12130): Elaborated megafunction instantiation "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
-Info (12133): Instantiated megafunction "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" with the following parameter: File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
+Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_inst" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 43
+Info (12128): Elaborating entity "Mux2x1" for hierarchy "fetch_stage:fetch_stage_inst|Mux2x1:pc_mux" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 26
+Info (12128): Elaborating entity "PC" for hierarchy "fetch_stage:fetch_stage_inst|PC:Program_Counter" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 37
+Warning (10230): Verilog HDL assignment warning at PC.v(10): truncated value with size 364 to match size of target (64) File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 10
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 44
+Info (12128): Elaborating entity "altsyncram" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
+Info (12130): Elaborated megafunction instantiation "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
+Info (12133): Instantiated megafunction "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v Line: 85
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
     Info (12134): Parameter "clock_enable_output_a" = "NORMAL"
@@ -577,66 +586,66 @@ Info (12133): Instantiated megafunction "fetch_stage:fetch_stage_inst|Instructio
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2v91.tdf
-    Info (12023): Found entity 1: altsyncram_2v91 File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_2v91 File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2v91" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "PC_Adder" for hierarchy "fetch_stage:fetch_stage_inst|PC_Adder:pc_add" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 50
-Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 68
-Info (12128): Elaborating entity "ControlUnit" for hierarchy "decode_stage:decode_stage_inst|ControlUnit:dut" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 66
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(192): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 192
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(213): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 213
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "decode_stage:decode_stage_inst|RegisterFile:RF" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 81
-Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(18): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 18
-Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 90
-Warning (10230): Verilog HDL assignment warning at sign_extension.v(26): truncated value with size 96 to match size of target (64) File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 26
-Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 100
+Info (12128): Elaborating entity "PC_Adder" for hierarchy "fetch_stage:fetch_stage_inst|PC_Adder:pc_add" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 50
+Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_inst" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 68
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "decode_stage:decode_stage_inst|ControlUnit:dut" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 66
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(192): incomplete case statement has no default case item File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 192
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(213): incomplete case statement has no default case item File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 213
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "decode_stage:decode_stage_inst|RegisterFile:RF" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 81
+Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(18): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 18
+Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 90
+Warning (10230): Verilog HDL assignment warning at sign_extension.v(26): truncated value with size 96 to match size of target (64) File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 26
+Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 100
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[0]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 36
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[1]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 58
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[2]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 80
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[3]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 102
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[4]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 124
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[5]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 146
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[6]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 168
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[7]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 190
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[8]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 212
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[9]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 234
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[10]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 256
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[11]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 278
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[12]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 300
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[13]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 322
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[14]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 344
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[15]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 366
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[16]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 388
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[17]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 410
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[18]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 432
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[19]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 454
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[20]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 476
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[21]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 498
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[22]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 520
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[23]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 542
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[24]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 564
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[25]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 586
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[26]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 608
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[27]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 630
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[28]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 652
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[29]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 674
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[30]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 696
-        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[31]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 718
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[0]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 36
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[1]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 58
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[2]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 80
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[3]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 102
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[4]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 124
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[5]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 146
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[6]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 168
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[7]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 190
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[8]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 212
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[9]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 234
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[10]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 256
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[11]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 278
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[12]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 300
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[13]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 322
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[14]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 344
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[15]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 366
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[16]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 388
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[17]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 410
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[18]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 432
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[19]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 454
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[20]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 476
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[21]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 498
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[22]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 520
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[23]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 542
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[24]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 564
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[25]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 586
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[26]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 608
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[27]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 630
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[28]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 652
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[29]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 674
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[30]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 696
+        Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[31]" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 718
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (17049): 62 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 2
-    Warning (15610): No output dependent on input pin "reset" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 4
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 2
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/sarah/Desktop/ArchProject/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 4
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
-    Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Mon Dec 23 22:30:41 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 4747 megabytes
+    Info: Processing ended: Tue Dec 24 18:57:17 2024
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:10
 
 

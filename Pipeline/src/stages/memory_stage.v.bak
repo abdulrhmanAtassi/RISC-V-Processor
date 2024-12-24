@@ -1,0 +1,61 @@
+module memory_stage(clk, rst, RegWriteEnM, MemtoRegM, JALM, MemReadEnM, MemWriteEnM,
+							MemSizeM, LoadSizeM, RdM, PcPlus4M, ReadData2M, ALUResultM, 
+							RegWriteEnW, MemtoRegW, JALW, PcPlus4W, ALUResultW, ReadDataW, RdW
+							);
+
+input clk, rst;
+input RegWriteEnM, MemtoRegM, JALM, MemReadEnM, MemWriteEnM;
+input [1:0] MemSizeM, LoadSizeM;
+input [4:0] RdM;
+input [63:0] PcPlus4M, ReadData2M, ALUResultM;
+
+output RegWriteEnW, MemtoRegW, JALW;
+output [63:0] PcPlus4W, ALUResultW, ReadDataW;
+output [4:0] RdW;
+
+
+reg RegWriteEnM_r, MemtoRegM_r, JALM_r;
+reg [4:0] RdM_r;
+reg [63:0] PcPlus4M_r, ReadDataM_r, ALUResultM_r;
+
+wire [63:0] ReadDataM;
+
+//DataMemory (
+	//address,
+	//clken,
+	//clock,
+	//data,
+	//rden,
+	//wren,
+	//q);
+
+always @(posedge clk) begin
+    if (rst) begin
+        RegWriteEnM_r <= 0;
+        MemtoRegM_r <= 0;
+        JALM_r <= 0;
+        RdM_r <= 5'b0;
+        PcPlus4M_r <= 64'b0;
+        ReadDataM_r <= 64'b0;
+        ALUResultM_r <= 64'b0;
+    end else begin
+        RegWriteEnM_r <= RegWriteEnM;
+        MemtoRegM_r <= MemtoRegM;
+        JALM_r <= JALM;
+        RdM_r <= RdM;
+        PcPlus4M_r <= PcPlus4M;
+        ReadDataM_r <= ReadData2M;
+        ALUResultM_r <= ALUResultM;
+    end
+end
+
+assign RegWriteEnW = RegWriteEnM_r;
+assign MemtoRegW = MemtoRegM_r;
+assign JALW = JALM_r;
+assign RdW = RdM_r;
+assign PcPlus4W = PcPlus4M_r;
+assign ReadDataW = ReadData2M_r;
+assign ALUResultW = ALUResultM_r;
+
+endmodule 
+
