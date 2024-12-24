@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pipelined_processor
-Mon Dec 23 22:30:41 2024
+Tue Dec 24 14:53:38 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -21,13 +21,17 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  13. Parameter Settings for User Entity Instance: fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component
  14. Parameter Settings for User Entity Instance: decode_stage:decode_stage_inst|ControlUnit:dut
  15. Parameter Settings for User Entity Instance: decode_stage:decode_stage_inst|Mux2x1:adderSrc
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "decode_stage:decode_stage_inst"
- 18. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"
- 19. Port Connectivity Checks: "fetch_stage:fetch_stage_inst"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 16. Parameter Settings for User Entity Instance: execution_stage:execution_stage_inst|ALU_Control:comb_67
+ 17. Parameter Settings for User Entity Instance: execution_stage:execution_stage_inst|ALU:comb_68
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "execution_stage:execution_stage_inst"
+ 20. Port Connectivity Checks: "decode_stage:decode_stage_inst"
+ 21. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"
+ 22. Port Connectivity Checks: "fetch_stage:fetch_stage_inst"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 23 22:30:41 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 14:53:38 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -187,6 +191,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; src/datapath/ControlUnit.v       ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v       ;         ;
 ; src/stages/decode_stage.v        ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v        ;         ;
 ; src/datapath/sign_extension.v    ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v    ;         ;
+; src/stages/execution_stage.v     ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v     ;         ;
+; src/datapath/ALU_Control.v       ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ALU_Control.v       ;         ;
+; src/datapath/ALU.v               ; yes             ; User Verilog HDL File            ; D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ALU.v               ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
@@ -408,6 +415,57 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: execution_stage:execution_stage_inst|ALU_Control:comb_67 ;
++------------------+-------+----------------------------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                                       ;
++------------------+-------+----------------------------------------------------------------------------+
+; ALU_ADD          ; 0000  ; Unsigned Binary                                                            ;
+; ALU_SUB          ; 0001  ; Unsigned Binary                                                            ;
+; ALU_AND          ; 0010  ; Unsigned Binary                                                            ;
+; ALU_OR           ; 0011  ; Unsigned Binary                                                            ;
+; ALU_XOR          ; 0100  ; Unsigned Binary                                                            ;
+; ALU_SLT          ; 0101  ; Unsigned Binary                                                            ;
+; ALU_SLL          ; 0110  ; Unsigned Binary                                                            ;
+; ALU_SRL          ; 0111  ; Unsigned Binary                                                            ;
+; ALU_PASS         ; 1000  ; Unsigned Binary                                                            ;
+; ALU_OP_R_TYPE    ; 000   ; Unsigned Binary                                                            ;
+; ALU_OP_I_TYPE    ; 001   ; Unsigned Binary                                                            ;
+; ALU_OP_S_TYPE    ; 010   ; Unsigned Binary                                                            ;
+; ALU_OP_JAL       ; 011   ; Unsigned Binary                                                            ;
+; ALU_OP_LOAD_TYPE ; 100   ; Unsigned Binary                                                            ;
+; ALU_OP_BRANCH    ; 101   ; Unsigned Binary                                                            ;
+; ALU_OP_U_TYPE    ; 111   ; Unsigned Binary                                                            ;
+; FUNCT3_ADDW      ; 001   ; Unsigned Binary                                                            ;
+; FUNCT3_SUB       ; 110   ; Unsigned Binary                                                            ;
+; FUNCT3_AND       ; 111   ; Unsigned Binary                                                            ;
+; FUNCT3_OR        ; 101   ; Unsigned Binary                                                            ;
+; FUNCT3_XOR       ; 011   ; Unsigned Binary                                                            ;
+; FUNCT3_SLT       ; 000   ; Unsigned Binary                                                            ;
+; FUNCT3_SLL       ; 100   ; Unsigned Binary                                                            ;
+; FUNCT3_SRL       ; 010   ; Unsigned Binary                                                            ;
++------------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: execution_stage:execution_stage_inst|ALU:comb_68 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; ALU_ADD        ; 0000  ; Unsigned Binary                                                      ;
+; ALU_SUB        ; 0001  ; Unsigned Binary                                                      ;
+; ALU_AND        ; 0010  ; Unsigned Binary                                                      ;
+; ALU_OR         ; 0011  ; Unsigned Binary                                                      ;
+; ALU_XOR        ; 0100  ; Unsigned Binary                                                      ;
+; ALU_SLT        ; 0101  ; Unsigned Binary                                                      ;
+; ALU_SLL        ; 0110  ; Unsigned Binary                                                      ;
+; ALU_SRL        ; 0111  ; Unsigned Binary                                                      ;
+; ALU_PASS       ; 1000  ; Unsigned Binary                                                      ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                                                ;
 +-------------------------------------------+-------------------------------------------------------------------------------------+
@@ -428,35 +486,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decode_stage:decode_stage_inst"                                                                                                                             ;
-+-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                                                              ;
-+-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PCD         ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCD[63..32]" will be connected to GND.      ;
-; PCPlus4D    ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCPlus4D[63..32]" will be connected to GND. ;
-; ResultW     ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "ResultW[63..32]" will be connected to GND.  ;
-; RegWriteEnE ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; MemtoRegE   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; JALE        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; MemReadEnE  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; MemWriteEnE ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; ALUOpE      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; ALUSrcE     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; PCSF        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; ImmE        ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ImmE[63..32]" have no fanouts                          ;
-; ImmE        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; RdE         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; PCPlus4E    ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "PCPlus4E[63..32]" have no fanouts                      ;
-; PCPlus4E    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; ReadData1E  ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ReadData1E[63..32]" have no fanouts                    ;
-; ReadData1E  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; ReadData2E  ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ReadData2E[63..32]" have no fanouts                    ;
-; ReadData2E  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
-; MemSizeE    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
-; LoadSizeE   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
-; PCTargetD   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
-+-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "execution_stage:execution_stage_inst"                                                                                                                         ;
++-------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                ;
++-------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; MemSizeE    ; Bidir  ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; LoadSizeE   ; Bidir  ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; ImmE        ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "ImmE[63..32]" will be connected to GND.       ;
+; ReadData1E  ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "ReadData1E[63..32]" will be connected to GND. ;
+; ReadData2E  ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "ReadData2E[63..32]" will be connected to GND. ;
+; PCPlus4E    ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCPlus4E[63..32]" will be connected to GND.   ;
+; RdM         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; PcPlus4M    ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "PcPlus4M[63..32]" have no fanouts                        ;
+; PcPlus4M    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; ReadData2M  ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ReadData2M[63..32]" have no fanouts                      ;
+; ReadData2M  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; ALUResultM  ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ALUResultM[63..32]" have no fanouts                      ;
+; ALUResultM  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; RegWriteEnM ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; MemtoRegM   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; JALM        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; MemReadEnM  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; MemWriteEnM ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; MemSizeM    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
+; LoadSizeM   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
++-------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decode_stage:decode_stage_inst"                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                              ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PCD        ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCD[63..32]" will be connected to GND.      ;
+; PCPlus4D   ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "PCPlus4D[63..32]" will be connected to GND. ;
+; ResultW    ; Input  ; Warning  ; Input port expression (32 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "ResultW[63..32]" will be connected to GND.  ;
+; PCSF       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                  ;
+; ImmE       ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ImmE[63..32]" have no fanouts                          ;
+; PCPlus4E   ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "PCPlus4E[63..32]" have no fanouts                      ;
+; ReadData1E ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ReadData1E[63..32]" have no fanouts                    ;
+; ReadData2E ; Output ; Warning  ; Output or bidir port (64 bits) is wider than the port expression (32 bits) it drives; bit(s) "ReadData2E[63..32]" have no fanouts                    ;
+; MemSizeE   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
+; LoadSizeE  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
+; PCTargetD  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                             ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -507,7 +581,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Dec 23 22:30:28 2024
+    Info: Processing started: Tue Dec 24 14:53:17 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipelined_processor -c pipelined_processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -553,8 +627,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file src/tb/
     Info (12023): Found entity 1: sign_extension_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/sign_extension_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/tb/controlunit_tb.v
     Info (12023): Found entity 1: ControlUnit_tb File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/ControlUnit_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file src/stages/execution_stage.v
+    Info (12023): Found entity 1: execution_stage File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/alu_control.v
+    Info (12023): Found entity 1: ALU_Control File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ALU_Control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/datapath/alu.v
+    Info (12023): Found entity 1: ALU File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/tb_alu_control.v
+    Info (12023): Found entity 1: tb_ALU_Control File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/tb_ALU_Control.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/tb_alu.v
+    Info (12023): Found entity 1: tb_ALU File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/tb_ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/tb/tb_execution_stage.v
+    Info (12023): Found entity 1: tb_execution_stage File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/tb_execution_stage.v Line: 4
+Critical Warning (10846): Verilog HDL Instantiation warning at execution_stage.v(49): instance has no name File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at execution_stage.v(60): instance has no name File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 60
+Warning (10037): Verilog HDL or VHDL warning at tb_execution_stage.v(153): conditional expression evaluates to a constant File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/tb_execution_stage.v Line: 153
 Info (12127): Elaborating entity "pipelined_processor" for the top level hierarchy
-Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 43
+Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 60
 Info (12128): Elaborating entity "Mux2x1" for hierarchy "fetch_stage:fetch_stage_inst|Mux2x1:pc_mux" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 26
 Info (12128): Elaborating entity "PC" for hierarchy "fetch_stage:fetch_stage_inst|PC:Program_Counter" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 37
 Warning (10230): Verilog HDL assignment warning at PC.v(10): truncated value with size 364 to match size of target (64) File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v Line: 10
@@ -580,7 +669,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_2v91 File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2v91" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "PC_Adder" for hierarchy "fetch_stage:fetch_stage_inst|PC_Adder:pc_add" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 50
-Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 68
+Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 85
 Info (12128): Elaborating entity "ControlUnit" for hierarchy "decode_stage:decode_stage_inst|ControlUnit:dut" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 66
 Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(192): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 192
 Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(213): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 213
@@ -589,6 +678,13 @@ Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(18): inf
 Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 90
 Warning (10230): Verilog HDL assignment warning at sign_extension.v(26): truncated value with size 96 to match size of target (64) File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 26
 Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 100
+Info (12128): Elaborating entity "execution_stage" for hierarchy "execution_stage:execution_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 118
+Info (12128): Elaborating entity "ALU_Control" for hierarchy "execution_stage:execution_stage_inst|ALU_Control:comb_67" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 49
+Info (12128): Elaborating entity "ALU" for hierarchy "execution_stage:execution_stage_inst|ALU:comb_68" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 60
+Warning (12161): Node "execution_stage:execution_stage_inst|MemSizeE[1]" is stuck at GND because node is in wire loop and does not have a source File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 8
+Warning (12161): Node "execution_stage:execution_stage_inst|MemSizeE[0]" is stuck at GND because node is in wire loop and does not have a source File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 8
+Warning (12161): Node "execution_stage:execution_stage_inst|LoadSizeE[1]" is stuck at GND because node is in wire loop and does not have a source File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 8
+Warning (12161): Node "execution_stage:execution_stage_inst|LoadSizeE[0]" is stuck at GND because node is in wire loop and does not have a source File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/execution_stage.v Line: 8
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[0]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 36
@@ -623,8 +719,9 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[29]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 674
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[30]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 696
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[31]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 718
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (17049): 62 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/output_files/pipelined_processor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -633,10 +730,16 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
-    Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Mon Dec 23 22:30:41 2024
-    Info: Elapsed time: 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 4764 megabytes
+    Info: Processing ended: Tue Dec 24 14:53:38 2024
+    Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/output_files/pipelined_processor.map.smsg.
 
 
