@@ -1,4 +1,4 @@
-module pipelined_processor(
+module pipelined_processor (
     input clk,
     input reset
 );
@@ -29,6 +29,26 @@ module pipelined_processor(
     wire [31:0] PCPlus4E;
     wire [31:0] ReadData1E;
     wire [31:0] ReadData2E;
+
+    // Memory stage signals
+    wire RegWriteEnM;
+    wire MemtoRegM;
+    wire JALM;
+    wire MemReadEnM;
+    wire MemWriteEnM;
+    wire [1:0] MemSizeM;
+    wire [1:0] LoadSizeM;
+    wire [4:0] RdM;
+    wire [63:0] PcPlus4M;
+    wire [63:0] ReadData2M;
+    wire [63:0] ALUResultM;
+
+    // Outputs from memory stage
+    wire [63:0] ReadDataW;
+    wire [63:0] PcPlus4W;
+    wire [63:0] ALUResultW;
+    wire JALW;
+    wire MemtoRegW;
 
     // Instantiate fetch stage
     fetch_stage fetch_stage_inst (
@@ -66,4 +86,29 @@ module pipelined_processor(
         .ReadData1E(ReadData1E),
         .ReadData2E(ReadData2E)
     );
+
+    // Instantiate memory stage
+    memory_stage memory_stage_inst (
+        .clk(clk),
+        .rst(reset),
+        .RegWriteEnM(RegWriteEnM),
+        .MemtoRegM(MemtoRegM),
+        .JALM(JALM),
+        .MemReadEnM(MemReadEnM),
+        .MemWriteEnM(MemWriteEnM),
+        .MemSizeM(MemSizeM),
+        .LoadSizeM(LoadSizeM),
+        .RdM(RdM),
+        .PcPlus4M(PcPlus4M),
+        .ReadData2M(ReadData2M),
+        .ALUResultM(ALUResultM),
+        .RegWriteEnW(RegWriteEnW),
+        .MemtoRegW(MemtoRegW),
+        .JALW(JALW),
+        .PcPlus4W(PcPlus4W),
+        .ALUResultW(ALUResultW),
+        .ReadDataW(ReadDataW),
+        .RdW(RdW)
+    );
+
 endmodule

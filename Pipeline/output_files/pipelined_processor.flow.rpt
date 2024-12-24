@@ -1,5 +1,5 @@
 Flow report for pipelined_processor
-Tue Dec 24 18:57:39 2024
+Tue Dec 24 23:37:42 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 24 18:57:39 2024          ;
+; Flow Status                        ; Successful - Tue Dec 24 23:37:42 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/24/2024 18:56:57 ;
+; Start date & time ; 12/24/2024 23:37:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pipelined_processor ;
 +-------------------+---------------------+
@@ -78,9 +78,10 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 1095467544287.173505581732932          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 20670390657237.173507263715452         ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RegisterFile_tb                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; fetch_stage_tb                    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; memory_stage_tb                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ControlUnit_tb                    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; decode_stage_tb                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; InstractionMemory_tb              ;
@@ -88,17 +89,19 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; decode_stage_tb                        ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; memory_stage_tb                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; src/tb/RegisterFile_tb.v               ; --            ; --          ; RegisterFile_tb                   ;
 ; EDA_TEST_BENCH_FILE                  ; src/tb/fetch_stage_tb.v                ; --            ; --          ; fetch_stage_tb                    ;
+; EDA_TEST_BENCH_FILE                  ; src/tb/memory_stage_tb.v               ; --            ; --          ; memory_stage_tb                   ;
 ; EDA_TEST_BENCH_FILE                  ; src/tb/ControlUnit_tb.v                ; --            ; --          ; ControlUnit_tb                    ;
 ; EDA_TEST_BENCH_FILE                  ; src/tb/decode_stage_tb.v               ; --            ; --          ; decode_stage_tb                   ;
 ; EDA_TEST_BENCH_FILE                  ; src/tb/InstractionMemory_tb.v          ; --            ; --          ; InstractionMemory_tb              ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; RegisterFile_tb                        ; --            ; --          ; RegisterFile_tb                   ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; fetch_stage_tb                         ; --            ; --          ; fetch_stage_tb                    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; memory_stage_tb                        ; --            ; --          ; memory_stage_tb                   ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ControlUnit_tb                         ; --            ; --          ; ControlUnit_tb                    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; decode_stage_tb                        ; --            ; --          ; decode_stage_tb                   ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; InstractionMemory_tb                   ; --            ; --          ; InstractionMemory_tb              ;
@@ -107,6 +110,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; RegisterFile_tb                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; ControlUnit_tb                         ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; decode_stage_tb                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; memory_stage_tb                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
@@ -127,12 +131,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4738 MB             ; 00:00:10                           ;
-; Fitter               ; 00:00:09     ; 1.0                     ; 5529 MB             ; 00:00:02                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4689 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4777 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4638 MB             ; 00:00:00                           ;
-; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4737 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:04     ; 1.0                     ; 5101 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4683 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4756 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4635 MB             ; 00:00:00                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -141,11 +145,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-0VDJB08F  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-0VDJB08F  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-0VDJB08F  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-0VDJB08F  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-0VDJB08F  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; WSAMZN-K8KT13CV  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; WSAMZN-K8KT13CV  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; WSAMZN-K8KT13CV  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; WSAMZN-K8KT13CV  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; WSAMZN-K8KT13CV  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
