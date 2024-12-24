@@ -1,0 +1,58 @@
+module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
+                    RegWriteEnE,MemtoRegE, JALE, MemReadEnE,MemWriteEnE, ALUOpE, ALUSrcE, PCSF, ImmE, RdE, PCPlus4E,ReadData1E, ReadData2E);
+	
+    // Declaring I/O
+    input clk, rst, RegWriteEnW;
+    input [4:0] RDW;
+    input [31:0] InstrD, PCD, PCPlus4D, ResultW;
+
+    output RegWriteEnE,MemtoRegE, JALE, MemReadEnE,MemWriteEnE, PCSF;
+    output [4:0]  ALUOpE, ALUSrcE, RdE;
+    output [31:0] ImmE, PCPlus4E, ReadData1E, ReadData2E;
+
+    // Declare Interim Wires
+    wire IsBranch, BranchType, JALR, BranchResult;
+    wire [1:0] ImmSrc;
+    wire [31:0] AdderInput;
+
+    // Declaration of Interim Register
+    reg RegWriteEnD_R,MemtoRegD_R, JALD_R, MemReadEnD_R,MemWriteEnD_R, PCSD_R;
+    reg [4:0]  ALUOpD_R, ALUSrcD_R, RdD_R;
+    reg  [31:0] ImmD_R, PCPlus4D_R, ReadData1D_R, ReadData2D_R;
+
+//control Unit
+
+//RF
+
+    RegisterFile (
+        .clk(clk),
+        .rst(rst),
+        .ReadRegister1(InstrD[19:15]), 
+        .ReadRegister2(InstrD[24:20]), 
+        .WriteRegister(RDW),
+        .WriteData(ResultW),
+        .WriteEnable(RegWriteEnW),      // Control signal for enabling write
+        .ReadData1(ReadData1E), 
+        .ReadData2(ReadData2E)
+);
+//SingExt
+
+//eq 
+    EqReg (
+    .Data1(ReadData1E),       // 32-bit input data1
+    .Data2(ReadData2E),       // 32-bit input data2
+    .BranchType(BranchType),         // Branch type (1 for equality, 0 for inequality)
+    .Branch(BranchResult)         // Output signal indicating branch decision
+);
+//and
+
+//MUX
+
+//add
+
+endmodule
+
+
+
+
+

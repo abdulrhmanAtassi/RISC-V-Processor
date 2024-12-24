@@ -1,4 +1,4 @@
-Fitter Status : Successful - Sun Dec 22 21:31:29 2024
+Fitter Status : Successful - Tue Dec 24 20:47:57 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : pipelined_processor
 Top-level Entity Name : pipelined_processor
@@ -9,7 +9,7 @@ Total logic elements : 1 / 8,064 ( < 1 % )
     Total combinational functions : 1 / 8,064 ( < 1 % )
     Dedicated logic registers : 0 / 8,064 ( 0 % )
 Total registers : 0
-Total pins : 1 / 250 ( < 1 % )
+Total pins : 2 / 250 ( < 1 % )
 Total virtual pins : 0
 Total memory bits : 0 / 387,072 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 48 ( 0 % )
