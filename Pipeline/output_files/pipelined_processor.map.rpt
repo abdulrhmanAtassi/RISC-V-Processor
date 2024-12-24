@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pipelined_processor
-Mon Dec 23 22:30:41 2024
+Tue Dec 24 20:47:53 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -22,12 +22,13 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  14. Parameter Settings for User Entity Instance: decode_stage:decode_stage_inst|ControlUnit:dut
  15. Parameter Settings for User Entity Instance: decode_stage:decode_stage_inst|Mux2x1:adderSrc
  16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "decode_stage:decode_stage_inst"
- 18. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"
- 19. Port Connectivity Checks: "fetch_stage:fetch_stage_inst"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 17. Port Connectivity Checks: "decode_stage:decode_stage_inst|ControlUnit:dut"
+ 18. Port Connectivity Checks: "decode_stage:decode_stage_inst"
+ 19. Port Connectivity Checks: "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM"
+ 20. Port Connectivity Checks: "fetch_stage:fetch_stage_inst"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -54,7 +55,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 23 22:30:41 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 20:47:53 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; pipelined_processor                            ;
 ; Top-level Entity Name              ; pipelined_processor                            ;
@@ -357,44 +358,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: decode_stage:decode_stage_inst|ControlUnit:dut ;
-+----------------+---------+------------------------------------------------------------------+
-; Parameter Name ; Value   ; Type                                                             ;
-+----------------+---------+------------------------------------------------------------------+
-; ALU_OP_ADD     ; 000     ; Unsigned Binary                                                  ;
-; ALU_OP_SUB     ; 001     ; Unsigned Binary                                                  ;
-; ALU_OP_AND     ; 010     ; Unsigned Binary                                                  ;
-; ALU_OP_OR      ; 011     ; Unsigned Binary                                                  ;
-; ALU_OP_XOR     ; 100     ; Unsigned Binary                                                  ;
-; ALU_OP_SLT     ; 101     ; Unsigned Binary                                                  ;
-; ALU_OP_SLL     ; 110     ; Unsigned Binary                                                  ;
-; ALU_OP_SRL     ; 111     ; Unsigned Binary                                                  ;
-; IMM_I          ; 000     ; Unsigned Binary                                                  ;
-; IMM_S          ; 001     ; Unsigned Binary                                                  ;
-; IMM_SB         ; 010     ; Unsigned Binary                                                  ;
-; IMM_U          ; 011     ; Unsigned Binary                                                  ;
-; IMM_UJ         ; 100     ; Unsigned Binary                                                  ;
-; OP_R           ; 0110011 ; Unsigned Binary                                                  ;
-; OP_I1          ; 0010011 ; Unsigned Binary                                                  ;
-; OP_I2          ; 0011011 ; Unsigned Binary                                                  ;
-; OP_B           ; 1100011 ; Unsigned Binary                                                  ;
-; OP_JAL         ; 1101111 ; Unsigned Binary                                                  ;
-; OP_JALR        ; 1100111 ; Unsigned Binary                                                  ;
-; OP_L           ; 0000011 ; Unsigned Binary                                                  ;
-; OP_S           ; 0100011 ; Unsigned Binary                                                  ;
-; OP_LUI         ; 0111000 ; Unsigned Binary                                                  ;
-; FUNCT7_20      ; 0100000 ; Unsigned Binary                                                  ;
-; FUNCT7_00      ; 0000000 ; Unsigned Binary                                                  ;
-; FUNCT3_ADDW    ; 001     ; Unsigned Binary                                                  ;
-; FUNCT3_AND     ; 111     ; Unsigned Binary                                                  ;
-; FUNCT3_XOR     ; 011     ; Unsigned Binary                                                  ;
-; FUNCT3_OR      ; 101     ; Unsigned Binary                                                  ;
-; FUNCT3_SLT     ; 000     ; Unsigned Binary                                                  ;
-; FUNCT3_SLL     ; 100     ; Unsigned Binary                                                  ;
-; FUNCT3_SRL     ; 010     ; Unsigned Binary                                                  ;
-; FUNCT3_SUB     ; 110     ; Unsigned Binary                                                  ;
-; FUNCT3_BEQ     ; 000     ; Unsigned Binary                                                  ;
-; FUNCT3_BNE     ; 001     ; Unsigned Binary                                                  ;
-+----------------+---------+------------------------------------------------------------------+
++------------------+---------+----------------------------------------------------------------+
+; Parameter Name   ; Value   ; Type                                                           ;
++------------------+---------+----------------------------------------------------------------+
+; ALU_OP_R_TYPE    ; 000     ; Unsigned Binary                                                ;
+; ALU_OP_I_TYPE    ; 001     ; Unsigned Binary                                                ;
+; ALU_OP_S_TYPE    ; 010     ; Unsigned Binary                                                ;
+; ALU_OP_JAL       ; 011     ; Unsigned Binary                                                ;
+; ALU_OP_LOAD_TYPE ; 100     ; Unsigned Binary                                                ;
+; ALU_OP_BRANCH    ; 101     ; Unsigned Binary                                                ;
+; ALU_OP_U_TYPE    ; 111     ; Unsigned Binary                                                ;
+; IMM_I            ; 000     ; Unsigned Binary                                                ;
+; IMM_S            ; 001     ; Unsigned Binary                                                ;
+; IMM_SB           ; 010     ; Unsigned Binary                                                ;
+; IMM_U            ; 011     ; Unsigned Binary                                                ;
+; IMM_UJ           ; 100     ; Unsigned Binary                                                ;
+; OP_R             ; 0110011 ; Unsigned Binary                                                ;
+; OP_I1            ; 0010011 ; Unsigned Binary                                                ;
+; OP_I2            ; 0011011 ; Unsigned Binary                                                ;
+; OP_B             ; 1100011 ; Unsigned Binary                                                ;
+; OP_JAL           ; 1101111 ; Unsigned Binary                                                ;
+; OP_JALR          ; 1100111 ; Unsigned Binary                                                ;
+; OP_L             ; 0000011 ; Unsigned Binary                                                ;
+; OP_S             ; 0100011 ; Unsigned Binary                                                ;
+; OP_LUI           ; 0111000 ; Unsigned Binary                                                ;
+; FUNCT3_ADDW      ; 001     ; Unsigned Binary                                                ;
+; FUNCT3_AND       ; 111     ; Unsigned Binary                                                ;
+; FUNCT3_XOR       ; 011     ; Unsigned Binary                                                ;
+; FUNCT3_OR        ; 101     ; Unsigned Binary                                                ;
+; FUNCT3_SLT       ; 000     ; Unsigned Binary                                                ;
+; FUNCT3_SLL       ; 100     ; Unsigned Binary                                                ;
+; FUNCT3_SRL       ; 010     ; Unsigned Binary                                                ;
+; FUNCT3_SUB       ; 110     ; Unsigned Binary                                                ;
+; FUNCT3_BEQ       ; 000     ; Unsigned Binary                                                ;
+; FUNCT3_BNE       ; 001     ; Unsigned Binary                                                ;
++------------------+---------+----------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -426,6 +424,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                           ;
 +-------------------------------------------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decode_stage:decode_stage_inst|ControlUnit:dut"                                                            ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; RegDst ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -507,7 +514,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Dec 23 22:30:28 2024
+    Info: Processing started: Tue Dec 24 20:47:41 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipelined_processor -c pipelined_processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -581,14 +588,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_2v91" for hierarchy "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "PC_Adder" for hierarchy "fetch_stage:fetch_stage_inst|PC_Adder:pc_add" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v Line: 50
 Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_inst" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 68
-Info (12128): Elaborating entity "ControlUnit" for hierarchy "decode_stage:decode_stage_inst|ControlUnit:dut" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 66
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(192): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 192
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(213): incomplete case statement has no default case item File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v Line: 213
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "decode_stage:decode_stage_inst|RegisterFile:RF" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 81
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "decode_stage:decode_stage_inst|ControlUnit:dut" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 69
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "decode_stage:decode_stage_inst|RegisterFile:RF" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 84
 Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(18): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v Line: 18
-Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 90
+Info (12128): Elaborating entity "sign_extension" for hierarchy "decode_stage:decode_stage_inst|sign_extension:SE" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 93
 Warning (10230): Verilog HDL assignment warning at sign_extension.v(26): truncated value with size 96 to match size of target (64) File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v Line: 26
-Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 100
+Info (12128): Elaborating entity "EqReg" for hierarchy "decode_stage:decode_stage_inst|EqReg:EQ" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v Line: 103
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[0]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 36
@@ -623,7 +628,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[29]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 674
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[30]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 696
         Warning (14320): Synthesized away node "fetch_stage:fetch_stage_inst|InstructionMemory:IMEM|altsyncram:altsyncram_component|altsyncram_2v91:auto_generated|q_a[31]" File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/db/altsyncram_2v91.tdf Line: 718
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (17049): 62 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -633,10 +638,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
     Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Mon Dec 23 22:30:41 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Tue Dec 24 20:47:53 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:16
 
 

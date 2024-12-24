@@ -1,7 +1,7 @@
 module sign_extension (
     input [31:0] instruction,  
     input [2:0] imm_type,       
-    output reg [63:0] imm_out  // Change to 64 bits
+    output reg signed [63:0] imm_out  // Change to 64 bits
 );
 
     always @(*) begin

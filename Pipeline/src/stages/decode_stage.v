@@ -7,20 +7,22 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     input clk, rst, RegWriteEnW;
     input [4:0] RDW;
     input [31:0] InstrD;
-    input [63:0] ResultW, PCD, PCPlus4D;
+    input [63:0] PCD, PCPlus4D;
+    input signed [63:0] ResultW;
 
     output RegWriteEnE,MemtoRegE, JALE, MemReadEnE, MemWriteEnE, PCSF, ALUSrcE;
     output [1:0]  MemSizeE, LoadSizeE;
     output [2:0]  ALUOpE;
     output [4:0]  RdE;
-    output [63:0] ImmE, ReadData1E, ReadData2E, PCPlus4E, PCTargetD;
+    output [63:0] PCPlus4E, PCTargetD;
+    output signed [63:0] ImmE, ReadData1E, ReadData2E;
 
     // Declare Interim Wires
     wire RegWriteEnD, MemtoRegD, JALD, MemReadEnD, MemWriteEnD, PCSD, ALUSrcD;
     wire [1:0] MemSizeD, LoadSizeD;
     wire [2:0] ALUOpD;
     wire [4:0] RdD;
-	wire [63:0] ImmD, ReadData1D, ReadData2D;
+	wire signed [63:0] ImmD, ReadData1D, ReadData2D;
     wire IsBranch, BranchType, JALR, BranchResult;
     wire [2:0] ImmSrc;
     wire [63:0] AdderInput;
@@ -30,7 +32,8 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     reg [1:0]  MemSizeD_R, LoadSizeD_R;
     reg [2:0]  ALUOpD_R;
     reg [4:0]  RdD_R;
-    reg [63:0] ImmD_R, ReadData1D_R, ReadData2D_R, PCPlus4D_R;
+    reg signed [63:0] ImmD_R, ReadData1D_R, ReadData2D_R;
+    reg [63:0] PCPlus4D_R;
 
     // ---------------
     // SPLIT THE INSTRUCTION
@@ -60,7 +63,7 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
         .BranchType(BranchType),
         .JALR(JALR),
         .ImmSrc(ImmSrc),
-        .alu_op(ALUOpD),
+        .ALUOp(ALUOpD),
         .MemSize(MemSizeD),
         .LoadSize(LoadSizeD)
     );

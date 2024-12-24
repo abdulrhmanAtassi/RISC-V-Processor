@@ -39,7 +39,7 @@ module ControlUnit_tb;
         .BranchType(BranchType),
         .JALR(JALR),
         .ImmSrc(ImmSrc),
-        .alu_op(alu_op),
+        .ALUOp(alu_op),
         .MemSize(MemSize),
         .LoadSize(LoadSize)
     );

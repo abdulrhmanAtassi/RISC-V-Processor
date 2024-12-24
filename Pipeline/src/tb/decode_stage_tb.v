@@ -8,7 +8,7 @@ module decode_stage_tb;
     reg RegWriteEnW;
     reg [4:0] RDW;
     reg [31:0] InstrD;
-    reg [63:0] ResultW;
+    reg signed [63:0] ResultW;
     reg [63:0] PCD;
     reg [63:0] PCPlus4D;
 
@@ -24,9 +24,9 @@ module decode_stage_tb;
     wire [1:0] LoadSizeE;
     wire [2:0] ALUOpE;
     wire [4:0] RdE;
-    wire [63:0] ImmE;
-    wire [63:0] ReadData1E;
-    wire [63:0] ReadData2E;
+    wire signed [63:0] ImmE;
+    wire signed [63:0] ReadData1E;
+    wire signed [63:0] ReadData2E;
     wire [63:0] PCPlus4E;
     wire [63:0] PCTargetD;
 
@@ -295,8 +295,8 @@ module decode_stage_tb;
 
     // Monitor outputs
     initial begin
-        $monitor("Time=%0t | InstrD=%h | RegWriteEnE=%b | MemtoRegE=%b | JALE=%b | MemReadEnE=%b | MemWriteEnE=%b | ALUOpE=%b | ALUSrcE=%b | RdE=%d | ImmE=%h | PCTargetD=%h",
-                $time, InstrD, RegWriteEnE, MemtoRegE, JALE, MemReadEnE, MemWriteEnE, ALUOpE, ALUSrcE, RdE,  ImmE, PCTargetD);
+        $monitor("Time=%0t | InstrD=%h | RegWriteEnE=%b | MemtoRegE=%b | JALE=%b | MemReadEnE=%b | MemWriteEnE=%b | ALUOpE=%b | ALUSrcE=%b | RdE=%d | ImmD=%h | ImmE=%h | PCTargetD=%h",
+                $time, InstrD, RegWriteEnE, MemtoRegE, JALE, MemReadEnE, MemWriteEnE, ALUOpE, ALUSrcE, RdE,uut.dut.ImmSrc ,  ImmE, PCTargetD);
     end
 
 endmodule
