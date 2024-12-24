@@ -1,0 +1,37 @@
+module execution_stage (clk, rst, RegWriteEnE, MemtoRegE, JALE, MemReadEnE, MemWriteEnE,
+						, ALUSrcE, MemSizeE, LoadSizeE, ALUOpE, RdE, ImmE, ReadData1E,
+						ReadData2E, PCPlus4E,
+						RdM, PcPlus4M, ReadData2M, ALUResultM, RegWriteEnM, MemtoRegM, 
+						JALM, MemReadEnM, MemWriteEnM, MemSizeM, LoadSizeM);
+
+input clk, rst, RegWriteEnE, MemtoRegE, JALE, MemReadEnE, MemWriteEnE, ALUSrcE;
+inout [1:0] MemSizeE, LoadSizeE;
+input [2:0] ALUOpE;
+input [4:0] RdE;
+input [63:0] ImmE, ReadData1E, ReadData2E, PCPlus4E;
+
+output RegWriteEnM, MemtoRegM, JALM, MemReadEnM, MemWriteEnM;
+output [1:0] MemSizeM, LoadSizeM;
+output [4:0] RdM;
+output [63:0] PcPlus4M, ReadData2M, ALUResultM;
+
+wire RegWriteEnE, MemtoRegE, JALE, MemReadEnE, MemWriteEnE;
+wire [1:0] MemSizeE, LoadSizeE;
+wire [4:0] RdE;
+wire [63:0] PcPlus4E, ReadData2E, ALUResultE;
+
+reg RegWriteEnE_R, MemtoRegE_R, JALE_R, MemReadEnE_R, MemWriteEnE_R;
+reg [1:0] MemSizeE_R, LoadSizeE_R;
+reg [4:0] RdE_R;
+reg [63:0] PcPlus4E_R, ReadData2E_R, ALUResultE_R;
+
+
+
+//ALU CONTROL 
+
+// MUN
+
+//ALU
+
+
+endmodule
