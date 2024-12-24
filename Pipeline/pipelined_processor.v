@@ -1,4 +1,4 @@
-module pipelined_processor(
+module pipelined_processor (
     input clk,
     input reset
 );
@@ -116,4 +116,20 @@ module pipelined_processor(
         .MemSizeM(MemSizeM),
         .LoadSizeM(LoadSizeM)
     );
+
+    // Instantiate writeback stage
+    writeback_stage writeback_stage_inst (
+        .clk(clk),
+        .rst(reset),
+        .RD_M(RdM),
+        .RegWriteEn_M(RegWriteEnM),
+        .MemtoReg_M(MemtoRegM),
+        .JAL_M(JALM),
+        .PCPlus4W(PcPlus4M),
+        .ALU_ResultW(ALUResultM),
+        .ReadDataW(ReadData2M),
+        .RD_W(RDW),
+        .ResultW(ResultW)
+    );
+
 endmodule
