@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at memory_stage.v(149): always construct contains both blocking and non-blocking assignments File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v Line: 149

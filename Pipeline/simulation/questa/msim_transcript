@@ -26,149 +26,149 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:39 on Dec 24,2024
+# Start time: 00:27:27 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
 # -- Compiling module pipelined_processor
 # 
 # Top level modules:
 # 	pipelined_processor
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:01
+# End time: 00:27:28 on Dec 28,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:28 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
 # -- Compiling module InstructionMemory
 # 
 # Top level modules:
 # 	InstructionMemory
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:28 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:28 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
 # -- Compiling module Mux2x1
 # 
 # Top level modules:
 # 	Mux2x1
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:28 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:28 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:28 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:28 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
 # -- Compiling module PC_Adder
 # 
 # Top level modules:
 # 	PC_Adder
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
 # -- Compiling module fetch_stage
 # 
 # Top level modules:
 # 	fetch_stage
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:40 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
 # -- Compiling module EqReg
 # 
 # Top level modules:
 # 	EqReg
-# End time: 23:40:40 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
 # -- Compiling module RegisterFile
 # 
 # Top level modules:
 # 	RegisterFile
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
 # -- Compiling module ControlUnit
 # 
 # Top level modules:
 # 	ControlUnit
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
 # -- Compiling module decode_stage
 # 
 # Top level modules:
 # 	decode_stage
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
 # -- Compiling module sign_extension
 # 
 # Top level modules:
 # 	sign_extension
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:29 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:29 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
 # -- Compiling module DataMemory
 # 
 # Top level modules:
 # 	DataMemory
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:30 on Dec 28,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:30 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
 # -- Compiling module memory_stage
 # 
 # Top level modules:
 # 	memory_stage
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:30 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
 # Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:40:41 on Dec 24,2024
+# Start time: 00:27:30 on Dec 28,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
 # -- Compiling module memory_stage_tb
 # 
 # Top level modules:
 # 	memory_stage_tb
-# End time: 23:40:41 on Dec 24,2024, Elapsed time: 0:00:00
+# End time: 00:27:30 on Dec 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
-# Start time: 23:40:42 on Dec 24,2024
+# Start time: 00:27:30 on Dec 28,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -186,11 +186,970 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Test 1: ReadDataW = 00000000 (Expected: FFFFFFFFFFFFFFAA)
-# Test 2: ReadDataW = 000000aa (Expected: FFFFFFFFFFFFFBEEF)
-# Test 3: ReadDataW = 0000000000000000 (Expected: FFFFFFFFDEADBEEF)
-# Test 4: ReadDataW = 0000000000000000 (Expected: FFFFFFFFFFFFFFAB)
-# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(187)
-#    Time: 255 ns  Iteration: 0  Instance: /memory_stage_tb
-# End time: 23:40:58 on Dec 24,2024, Elapsed time: 0:00:16
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 140 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Atassi@WSAMZN-K8KT13CV.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:13 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 01:37:13 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:13 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 01:37:14 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:14 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 01:37:14 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:14 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 01:37:14 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:14 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 01:37:14 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:14 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 01:37:14 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:14 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
+# -- Compiling module EqReg
+# 
+# Top level modules:
+# 	EqReg
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
+# -- Compiling module decode_stage
+# 
+# Top level modules:
+# 	decode_stage
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
+# -- Compiling module sign_extension
+# 
+# Top level modules:
+# 	sign_extension
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:15 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
+# -- Compiling module memory_stage
+# 
+# Top level modules:
+# 	memory_stage
+# End time: 01:37:15 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:37:16 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
+# -- Compiling module memory_stage_tb
+# 
+# Top level modules:
+# 	memory_stage_tb
+# End time: 01:37:16 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
+# End time: 01:37:22 on Dec 28,2024, Elapsed time: 1:09:52
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
+# Start time: 01:37:22 on Dec 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.memory_stage_tb(fast)
+# Loading work.memory_stage(fast)
+# Loading work.DataMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# Time=145ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=ffffffffaabbccdd, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 160 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Atassi@WSAMZN-K8KT13CV.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:29 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 01:48:29 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:29 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 01:48:29 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:29 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 01:48:29 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:29 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 01:48:29 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:29 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 01:48:29 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:30 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 01:48:30 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:30 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
+# -- Compiling module EqReg
+# 
+# Top level modules:
+# 	EqReg
+# End time: 01:48:30 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:30 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 01:48:30 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:30 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 01:48:30 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:30 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
+# -- Compiling module decode_stage
+# 
+# Top level modules:
+# 	decode_stage
+# End time: 01:48:31 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:31 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
+# -- Compiling module sign_extension
+# 
+# Top level modules:
+# 	sign_extension
+# End time: 01:48:31 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:31 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 01:48:31 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:31 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
+# -- Compiling module memory_stage
+# 
+# Top level modules:
+# 	memory_stage
+# End time: 01:48:31 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:48:31 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
+# -- Compiling module memory_stage_tb
+# 
+# Top level modules:
+# 	memory_stage_tb
+# End time: 01:48:31 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
+# End time: 01:48:34 on Dec 28,2024, Elapsed time: 0:11:12
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
+# Start time: 01:48:34 on Dec 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.memory_stage_tb(fast)
+# Loading work.memory_stage(fast)
+# Loading work.DataMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# Time=145ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=ffffffffaabbccdd, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 160 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Atassi@WSAMZN-K8KT13CV.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:55 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 01:52:55 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:55 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 01:52:55 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:55 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 01:52:56 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:56 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 01:52:56 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:56 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 01:52:56 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:56 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 01:52:56 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:56 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
+# -- Compiling module EqReg
+# 
+# Top level modules:
+# 	EqReg
+# End time: 01:52:56 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:56 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
+# -- Compiling module decode_stage
+# 
+# Top level modules:
+# 	decode_stage
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
+# -- Compiling module sign_extension
+# 
+# Top level modules:
+# 	sign_extension
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
+# -- Compiling module memory_stage
+# 
+# Top level modules:
+# 	memory_stage
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:52:57 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
+# -- Compiling module memory_stage_tb
+# 
+# Top level modules:
+# 	memory_stage_tb
+# End time: 01:52:57 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
+# End time: 01:53:00 on Dec 28,2024, Elapsed time: 0:04:26
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
+# Start time: 01:53:00 on Dec 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.memory_stage_tb(fast)
+# Loading work.memory_stage(fast)
+# Loading work.DataMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=95ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=ffffffffffffffaa, RdW=00000
+# Time=100ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=00000000000000aa, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=115ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=ffffffffffffaabb, RdW=00000
+# Time=120ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=000000000000aabb, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# Time=135ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=ffffffffaabbccdd, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 160 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Atassi@WSAMZN-K8KT13CV.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:03 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 01:57:04 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:04 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 01:57:04 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:04 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 01:57:04 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:04 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 01:57:04 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:04 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 01:57:04 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 01:57:05 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
+# -- Compiling module EqReg
+# 
+# Top level modules:
+# 	EqReg
+# End time: 01:57:05 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 01:57:05 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 01:57:05 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
+# -- Compiling module decode_stage
+# 
+# Top level modules:
+# 	decode_stage
+# End time: 01:57:05 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:05 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
+# -- Compiling module sign_extension
+# 
+# Top level modules:
+# 	sign_extension
+# End time: 01:57:06 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:06 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 01:57:06 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:06 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
+# -- Compiling module memory_stage
+# 
+# Top level modules:
+# 	memory_stage
+# End time: 01:57:06 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:57:06 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
+# -- Compiling module memory_stage_tb
+# 
+# Top level modules:
+# 	memory_stage_tb
+# End time: 01:57:06 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
+# End time: 01:57:08 on Dec 28,2024, Elapsed time: 0:04:08
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
+# Start time: 01:57:08 on Dec 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.memory_stage_tb(fast)
+# Loading work.memory_stage(fast)
+# Loading work.DataMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# doVOpenFlatFile(): INTERNAL ERROR: page load failed for file D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/simulation/questa/rtl_work/@_opt/vopt279ks3 (0:0 3:3 31 0 1878 1735340230 0x10b:0x101)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=95ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=ffffffffffffffaa, RdW=00000
+# Time=100ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=00000000000000aa, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=115ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=ffffffffffffaabb, RdW=00000
+# Time=120ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=000000000000aabb, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# Time=135ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=ffffffffaabbccdd, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 160 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+do pipelined_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Atassi@WSAMZN-K8KT13CV.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:49 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v 
+# -- Compiling module pipelined_processor
+# 
+# Top level modules:
+# 	pipelined_processor
+# End time: 02:00:49 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:49 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 02:00:49 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:49 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/Mux2x1.v 
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# End time: 02:00:49 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:49 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 02:00:50 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:50 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/PC_Adder.v 
+# -- Compiling module PC_Adder
+# 
+# Top level modules:
+# 	PC_Adder
+# End time: 02:00:50 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:50 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/fetch_stage.v 
+# -- Compiling module fetch_stage
+# 
+# Top level modules:
+# 	fetch_stage
+# End time: 02:00:50 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:50 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/EqReg.v 
+# -- Compiling module EqReg
+# 
+# Top level modules:
+# 	EqReg
+# End time: 02:00:50 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:50 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 02:00:50 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:50 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/ControlUnit.v 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:51 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/decode_stage.v 
+# -- Compiling module decode_stage
+# 
+# Top level modules:
+# 	decode_stage
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:51 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/sign_extension.v 
+# -- Compiling module sign_extension
+# 
+# Top level modules:
+# 	sign_extension
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:51 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/datapath/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:51 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/stages/memory_stage.v 
+# -- Compiling module memory_stage
+# 
+# Top level modules:
+# 	memory_stage
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb {D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v}
+# Questa Intel FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 02:00:51 on Dec 28,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb" D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v 
+# -- Compiling module memory_stage_tb
+# 
+# Top level modules:
+# 	memory_stage_tb
+# End time: 02:00:51 on Dec 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  memory_stage_tb
+# End time: 02:00:54 on Dec 28,2024, Elapsed time: 0:03:46
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" memory_stage_tb 
+# Start time: 02:00:54 on Dec 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.memory_stage_tb(fast)
+# Loading work.memory_stage(fast)
+# Loading work.DataMemory(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=0ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000000, ReadDataW=0000000000000000, RdW=00000
+# Time=25ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=45ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=0000000000000000, RdW=00000
+# Time=65ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=0000000000000000, RdW=00000
+# Time=85ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000010, ReadDataW=0000000000000000, RdW=00000
+# Time=105ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000020, ReadDataW=00000000000000aa, RdW=00000
+# Time=125ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=000000000000aabb, RdW=00000
+# Time=145ns, RegWriteEnW=0, MemtoRegW=0, JALW=0, PcPlus4W=0000000000000000, ALUResultW=0000000000000030, ReadDataW=ffffffffaabbccdd, RdW=00000
+# ** Note: $finish    : D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v(114)
+#    Time: 160 ns  Iteration: 0  Instance: /memory_stage_tb
+# 1
+# Break in Module memory_stage_tb at D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/src/tb/memory_stage_tb.v line 114
+# End time: 02:05:04 on Dec 28,2024, Elapsed time: 0:04:10
 # Errors: 0, Warnings: 1

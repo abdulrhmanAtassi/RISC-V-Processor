@@ -21,29 +21,34 @@ module memory_stage (
     input      [63:0] ALUResultM,    // Computed address or next-stage data
 
     // Outputs to MEM->WB pipeline
-    output reg        RegWriteEnW,
-    output reg        MemtoRegW,
-    output reg        JALW,
-    output reg [63:0] PcPlus4W,
-    output reg [63:0] ALUResultW,
-    output reg [63:0] ReadDataW,     // Data loaded from memory (64-bit, sign-extended)
-    output reg [4:0]  RdW
+    output            RegWriteEnW,
+    output            MemtoRegW,
+    output            JALW,
+    output     [63:0] PcPlus4W,
+    output     [63:0] ALUResultW,
+    output     [63:0] ReadDataW,     // Data loaded from memory (64-bit, sign-extended)
+    output     [4:0]  RdW
 );
-    //----------------------------------------------------
-    // 1) Address Calculation
-    //----------------------------------------------------
+
+    reg         RegWriteEnM_R;
+    reg         MemtoRegM_R;
+    reg         JALM_R;
+    reg  [63:0] PcPlus4M_R;
+    reg  [63:0] ALUResultM_R;
+    reg  [63:0] ReadDataM_R;     // Data loaded from memory (64-bit, sign-extended)
+    reg  [4:0]  RdM_R;
+
     wire [31:0] effAddress  = ALUResultM[31:0];
     wire [1:0]  byteOffset  = effAddress[1:0];    // which byte in 32-bit word
-    wire [12:0] baseAddress = effAddress[14:2];   // top 13 bits for address
+    wire [12:0] baseAddress = effAddress[14:2];     // top 13 bits for address
 
-    // We'll store the lower 32 bits of ReadData2M into memory
     wire [31:0] writeData32 = ReadData2M[31:0];
 
-    //----------------------------------------------------
-    // 2) Write-Enable Logic
-    //----------------------------------------------------
+    // Write-Enable Logic
     reg wren_lane0, wren_lane1, wren_lane2, wren_lane3;
+
     always @* begin
+        // Default values
         wren_lane0 = 1'b0;
         wren_lane1 = 1'b0;
         wren_lane2 = 1'b0;
@@ -51,8 +56,7 @@ module memory_stage (
 
         if (MemWriteEnM) begin
             case (MemSizeM)
-                2'b00: begin
-                    // SB => store 1 byte => offset picks the lane
+                2'b00: begin // SB
                     case (byteOffset)
                         2'b00: wren_lane0 = 1'b1;
                         2'b01: wren_lane1 = 1'b1;
@@ -60,8 +64,7 @@ module memory_stage (
                         2'b11: wren_lane3 = 1'b1;
                     endcase
                 end
-                2'b01: begin
-                    // SH => store 2 bytes => offset=0 => lanes0..1, offset=2 => lanes2..3
+                2'b01: begin // SH
                     if (byteOffset == 2'b00) begin
                         wren_lane0 = 1'b1;
                         wren_lane1 = 1'b1;
@@ -70,8 +73,7 @@ module memory_stage (
                         wren_lane3 = 1'b1;
                     end
                 end
-                2'b10: begin
-                    // SW => store 4 bytes => offset=0 => lanes0..3
+                2'b10: begin // SW
                     if (byteOffset == 2'b00) begin
                         wren_lane0 = 1'b1;
                         wren_lane1 = 1'b1;
@@ -83,149 +85,76 @@ module memory_stage (
         end
     end
 
-    //----------------------------------------------------
-    // 3) Instantiate Four Single-Port Byte RAMs
-    //----------------------------------------------------
-    // DataMemory IP: address[12:0], clken, clock, data[7:0],
-    //                rden, wren, q[7:0]
-    // We'll combine them to form a 32-bit interface.
-
+    // Lane Instantiations
     wire [7:0] readData0, readData1, readData2, readData3;
 
-    // Lane 0
-    DataMemory dataMemory_lane0 (
-        .address (baseAddress),
-        .clken   (1'b1),
-        .clock   (clk),
-        .data    (writeData32[7:0]),
-        .rden    (MemReadEnM),
-        .wren    (wren_lane0),
-        .q       (readData0)
-    );
+    DataMemory dataMemory_lane0 (.address(baseAddress), .clken(1'b1), .clock(clk),
+        .data(writeData32[7:0]), .rden(MemReadEnM), .wren(wren_lane0), .q(readData0));
 
-    // Lane 1
-    DataMemory dataMemory_lane1 (
-        .address (baseAddress),
-        .clken   (1'b1),
-        .clock   (clk),
-        .data    (writeData32[15:8]),
-        .rden    (MemReadEnM),
-        .wren    (wren_lane1),
-        .q       (readData1)
-    );
+    DataMemory dataMemory_lane1 (.address(baseAddress), .clken(1'b1), .clock(clk),
+        .data(writeData32[15:8]), .rden(MemReadEnM), .wren(wren_lane1), .q(readData1));
 
-    // Lane 2
-    DataMemory dataMemory_lane2 (
-        .address (baseAddress),
-        .clken   (1'b1),
-        .clock   (clk),
-        .data    (writeData32[23:16]),
-        .rden    (MemReadEnM),
-        .wren    (wren_lane2),
-        .q       (readData2)
-    );
+    DataMemory dataMemory_lane2 (.address(baseAddress), .clken(1'b1), .clock(clk),
+        .data(writeData32[23:16]), .rden(MemReadEnM), .wren(wren_lane2), .q(readData2));
 
-    // Lane 3
-    DataMemory dataMemory_lane3 (
-        .address (baseAddress),
-        .clken   (1'b1),
-        .clock   (clk),
-        .data    (writeData32[31:24]),
-        .rden    (MemReadEnM),
-        .wren    (wren_lane3),
-        .q       (readData3)
-    );
+    DataMemory dataMemory_lane3 (.address(baseAddress), .clken(1'b1), .clock(clk),
+        .data(writeData32[31:24]), .rden(MemReadEnM), .wren(wren_lane3), .q(readData3));
 
-    // Combine them into a 32-bit word
     wire [31:0] memReadData_comb = {readData3, readData2, readData1, readData0};
-
-    //----------------------------------------------------
-    // 4) Pipeline Registers for One-Cycle Read Latency
-    //----------------------------------------------------
-    reg [31:0] memData_reg;   // latched RAM output
-    reg [1:0]  LoadSize_reg;  // latched load size
-    reg [1:0]  byteOffset_reg;// latched offset
-    reg        MemReadEn_reg; // latched read enable
-
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            memData_reg    <= 32'd0;
-            LoadSize_reg   <= 2'd0;
-            byteOffset_reg <= 2'd0;
-            MemReadEn_reg  <= 1'b0;
-        end else begin
-            // Latch the RAM output this cycle, for sign-extension next cycle
-            memData_reg    <= memReadData_comb;
-            LoadSize_reg   <= LoadSizeM;
-            byteOffset_reg <= byteOffset;
-            MemReadEn_reg  <= MemReadEnM;
-        end
-    end
-
-    //----------------------------------------------------
-    // 5) MEM->WB Pipeline Register + Sign-Extension
-    //----------------------------------------------------
     reg [31:0] loadData32;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            RegWriteEnW <= 1'b0;
-            MemtoRegW   <= 1'b0;
-            JALW        <= 1'b0;
-            PcPlus4W    <= 64'd0;
-            ALUResultW  <= 64'd0;
-            RdW         <= 5'd0;
-            loadData32  <= 32'd0;
-        end else begin
-            // Pass pipeline signals
-            RegWriteEnW <= RegWriteEnM;
-            MemtoRegW   <= MemtoRegM;
-            JALW        <= JALM;
-            PcPlus4W    <= PcPlus4M;
-            ALUResultW  <= ALUResultM;
-            RdW         <= RdM;
-
-            // Default to 0 if no read
-            loadData32  <= 32'd0;
-
-            // Sign-extend only if we did a read
-            if (MemReadEn_reg) begin
-                case (LoadSize_reg)
-                    2'b00: begin
-                        // LB => load one byte, sign-extend
-                        case (byteOffset_reg)
-                            2'b00: loadData32 <= {{24{memData_reg[7]}},  memData_reg[7:0]};
-                            2'b01: loadData32 <= {{24{memData_reg[15]}}, memData_reg[15:8]};
-                            2'b10: loadData32 <= {{24{memData_reg[23]}}, memData_reg[23:16]};
-                            2'b11: loadData32 <= {{24{memData_reg[31]}}, memData_reg[31:24]};
-                        endcase
-                    end
-                    2'b01: begin
-                        // LH => load half-word, sign-extend
-                        case (byteOffset_reg)
-                            2'b00: loadData32 <= {{16{memData_reg[15]}}, memData_reg[15:0]};
-                            2'b10: loadData32 <= {{16{memData_reg[31]}}, memData_reg[31:16]};
-                        endcase
-                    end
-                    2'b10: begin
-                        // LW => load word
-                        // offset=0 => use entire memData_reg
-                        if (byteOffset_reg == 2'b00)
-                            loadData32 <= memData_reg;
-                    end
-                    // 2'b11 => (not used or LBU/LHU if extended)
-                endcase
-            end
+    always @* begin
+        loadData32 = 32'b0;
+        if (MemReadEnM) begin
+            case (LoadSizeM)
+                2'b00: begin // LB
+                    case (byteOffset)
+                        2'b00: loadData32 = {{24{memReadData_comb[7]}}, memReadData_comb[7:0]};
+                        2'b01: loadData32 = {{24{memReadData_comb[15]}}, memReadData_comb[15:8]};
+                        2'b10: loadData32 = {{24{memReadData_comb[23]}}, memReadData_comb[23:16]};
+                        2'b11: loadData32 = {{24{memReadData_comb[31]}}, memReadData_comb[31:24]};
+                    endcase
+                end
+                2'b01: begin // LH
+                    if (byteOffset == 2'b00)
+                        loadData32 = {{16{memReadData_comb[15]}}, memReadData_comb[15:0]};
+                    else if (byteOffset == 2'b10)
+                        loadData32 = {{16{memReadData_comb[31]}}, memReadData_comb[31:16]};
+                end
+                2'b10: loadData32 = {{32{memReadData_comb[31]}}, memReadData_comb}; // LW: Sign-extend
+            endcase
         end
     end
 
-    // Finally sign-extend from 32 -> 64 bits
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            ReadDataW <= 64'd0;
+            RegWriteEnM_R <= 0;
+            MemtoRegM_R <= 0;
+            JALM_R <= 0;
+            PcPlus4M_R <= 64'b0;
+            ALUResultM_R <= 64'b0;
+            ReadDataM_R <= 64'b0;
+            RdM_R <= 5'b0;
         end else begin
-            ReadDataW <= {{32{loadData32[31]}}, loadData32};
+            RegWriteEnM_R <= RegWriteEnM;
+            MemtoRegM_R <= MemtoRegM;
+            JALM_R <= JALM;
+            PcPlus4M_R <= PcPlus4M;
+            ALUResultM_R <= ALUResultM;
+            if (MemReadEnM)
+                ReadDataM_R <= {{32{loadData32[31]}}, loadData32}; // Sign-extend properly    
+            RdM_R <= RdM;
         end
+        
     end
+
+    // Outputs assignment
+    assign RegWriteEnW = RegWriteEnM_R;
+    assign MemtoRegW = MemtoRegM_R;
+    assign JALW = JALM_R;
+    assign PcPlus4W = PcPlus4M_R;
+    assign ALUResultW = ALUResultM_R;
+    assign ReadDataW = ReadDataM_R; // Use pipeline register to ensure consistent timing
+    assign RdW = RdM_R;
 
 endmodule
