@@ -2,21 +2,28 @@ module writeback_stage(
     input             clk,
     input             rst,
     // Pipeline control signals and data from MEM stage
-    input      [4:0]  RD_M,        // Destination register from MEM stage
-    input             RegWriteEn_M, 
-    input             MemtoReg_M, 
-    input             JAL_M,
+    input      [4:0]  RDM,        // Destination register from MEM stage
+    input             RegWriteEnM, 
+    input             MemtoRegM, 
+    input             JALM,
     // Data inputs for potential write-back
     input      [31:0] PCPlus4W, 
     input      [31:0] ALU_ResultW, 
     input      [31:0] ReadDataW,
     // Outputs (latched)
-    output reg [4:0]  RD_W,        // Destination register latched into WB
-    output reg [31:0] ResultW      // Write-back data latched into WB
+    output  [4:0]  RdD,        // Destination register latched into WB
+    output  [31:0] ResultD,      // Write-back data latched into WB
+    output RegWriteEnD
 );
 
+    wire [4:0]  RDW;    
+    wire [31:0] ResultW;
+
+    reg RegWriteEnW_R;
+    reg [4:0]  RdW_R;    
+    reg [31:0] ResultW_R;
+    
     // Internal wire from the 4x1 Mux
-    wire [31:0] mux_out;
     wire [1:0]  mux_sel;
 
     // Create the mux select from JAL_M and MemtoReg_M
@@ -25,7 +32,7 @@ module writeback_stage(
     //       2'b01 -> Memory read data
     //       2'b10 -> PC+4 (JAL)
     //       2'b11 -> not used / default
-    assign mux_sel = {JAL_M, MemtoReg_M};
+    assign mux_sel = {JALM, MemtoRegM};
 
     // Instantiate the 4x1 Mux
     // We only really use three inputs (a, b, c).
@@ -36,29 +43,25 @@ module writeback_stage(
         .c   (PCPlus4W),
         .d   (32'b0),        // Unused fourth input
         .sel (mux_sel),
-        .y   (mux_out)
+        .y   (ResultW)
     );
 
     // Synchronous logic to latch RD_W and ResultW
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            RD_W    <= 5'b0;
-            ResultW <= 32'b0;
+            RdW_R    <= 5'b0;
+            ResultW_R <= 32'b0;
+            RegWriteEnW_R <= 1'b0;
         end else begin
             // Capture the Destination Register
-            RD_W <= RD_M;
+            RdW_R <= RDM;
+            ResultW_R <= ResultW;
+            RegWriteEnW_R <= RegWriteEnM;
 
-            // If needed, you can gate this with RegWriteEn_M
-            // to zero out ResultW when not writing. 
-            // For now, we always latch the mux_out.
-            if (RegWriteEn_M) begin
-                ResultW <= mux_out;
-            end else begin
-                // If register writing is disabled, you could hold the old value,
-                // or simply write zero. This depends on your design specs.
-                ResultW <= 32'b0;
-            end
         end
     end
 
+    assign RdD = RdW_R;
+    assign ResultD = ResultW_R;
+    assign RegWriteEnD = RegWriteEnW_R;
 endmodule
