@@ -1,127 +1,95 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
 
-module tb_writeback;
+module tb_writeback();
 
-    // -------------------------------
-    // Testbench Signals
-    // -------------------------------
-    reg         clk;
-    reg         rst;
-    reg  [4:0]  RD_M;
-    reg         RegWriteEn_M;
-    reg         MemtoReg_M;
-    reg         JAL_M;
-    reg  [31:0] PCPlus4W;
-    reg  [31:0] ALU_ResultW;
-    reg  [31:0] ReadDataW;
-    
-    wire [4:0]  RD_W;
-    wire [31:0] ResultW;
+    // Testbench signals
+    reg clk;
+    reg rst;
+    reg [4:0] RDM;
+    reg RegWriteEnM;
+    reg MemtoRegM;
+    reg JALM;
+    reg [31:0] PCPlus4W;
+    reg [31:0] ALU_ResultW;
+    reg [31:0] ReadDataW;
 
-    // -------------------------------
-    // Clock Generation
-    // -------------------------------
-    initial begin
-        clk = 0;
-        forever #5 clk = ~clk;  // 10ns period
-    end
+    wire [4:0] RdD;
+    wire [31:0] ResultD;
+    wire RegWriteEnD;
 
-    // -------------------------------
-    // DUT Instantiation
-    // -------------------------------
-    writeback_stage DUT (
-        .clk          (clk),
-        .rst          (rst),
-        .RD_M         (RD_M),
-        .RegWriteEn_M (RegWriteEn_M),
-        .MemtoReg_M   (MemtoReg_M),
-        .JAL_M        (JAL_M),
-        .PCPlus4W     (PCPlus4W),
-        .ALU_ResultW  (ALU_ResultW),
-        .ReadDataW    (ReadDataW),
-        .RD_W         (RD_W),
-        .ResultW      (ResultW)
+    // Instantiate the DUT (Device Under Test)
+    writeback_stage dut (
+        .clk(clk),
+        .rst(rst),
+        .RDM(RDM),
+        .RegWriteEnM(RegWriteEnM),
+        .MemtoRegM(MemtoRegM),
+        .JALM(JALM),
+        .PCPlus4W(PCPlus4W),
+        .ALU_ResultW(ALU_ResultW),
+        .ReadDataW(ReadDataW),
+        .RdD(RdD),
+        .ResultD(ResultD),
+        .RegWriteEnD(RegWriteEnD)
     );
 
-    // -------------------------------
-    // Stimulus
-    // -------------------------------
+    // Clock generation
     initial begin
-        // Initialize signals
-        rst          = 1;
-        RD_M         = 5'd0;
-        RegWriteEn_M = 0;
-        MemtoReg_M   = 0;
-        JAL_M        = 0;
-        PCPlus4W     = 32'h0000_0004;
-        ALU_ResultW  = 32'hAAAA_AAAA;
-        ReadDataW    = 32'h5555_5555;
-        
-        // Wait a couple of clock edges for reset
-        @(posedge clk);
-        @(posedge clk);
-        rst = 0;
-        
-        // TEST 1: Normal ALU Write-Back (JAL=0, MemtoReg=0)
-        // Expect: ResultW = ALU_ResultW after the next rising edge
-        RD_M         = 5'd10;
-        RegWriteEn_M = 1;
-        MemtoReg_M   = 0; 
-        JAL_M        = 0; 
-        ALU_ResultW  = 32'hAAAA_AAAA;
-        ReadDataW    = 32'h5555_5555;
-        PCPlus4W     = 32'h0000_00F0;
-        
-        @(posedge clk);  // Wait one clock
-        $display("Time=%0t | [ALU] RD_W=%0d, ResultW=0x%08h", 
-                 $time, RD_W, ResultW);
-        
-        // TEST 2: Memory Load (JAL=0, MemtoReg=1)
-        // Expect: ResultW = ReadDataW
-        RD_M         = 5'd11;
-        RegWriteEn_M = 1;
-        MemtoReg_M   = 1; 
-        JAL_M        = 0; 
-        ALU_ResultW  = 32'hBBBB_BBBB;
-        ReadDataW    = 32'hCCCC_CCCC;
-        PCPlus4W     = 32'h0000_0F00;
-        
-        @(posedge clk);
-        $display("Time=%0t | [MEM] RD_W=%0d, ResultW=0x%08h", 
-                 $time, RD_W, ResultW);
+        clk = 0;
+        forever #5 clk = ~clk; // 10ns clock period
+    end
 
-        // TEST 3: Jump And Link (JAL=1, MemtoReg=0)
-        // Expect: ResultW = PCPlus4W
-        RD_M         = 5'd12;
-        RegWriteEn_M = 1;
-        MemtoReg_M   = 0;
-        JAL_M        = 1;
-        ALU_ResultW  = 32'hDDDD_DDDD;
-        ReadDataW    = 32'hEEEE_EEEE;
-        PCPlus4W     = 32'h0000_F000;
+    // Test stimulus
+    initial begin
+        // Initialize inputs
+        rst = 1;
+        RDM = 5'b0;
+        RegWriteEnM = 0;
+        MemtoRegM = 0;
+        JALM = 0;
+        PCPlus4W = 32'b0;
+        ALU_ResultW = 32'b0;
+        ReadDataW = 32'b0;
 
-        @(posedge clk);
-        $display("Time=%0t | [JAL] RD_W=%0d, ResultW=0x%08h", 
-                 $time, RD_W, ResultW);
-        
-        // TEST 4: No Register Write (RegWriteEn=0)
-        // Expect: ResultW = 0 on next cycle (based on DUT code)
-        RD_M         = 5'd15;
-        RegWriteEn_M = 0;  // Disables writing the result
-        MemtoReg_M   = 0;
-        JAL_M        = 0;
-        ALU_ResultW  = 32'h9999_9999;
-        ReadDataW    = 32'h8888_8888;
-        PCPlus4W     = 32'h0000_1111;
+        // Apply reset
+        #10 rst = 0;
 
-        @(posedge clk);
-        $display("Time=%0t | [No Write] RD_W=%0d, ResultW=0x%08h", 
-                 $time, RD_W, ResultW);
+        // Test case 1: Select ALU result
+        RDM = 5'd10;
+        RegWriteEnM = 1;
+        MemtoRegM = 0;
+        JALM = 0;
+        ALU_ResultW = 32'hAABBCCDD;
+        #10;
 
-        // Finish the simulation
-        @(posedge clk);
-        $display("Testbench completed at time=%0t", $time);
-        $stop;
+        // Test case 2: Select memory read data
+        MemtoRegM = 1;
+        ReadDataW = 32'h11223344;
+        #10;
+
+        // Test case 3: Select PC+4 (JAL)
+        MemtoRegM = 0;
+        JALM = 1;
+        PCPlus4W = 32'h55667788;
+        #10;
+
+        // Test case 4: Invalid mux select (default to 0)
+        MemtoRegM = 1;
+        JALM = 1;
+        #10;
+
+        // Test case 5: Reset active
+        rst = 1;
+        #10 rst = 0;
+
+        // End simulation
+        #50 $finish;
+    end
+
+    // Monitor outputs
+    initial begin
+        $monitor("Time=%0dns, RdD=%b, ResultD=%h, RegWriteEnD=%b", 
+                $time, RdD, ResultD, RegWriteEnD);
     end
 
 endmodule

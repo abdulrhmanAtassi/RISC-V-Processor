@@ -13,9 +13,9 @@ module pipelined_processor (
     wire [31:0] PCPlus4D;
 
     // Decode stage signals
-    wire RegWriteEnW;
+    wire RegWriteEnD;
     wire [4:0] RDW;
-    wire [31:0] ResultW;
+    wire [31:0] ResultD;
     wire RegWriteEnE;
     wire MemtoRegE;
     wire JALE;
@@ -66,9 +66,9 @@ module pipelined_processor (
         .InstrD(InstrD),
         .PCD(PCD),
         .PCPlus4D(PCPlus4D),
-        .RegWriteEnW(RegWriteEnW),
+        .RegWriteEnW(RegWriteEnD),
         .RDW(RDW),
-        .ResultW(ResultW),
+        .ResultW(ResultD),
         .RegWriteEnE(RegWriteEnE),
         .MemtoRegE(MemtoRegE),
         .JALE(JALE),
@@ -146,15 +146,16 @@ module pipelined_processor (
     writeback_stage writeback_stage_inst (
         .clk(clk),
         .rst(reset),
-        .RD_M(RdM),
-        .RegWriteEn_M(RegWriteEnM),
-        .MemtoReg_M(MemtoRegM),
-        .JAL_M(JALM),
+        .RDM(RdM),
+        .RegWriteEnM(RegWriteEnM),
+        .MemtoRegM(MemtoRegM),
+        .JALM(JALM),
         .PCPlus4W(PcPlus4M),
         .ALU_ResultW(ALUResultM),
         .ReadDataW(ReadData2M),
-        .RD_W(RDW),
-        .ResultW(ResultW)
+        .RdD(RDW),
+        .ResultD(ResultD),
+        .RegWriteEnD(RegWriteEnD)
     );
 
 endmodule
