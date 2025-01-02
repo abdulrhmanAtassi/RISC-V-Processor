@@ -11,6 +11,10 @@ module fetch_stage_tb;
     wire [31:0] InstrD;
     wire [63:0] PCD;
     wire [63:0] PCPlus4D;
+    wire [31:0] InstrF;
+
+
+
 
     // Instantiate the fetch_stage module
     fetch_stage uut (
@@ -39,7 +43,7 @@ module fetch_stage_tb;
         PCTargetD = 64'h00000000;
 
         // Release reset after some time
-        #10 rst = 0;
+        #30 rst = 0;
 
         // Test a simple PC increment (PC + 4)
         #10 PCSrcD = 0; JalD = 0; PCTargetD = 64'h00000004;  // PC should increment by 4
@@ -59,7 +63,7 @@ module fetch_stage_tb;
     // Monitoring output (optional, for debugging)
     initial begin
         $monitor("Time=%t | clk=%b | rst=%b | PCSrcD=%b | JalD=%b | PCTargetD=%h | InstrD=%h | PCD=%h | PCPlus4D=%h",
-                 $time, clk, rst, PCSrcD, JalD, PCTargetD, InstrD, PCD, PCPlus4D);
+                    $time, clk, rst, PCSrcD, JalD, PCTargetD, InstrD, PCD, PCPlus4D);
     end
 
 endmodule

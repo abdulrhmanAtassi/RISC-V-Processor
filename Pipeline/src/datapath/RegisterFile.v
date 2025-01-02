@@ -15,22 +15,22 @@ module RegisterFile (
     integer i;
 
     // Reset logic and synchronous write
+    // Synchronous reset + write on posedge
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            // Reset all registers to 0 when reset is asserted
             for (i = 0; i < 32; i = i + 1) begin
                 registers[i] <= 64'b0;
             end
-        end else if (WriteEnable && WriteRegister != 5'b00000) begin
-            // Synchronous write
-            registers[WriteRegister] <= WriteData; // Write to the register
+        end 
+        else if (WriteEnable && WriteRegister != 5'b00000) begin
+            registers[WriteRegister] <= WriteData;
         end
     end
 
-    // Asynchronous read
-    always @(*) begin
-        ReadData1 = (ReadRegister1 == 5'b00000) ? 64'b0 : registers[ReadRegister1];
-        ReadData2 = (ReadRegister2 == 5'b00000) ? 64'b0 : registers[ReadRegister2];
+    // Asynchronous read on negedge
+    always @(negedge clk) begin
+        ReadData1 = (ReadRegister1 == 5'd0) ? 64'b0 : registers[ReadRegister1];
+        ReadData2 = (ReadRegister2 == 5'd0) ? 64'b0 : registers[ReadRegister2];
     end
 
 endmodule

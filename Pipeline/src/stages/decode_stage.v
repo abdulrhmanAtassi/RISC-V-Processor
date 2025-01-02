@@ -1,19 +1,44 @@
-module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
-                    RegWriteEnE,MemtoRegE, JALE, MemReadEnE, MemWriteEnE, ALUOpE,
-                    ALUSrcE, MemSizeE, LoadSizeE, PCSF, ImmE, RdE, PCPlus4E,ReadData1E,
-                    ReadData2E, PCTargetD);
-	
-    // Declaring I/O
-    input clk, rst, RegWriteEnW;
-    input [4:0] RDW;
-    input [31:0] InstrD;
-    input [63:0] ResultW, PCD, PCPlus4D;
+module decode_stage (
+    input              clk,
+    input              rst,
+    input      [31:0]  InstrD,       // Instruction fetched
+    input      [63:0]  PCD,          // Current PC
+    input      [63:0]  PCPlus4D,     // PC + 4 from fetch stage
 
-    output RegWriteEnE,MemtoRegE, JALE, MemReadEnE, MemWriteEnE, PCSF, ALUSrcE;
-    output [1:0]  MemSizeE, LoadSizeE;
-    output [2:0]  ALUOpE;
-    output [4:0]  RdE;
-    output [63:0] ImmE, ReadData1E, ReadData2E, PCPlus4E, PCTargetD;
+    // Writeback inputs (to write data back into register file)
+    input              RegWriteEnW,
+    input      [4:0]   RDW,
+    input      [63:0]  ResultW,
+
+    // Pipeline outputs to execution stage
+    output             RegWriteEnE,
+    output             MemtoRegE,
+    output             JALE,
+    output             MemReadEnE,
+    output             MemWriteEnE,
+    output     [2:0]   ALUOpE,
+    output             ALUSrcE,
+
+    // Additional signals you mentioned
+    output     [1:0]   MemSizeE,
+    output     [1:0]   LoadSizeE,
+
+    // Possibly a branch/PC-select flag or other condition
+    output             PCSF,
+
+    // Immediate, register addresses, and data going to execution
+    output     [63:0]  ImmE,
+    output     [4:0]   RdE,
+    output     [63:0]  PCPlus4E,
+    output     [63:0]  ReadData1E,
+    output     [63:0]  ReadData2E,
+    output     [2:0]   funct3E,
+    output     [6:0]   funct7E,
+    // Branch target calculation
+    output     [63:0]  PCTargetD
+    
+);
+
 
     // Declare Interim Wires
     wire RegWriteEnD, MemtoRegD, JALD, MemReadEnD, MemWriteEnD, PCSD, ALUSrcD;
@@ -31,6 +56,10 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     reg [2:0]  ALUOpD_R;
     reg [4:0]  RdD_R;
     reg [63:0] ImmD_R, ReadData1D_R, ReadData2D_R, PCPlus4D_R;
+    reg [63:0] PCTargetD_R;
+    reg [2:0]   funct3D_R;
+    reg [6:0]   funct7D_R;
+
 
     // ---------------
     // SPLIT THE INSTRUCTION
@@ -123,7 +152,7 @@ module decode_stage(clk, rst, InstrD, PCD, PCPlus4D, RegWriteEnW, RDW, ResultW,
     wire [63:0] raw_jalr_addr = ImmE + AdderInput;
     wire [63:0] jalr_addr     = {raw_jalr_addr[63:1], 1'b0}; // Clear LSB
 
-    assign PCTargetD = (JALR) ? jalr_addr : (ImmE + AdderInput);
+    //assign PCTargetD = (JALR) ? jalr_addr : (ImmE + AdderInput);
     //assign RdD = rd;
 always @(posedge clk or posedge rst) begin
     if (rst) begin
@@ -142,6 +171,9 @@ always @(posedge clk or posedge rst) begin
         ReadData1D_R <= 64'b0;
         ReadData2D_R <= 64'b0;
         PCPlus4D_R <= 64'b0;
+        PCTargetD_R <= 64'b0;
+        funct3D_R <= 3'b0;        
+        funct7D_R <= 7'b0;
     end else begin
         RegWriteEnD_R <= RegWriteEnD;
         MemtoRegD_R <= MemtoRegD;
@@ -158,6 +190,10 @@ always @(posedge clk or posedge rst) begin
         ReadData1D_R <= ReadData1D;
         ReadData2D_R <= ReadData2D;
         PCPlus4D_R <= PCPlus4D;
+        PCTargetD_R <= (JALR) ? jalr_addr : (ImmE + AdderInput);
+        funct3D_R <= funct3;        
+        funct7D_R <= funct7;
+
     end
 end
 
@@ -177,6 +213,10 @@ end
 		assign ReadData1E = ReadData1D_R;
 		assign ReadData2E = ReadData2D_R;
 		assign PCPlus4E = PCPlus4D_R;
+        assign PCTargetD = PCTargetD_R;
+        assign funct3E = funct3D_R;
+        assign funct7E = funct7D_R;
+
 
 
 endmodule

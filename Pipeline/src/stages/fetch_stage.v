@@ -37,35 +37,42 @@ module fetch_stage (
     );
 
     // Instruction Memory: Fetch instruction at the current PC
-    InstructionMemory IMEM (
-        .address(PCF[63:2]),          // Address input (current PC)
-        .clock(clk),            // Clock signal
-        .q(InstrF)              // Instruction output
+    // InstructionMemory_IP IMEM (
+    //     //.aclr(1'b1),
+    //     .address(PCF[9:2]),          // Address input (current PC)
+    //     //.clken(1'b1),
+    //     .clock(clk),            // Clock signal
+    //     .q(InstrF)              // Instruction output
+    // );
+    Instruction_Memory_asy IMEM(
+        .rst(rst),
+        .A(PCF[9:2]),
+        .RD(InstrF)
     );
+
 
     // PC Adder: Calculate PC + 4 (for sequential PC)
 			PC_Adder pc_add (
 			 .in(PCF),          // Connects to input port 'in'
 			 .out(PCPlus4F)     // Connects to output port 'out'
 		);
-    // Pipeline registers for fetch stage
+    // Additional signal to indicate initialization
+
+    // Initialize the pipeline
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            // Reset the pipeline registers
             InstrF_reg <= 32'h00000000;
             PCF_reg <= 64'h00000000;
             PCPlus4F_reg <= 64'h00000000;
         end else begin
-            // Update pipeline registers with the current values
             InstrF_reg <= InstrF;
             PCF_reg <= PCF;
             PCPlus4F_reg <= PCPlus4F;
         end
     end
 
-    // Assigning pipeline registers to output ports
-    assign InstrD = InstrF_reg;
-    assign PCD = PCF_reg;
-    assign PCPlus4D = PCPlus4F_reg;
-
+    // Assign outputs
+    assign InstrD = (rst) ? 32'h00000000 : InstrF_reg;
+    assign PCD = (rst) ? 64'h00000000 : PCF_reg;
+    assign PCPlus4D = (rst) ? 64'h00000000 : PCPlus4F_reg;
 endmodule

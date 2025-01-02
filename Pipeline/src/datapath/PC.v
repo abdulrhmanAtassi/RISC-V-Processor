@@ -7,7 +7,7 @@ module PC (
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            pc_out <= 364'b0;  // Reset the PC register to zero
+            pc_out <= 64'b0;  // Reset the PC register to zero
         end else begin
             pc_out <= pc_in;  // Update the PC register with the input value
         end

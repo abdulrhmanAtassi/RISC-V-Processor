@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at pipelined_processor.v(25): object "RDW" differs only in case from object "RdW" in the same scope File: D:/Users/Atassi/Desktop/RISC-V-Processor/Pipeline/pipelined_processor.v Line: 25

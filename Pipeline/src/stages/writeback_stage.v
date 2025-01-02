@@ -2,26 +2,26 @@ module writeback_stage(
     input             clk,
     input             rst,
     // Pipeline control signals and data from MEM stage
-    input      [4:0]  RDM,        // Destination register from MEM stage
-    input             RegWriteEnM, 
+    // input      [4:0]  RDM,        // Destination register from MEM stage
+    // input             RegWriteEnM, 
     input             MemtoRegM, 
     input             JALM,
     // Data inputs for potential write-back
-    input      [31:0] PCPlus4W, 
-    input      [31:0] ALU_ResultW, 
-    input      [31:0] ReadDataW,
+    input      [63:0] PCPlus4W, 
+    input      [63:0] ALU_ResultW, 
+    input      [63:0] ReadDataW,
     // Outputs (latched)
-    output  [4:0]  RdD,        // Destination register latched into WB
-    output  [31:0] ResultD,      // Write-back data latched into WB
-    output RegWriteEnD
+    // output  [4:0]  RdD,        // Destination register latched into WB
+    output  [63:0] ResultD      // Write-back data latched into WB
+    // output RegWriteEnD
 );
 
-    wire [4:0]  RDW;    
-    wire [31:0] ResultW;
+    // wire [4:0]  RDW;    
+    // wire [63:0] ResultW;
 
-    reg RegWriteEnW_R;
-    reg [4:0]  RdW_R;    
-    reg [31:0] ResultW_R;
+    // reg RegWriteEnW_R;
+    // reg [4:0]  RdW_R;    
+    // reg [63:0] ResultW_R;
     
     // Internal wire from the 4x1 Mux
     wire [1:0]  mux_sel;
@@ -41,27 +41,28 @@ module writeback_stage(
         .a   (ALU_ResultW),
         .b   (ReadDataW),
         .c   (PCPlus4W),
-        .d   (32'b0),        // Unused fourth input
+        .d   (64'b0),        // Unused fourth input
         .sel (mux_sel),
-        .y   (ResultW)
+        .y   (ResultD)
     );
 
-    // Synchronous logic to latch RD_W and ResultW
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            RdW_R    <= 5'b0;
-            ResultW_R <= 32'b0;
-            RegWriteEnW_R <= 1'b0;
-        end else begin
-            // Capture the Destination Register
-            RdW_R <= RDM;
-            ResultW_R <= ResultW;
-            RegWriteEnW_R <= RegWriteEnM;
 
-        end
-    end
+    // // Synchronous logic to latch RD_W and ResultW
+    // always @(posedge clk or posedge rst) begin
+    //     if (rst) begin
+    //         RdW_R    <= 5'b0;
+    //         ResultW_R <= 32'b0;
+    //         RegWriteEnW_R <= 1'b0;
+    //     end else begin
+    //         // Capture the Destination Register
+    //         RdW_R <= RDM;
+    //         ResultW_R <= ResultW;
+    //         RegWriteEnW_R <= RegWriteEnM;
 
-    assign RdD = RdW_R;
-    assign ResultD = ResultW_R;
-    assign RegWriteEnD = RegWriteEnW_R;
+    //     end
+    // end
+
+    // assign RdD = RdW_R;
+    // assign ResultD = ResultW_R;
+    // assign RegWriteEnD = RegWriteEnW_R;
 endmodule

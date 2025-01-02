@@ -18,15 +18,25 @@ module ControlUnit(
     output reg [1:0] LoadSize
 );
 
-// -------------------- ALU Operation Codes --------------------
-parameter [2:0] ALU_OP_ADD = 3'b000;
-parameter [2:0] ALU_OP_SUB = 3'b001;
-parameter [2:0] ALU_OP_AND = 3'b010;
-parameter [2:0] ALU_OP_OR  = 3'b011;
-parameter [2:0] ALU_OP_XOR = 3'b100;
-parameter [2:0] ALU_OP_SLT = 3'b101;
-parameter [2:0] ALU_OP_SLL = 3'b110;
-parameter [2:0] ALU_OP_SRL = 3'b111;
+// // -------------------- ALU Operation Codes --------------------
+// parameter [2:0] ALU_OP_ADD = 3'b000;
+// parameter [2:0] ALU_OP_SUB = 3'b001;
+// parameter [2:0] ALU_OP_AND = 3'b010;
+// parameter [2:0] ALU_OP_OR  = 3'b011;
+// parameter [2:0] ALU_OP_XOR = 3'b100;
+// parameter [2:0] ALU_OP_SLT = 3'b101;
+// parameter [2:0] ALU_OP_SLL = 3'b110;
+// parameter [2:0] ALU_OP_SRL = 3'b111;
+
+// -------------------- ALU Operation Types --------------------
+parameter [2:0] ALU_OP_R_TYPE = 3'b000; // R-Type Instructions
+parameter [2:0] ALU_OP_I_TYPE = 3'b001; // I-Type Instructions
+parameter [2:0] ALU_OP_S_TYPE = 3'b010; 
+parameter [2:0] ALU_OP_JAL    = 3'b011; // JAL/JALR Instructions
+parameter [2:0] ALU_OP_LOAD_TYPE = 3'b100; // LOAD-Type Instructions
+parameter [2:0] ALU_OP_BRANCH = 3'b101; // Branch Instructions
+parameter [2:0] ALU_OP_U_TYPE = 3'b111; // U-Type Instructions (e.g., LUI)
+// parameter [2:0] ALU_OP_RESERVED    = 3'b111;
 
 // -------------------- Immediate Types ------------------------
 parameter [2:0] IMM_I  = 3'b000;
@@ -76,7 +86,7 @@ always @(*) begin
     BranchType  = 0;
     JALR        = 0;
     ImmSrc      = IMM_I;
-    alu_op      = ALU_OP_ADD; // default ALU op
+    alu_op      = ALU_OP_R_TYPE; // default ALU op
     MemSize     = 2'b00;     
     LoadSize    = 2'b00; 
 
@@ -86,35 +96,9 @@ always @(*) begin
         // R-Type
         // ------------
         OP_R: begin
-            RegWriteEn = 1;
-            case({funct7,funct3})
-                // addw => opcode=0x33, funct7=0x20, funct3=0x1
-                {FUNCT7_20, FUNCT3_ADDW} : alu_op = ALU_OP_ADD; 
-
-                // and => 33/7/00
-                {FUNCT7_00, FUNCT3_AND}  : alu_op = ALU_OP_AND;
-
-                // xor => 33/3/00
-                {FUNCT7_00, FUNCT3_XOR}  : alu_op = ALU_OP_XOR;
-
-                // or  => 33/5/00
-                {FUNCT7_00, FUNCT3_OR}   : alu_op = ALU_OP_OR;
-
-                // slt => 33/0/00
-                {FUNCT7_00, FUNCT3_SLT}  : alu_op = ALU_OP_SLT;
-
-                // sll => 33/4/00
-                {FUNCT7_00, FUNCT3_SLL}  : alu_op = ALU_OP_SLL;
-
-                // srl => 33/2/00
-                {FUNCT7_00, FUNCT3_SRL}  : alu_op = ALU_OP_SRL;
-
-                // sub => 33/6/00
-                {FUNCT7_00, FUNCT3_SUB}  : alu_op = ALU_OP_SUB;
-
-                default: alu_op = ALU_OP_ADD;
-            endcase
-        end
+                RegWriteEn = 1;
+                alu_op       = ALU_OP_R_TYPE;
+            end
 
         // ------------
         // I-Type #1 (e.g., addiw, ori, etc.)
@@ -123,15 +107,7 @@ always @(*) begin
             RegWriteEn = 1;
             ALUSrc     = 1;
             ImmSrc     = IMM_I;
-            case(funct3)
-                // addiw => 13/0
-                3'h0: alu_op = ALU_OP_ADD;
-
-                // ori => 13/7
-                3'h7: alu_op = ALU_OP_OR;
-
-                default: alu_op = ALU_OP_ADD;
-            endcase
+            alu_op      = ALU_OP_I_TYPE;
         end
 
         // ------------
@@ -142,7 +118,7 @@ always @(*) begin
             ALUSrc     = 1;
             ImmSrc     = IMM_I;
             // Only one option in your table => andi
-            alu_op = ALU_OP_AND; 
+            alu_op      = ALU_OP_I_TYPE; 
         end
 
         // ------------
@@ -151,6 +127,7 @@ always @(*) begin
         OP_B: begin
             IsBranch = 1;
             ImmSrc   = IMM_SB;
+            alu_op    = ALU_OP_BRANCH;
             case(funct3)
                 FUNCT3_BEQ: BranchType = 1; // beq => branch if equal
                 FUNCT3_BNE: BranchType = 0; // bne => branch if not equal
@@ -166,6 +143,7 @@ always @(*) begin
             RegWriteEn = 1;
             MemtoReg   = 1;
             ImmSrc     = IMM_UJ;
+            alu_op      = ALU_OP_JAL;
         end
 
         // ------------
@@ -178,6 +156,7 @@ always @(*) begin
             MemtoReg   = 1;
             ALUSrc     = 1;
             ImmSrc     = IMM_I;
+            alu_op      = ALU_OP_JAL;
         end
 
         // ------------
@@ -188,7 +167,7 @@ always @(*) begin
             MemReadEn  = 1;
             MemtoReg   = 1;
             ALUSrc     = 1;
-            alu_op     = ALU_OP_ADD; // base + offset
+            alu_op     = ALU_OP_LOAD_TYPE; // base + offset
             case(funct3)
                 3'h0: begin // lw
                 MemSize = 2'b10; // word
@@ -209,7 +188,7 @@ always @(*) begin
             MemWriteEn = 1;
             ALUSrc     = 1;
             ImmSrc     = IMM_S;
-            alu_op     = ALU_OP_ADD; // base + offset
+            alu_op     = ALU_OP_S_TYPE; // base + offset
             case(funct3)
                 3'h0: MemSize = 2'b00; // sb
                 3'h1: MemSize = 2'b01; // sh
@@ -224,6 +203,7 @@ always @(*) begin
             RegWriteEn = 1;
             ALUSrc     = 1;
             ImmSrc     = IMM_U;
+            alu_op     = ALU_OP_U_TYPE;
             // LUI itself does not really need an ALU operation; 
             // but you can keep alu_op=ALU_OP_ADD or something safe
         end
