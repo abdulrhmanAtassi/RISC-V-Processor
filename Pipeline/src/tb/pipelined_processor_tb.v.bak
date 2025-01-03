@@ -1,0 +1,57 @@
+`timescale 1ns / 1ps
+
+module pipelined_processor_tb;
+
+    // Inputs
+    reg clk;
+    reg reset;
+
+    // Instantiate the Unit Under Test (UUT)
+    pipelined_processor uut (
+        .clk(clk),
+        .reset(reset)
+    );
+
+    // Clock generation
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // 10ns clock period
+    end
+
+    // Stimulus
+    initial begin
+        // Initialize inputs
+        reset = 1;
+        
+        // Wait for global reset to finish
+        #20;
+        reset = 0;
+
+        // Provide test program (assembly code)
+        // Assembly program: 
+        // addiw x1, x0, 16  -> x1 = 16
+        // addiw x2, x0, 8   -> x2 = 8
+        // addiw x4, x0, 10  -> x4 = 10
+        // addiw x3, x0, 0   -> x3 = 0
+        
+        // Memory initialization with test instructions
+        $readmemb("instructions.mem", uut.fetch_stage_inst.instruction_memory.mem);
+
+        // Wait for execution to complete
+        #100;
+
+        // Check results
+        if (uut.writeback_stage_inst.ResultD !== 16) 
+            $display("Test failed for x1. Expected: 16, Got: %d", uut.writeback_stage_inst.ResultD);
+        if (uut.writeback_stage_inst.ResultD !== 8) 
+            $display("Test failed for x2. Expected: 8, Got: %d", uut.writeback_stage_inst.ResultD);
+        if (uut.writeback_stage_inst.ResultD !== 24) 
+            $display("Test failed for x3. Expected: 24, Got: %d", uut.writeback_stage_inst.ResultD);
+        if (uut.writeback_stage_inst.ResultD !== 10) 
+            $display("Test failed for x4. Expected: 10, Got: %d", uut.writeback_stage_inst.ResultD);
+
+        // End simulation
+        $stop;
+    end
+
+endmodule
