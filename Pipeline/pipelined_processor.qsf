@@ -60,7 +60,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH fetch_stage_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH pipelined_processor_tb_Ins -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME InstractionMemory_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id InstractionMemory_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME InstractionMemory_tb -section_id InstractionMemory_tb
@@ -135,6 +135,11 @@ set_global_assignment -name VERILOG_FILE src/tb/pipelined_processor_tb_Ins.v
 set_global_assignment -name EDA_TEST_BENCH_NAME pipelined_processor_tb_Ins -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id pipelined_processor_tb_Ins
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME pipelined_processor_tb_Ins -section_id pipelined_processor_tb_Ins
+set_global_assignment -name VERILOG_FILE src/datapath/Instruction_Memory_asy.v
+set_global_assignment -name VERILOG_FILE src/tb/benchmark_testbench.v
+set_global_assignment -name EDA_TEST_BENCH_NAME benchmark_testbench -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id benchmark_testbench
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME benchmark_testbench -section_id benchmark_testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/InstractionMemory_tb.v -section_id InstractionMemory_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/fetch_stage_tb.v -section_id fetch_stage_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/RegisterFile_tb.v -section_id RegisterFile_tb
@@ -147,5 +152,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/tb_writeback.v -section_i
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/pipelined_processor_tb.v -section_id pipelined_processor_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/memory_stage_tb.v -section_id memory_stage_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/pipelined_processor_tb_Ins.v -section_id pipelined_processor_tb_Ins
-set_global_assignment -name VERILOG_FILE src/datapath/Instruction_Memory_asy.v
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/benchmark_testbench.v -section_id benchmark_testbench
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

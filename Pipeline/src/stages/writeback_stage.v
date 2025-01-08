@@ -8,11 +8,11 @@ module writeback_stage(
     input             JALM,
     // Data inputs for potential write-back
     input      [63:0] PCPlus4W, 
-    input      [63:0] ALU_ResultW, 
+    input signed [63:0] ALU_ResultW, 
     input      [63:0] ReadDataW,
     // Outputs (latched)
     // output  [4:0]  RdD,        // Destination register latched into WB
-    output  [63:0] ResultD      // Write-back data latched into WB
+    output signed  [63:0] ResultD      // Write-back data latched into WB
     // output RegWriteEnD
 );
 

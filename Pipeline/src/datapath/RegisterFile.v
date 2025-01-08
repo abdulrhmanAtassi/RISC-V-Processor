@@ -4,7 +4,7 @@ module RegisterFile (
     input [4:0] ReadRegister1, 
     input [4:0] ReadRegister2, 
     input [4:0] WriteRegister,
-    input [63:0] WriteData,
+    input signed [63:0] WriteData,
     input WriteEnable,      // Control signal for enabling write
     output reg signed [63:0] ReadData1, 
     output reg signed [63:0] ReadData2

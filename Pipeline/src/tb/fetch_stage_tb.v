@@ -30,7 +30,8 @@ module fetch_stage_tb;
 
     // Clock generation
     always begin
-        #5 clk = ~clk;  // Toggle clock every 5 ns
+        clk = ~clk;  // Toggle clock every 5 ns
+        #50;
     end
 
     // Initial block for simulation setup
@@ -43,21 +44,21 @@ module fetch_stage_tb;
         PCTargetD = 64'h00000000;
 
         // Release reset after some time
-        #30 rst = 0;
-
+        #150 rst = 0;
+        //PCPlus4D = 64'h00000004;
         // Test a simple PC increment (PC + 4)
-        #10 PCSrcD = 0; JalD = 0; PCTargetD = 64'h00000004;  // PC should increment by 4
-        #10 PCSrcD = 0; JalD = 0; PCTargetD = 64'h00000004;  // Continue incrementing
+        // #10 PCSrcD = 0; JalD = 0; PCTargetD = 64'h00000004;  // PC should increment by 4
+        // #10 PCSrcD = 0; JalD = 0; PCTargetD = 64'h00000004;  // Continue incrementing
 
-        // Test a jump (JalD = 1)
-        #10 PCSrcD = 0; JalD = 1; PCTargetD = 64'h00000020;  // Jump to address 0x20
-        #10 PCSrcD = 0; JalD = 1; PCTargetD = 64'h00000020;  // Continue jump
+        // // Test a jump (JalD = 1)
+        // #10 PCSrcD = 0; JalD = 1; PCTargetD = 64'h00000020;  // Jump to address 0x20
+        // #10 PCSrcD = 0; JalD = 1; PCTargetD = 64'h00000020;  // Continue jump
 
-        // Test a branch (PCSrcD = 1)
-        #10 PCSrcD = 1; JalD = 0; PCTargetD = 64'h00000010;  // Branch to address 0x10
+        // // Test a branch (PCSrcD = 1)
+        // #10 PCSrcD = 1; JalD = 0; PCTargetD = 64'h00000010;  // Branch to address 0x10
 
         // End simulation
-        #20 $finish;
+        #1000 $finish;
     end
 
     // Monitoring output (optional, for debugging)

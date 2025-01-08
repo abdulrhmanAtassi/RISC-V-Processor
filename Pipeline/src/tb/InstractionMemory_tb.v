@@ -4,16 +4,22 @@ module InstractionMemory_tb;
     // Declare testbench signals
     reg [31:0] address;
     reg clock;
+    reg rst;
     wire [31:0] q;
 
     // Instantiate the instruction memory module
-   
-	 
-	 InstructionMemory uut1(
+    
+    
+    InstructionMemory_IP uut1(
 		.address(address[31:2]),
-		.clken(1'b1),
+		//.clken(1'b1),
 		.clock(clock),
 		.q(q));
+    // Instruction_Memory_asy IMEM(
+    //     .rst(rst),
+    //     .A(address[9:2]),
+    //     .RD(q)
+    // );
 
     // Clock generation
     always begin

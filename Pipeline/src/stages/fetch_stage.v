@@ -36,26 +36,26 @@ module fetch_stage (
         .pc_out(PCF)            // Current PC
     );
 
-    // Instruction Memory: Fetch instruction at the current PC
-    // InstructionMemory_IP IMEM (
-    //     //.aclr(1'b1),
-    //     .address(PCF[9:2]),          // Address input (current PC)
-    //     //.clken(1'b1),
-    //     .clock(clk),            // Clock signal
-    //     .q(InstrF)              // Instruction output
-    // );
-    Instruction_Memory_asy IMEM(
-        .rst(rst),
-        .A(PCF[9:2]),
-        .RD(InstrF)
+    //Instruction Memory: Fetch instruction at the current PC
+    InstructionMemory_IP IMEM (
+        //.aclr(1'b1),
+        .address(PCF[9:2]),     // Address input (current PC)
+        //.clken(1'b1),
+        .clock(clk),            // Clock signal
+        .q(InstrF)              // Instruction output
     );
+    // Instruction_Memory_asy IMEM(
+    //     .rst(rst),
+    //     .A(PCF[9:2]),
+    //     .RD(InstrF)
+    // );
 
 
     // PC Adder: Calculate PC + 4 (for sequential PC)
-			PC_Adder pc_add (
-			 .in(PCF),          // Connects to input port 'in'
-			 .out(PCPlus4F)     // Connects to output port 'out'
-		);
+    PC_Adder pc_add (
+        .in(PCF),          // Connects to input port 'in'
+        .out(PCPlus4F)     // Connects to output port 'out'
+    );
     // Additional signal to indicate initialization
 
     // Initialize the pipeline

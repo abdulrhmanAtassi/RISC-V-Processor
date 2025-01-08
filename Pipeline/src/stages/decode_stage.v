@@ -27,11 +27,11 @@ module decode_stage (
     output             PCSF,
 
     // Immediate, register addresses, and data going to execution
-    output     [63:0]  ImmE,
+    output signed [63:0]  ImmE,
     output     [4:0]   RdE,
     output     [63:0]  PCPlus4E,
-    output     [63:0]  ReadData1E,
-    output     [63:0]  ReadData2E,
+    output signed [63:0]  ReadData1E,
+    output signed [63:0]  ReadData2E,
     output     [2:0]   funct3E,
     output     [6:0]   funct7E,
     // Branch target calculation
@@ -45,7 +45,7 @@ module decode_stage (
     wire [1:0] MemSizeD, LoadSizeD;
     wire [2:0] ALUOpD;
     wire [4:0] RdD;
-	wire [63:0] ImmD, ReadData1D, ReadData2D;
+	wire signed [63:0] ImmD, ReadData1D, ReadData2D;
     wire IsBranch, BranchType, JALR, BranchResult;
     wire [2:0] ImmSrc;
     wire [63:0] AdderInput;
@@ -55,8 +55,8 @@ module decode_stage (
     reg [1:0]  MemSizeD_R, LoadSizeD_R;
     reg [2:0]  ALUOpD_R;
     reg [4:0]  RdD_R;
-    reg [63:0] ImmD_R, ReadData1D_R, ReadData2D_R, PCPlus4D_R;
-    reg [63:0] PCTargetD_R;
+    reg signed [63:0] ImmD_R, ReadData1D_R, ReadData2D_R;
+    reg [63:0] PCTargetD_R, PCPlus4D_R;
     reg [2:0]   funct3D_R;
     reg [6:0]   funct7D_R;
 

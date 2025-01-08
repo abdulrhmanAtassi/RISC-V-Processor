@@ -17,16 +17,16 @@ module memory_stage (
     // Data signals from EX->MEM pipeline
     input      [4:0]  RdM,           // Destination register ID
     input      [63:0] PcPlus4M,      // PC+4 (for JAL/JALR)
-    input      [63:0] ReadData2M,    // Data to store in MEM
-    input      [63:0] ALUResultM,    // Computed address or next-stage data
+    input signed [63:0] ReadData2M,    // Data to store in MEM
+    input signed [63:0] ALUResultM,    // Computed address or next-stage data
 
     // Outputs to MEM->WB pipeline
     output            RegWriteEnW,
     output            MemtoRegW,
     output            JALW,
     output     [63:0] PcPlus4W,
-    output     [63:0] ALUResultW,
-    output     [63:0] ReadDataW,     // Data loaded from memory (64-bit, sign-extended)
+    output signed [63:0] ALUResultW,
+    output signed [63:0] ReadDataW,     // Data loaded from memory (64-bit, sign-extended)
     output     [4:0]  RdW
 );
 
@@ -34,15 +34,15 @@ module memory_stage (
     reg         MemtoRegM_R;
     reg         JALM_R;
     reg  [63:0] PcPlus4M_R;
-    reg  [63:0] ALUResultM_R;
-    reg  [63:0] ReadDataM_R;     // Data loaded from memory (64-bit, sign-extended)
+    reg signed [63:0] ALUResultM_R;
+    reg signed [63:0] ReadDataM_R;     // Data loaded from memory (64-bit, sign-extended)
     reg  [4:0]  RdM_R;
 
-    wire [31:0] effAddress  = ALUResultM[31:0];
+    wire  [31:0] effAddress  = ALUResultM[31:0];
     wire [1:0]  byteOffset  = effAddress[1:0];    // which byte in 32-bit word
     wire [12:0] baseAddress = effAddress[14:2];     // top 13 bits for address
 
-    wire [31:0] writeData32 = ReadData2M[31:0];
+    wire signed [31:0] writeData32 = ReadData2M[31:0];
 
     // Write-Enable Logic
     reg wren_lane0, wren_lane1, wren_lane2, wren_lane3;

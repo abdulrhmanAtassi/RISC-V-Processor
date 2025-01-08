@@ -26,7 +26,7 @@ module pipelined_processor (
     wire [63:0] ResultD;   // Data being written back into registers
 
     // Control signals going from decode to execute
-    wire RegWriteEnE;
+    wire RegWriteEnE; 
     wire MemtoRegE;
     wire JALE;
     wire MemReadEnE;
@@ -38,11 +38,11 @@ module pipelined_processor (
     wire PCSF;             // Some PC-select or branch comparison flag
 
     // Data signals going from decode to execute
-    wire [63:0] ImmE;
+    wire signed [63:0] ImmE;
     wire [4:0]  RdE;
     wire [63:0] PCPlus4E;
-    wire [63:0] ReadData1E;
-    wire [63:0] ReadData2E;
+    wire signed [63:0] ReadData1E;
+    wire signed [63:0] ReadData2E;
 
     //-------------------------------------------------------------
     //  EXECUTE -> MEMORY signals
@@ -51,8 +51,8 @@ module pipelined_processor (
     wire [6:0]  funct7E;
     wire [4:0]  RdM;
     wire [63:0] PcPlus4M;
-    wire [63:0] ReadData2M;
-    wire [63:0] ALUResultM;
+    wire signed [63:0] ReadData2M;
+    wire signed [63:0] ALUResultM;
     wire RegWriteEnM;
     wire MemtoRegM;
     wire JALM;
@@ -68,8 +68,8 @@ module pipelined_processor (
     wire MemtoRegW;        // Pipeline reg from memory stage
     wire JALW;             // Pipeline reg from memory stage
     wire [63:0] PcPlus4W;  
-    wire [63:0] ALUResultW;
-    wire [63:0] ReadDataW;
+    wire signed [63:0] ALUResultW;
+    wire signed [63:0] ReadDataW;
     wire [4:0]  RdW;
 
     //-------------------------------------------------------------
@@ -78,9 +78,11 @@ module pipelined_processor (
     fetch_stage fetch_stage_inst (
         .clk         (clk),
         .rst         (reset),
+        //input from Decode 
         .PCSrcD      (PCSF),
         .JalD        (JALE),
         .PCTargetD   (PCTargetD),
+        //output to Decode
         .InstrD      (InstrD),
         .PCD         (PCD),
         .PCPlus4D    (PCPlus4D)
@@ -113,7 +115,6 @@ module pipelined_processor (
         .ALUSrcE     (ALUSrcE),
         .MemSizeE    (MemSizeE),   // <--- now hooked up
         .LoadSizeE   (LoadSizeE),  // <--- now hooked up
-        .PCSF        (PCSF),
         .ImmE        (ImmE),
         .RdE         (RdE),
         .PCPlus4E    (PCPlus4E),
@@ -121,6 +122,7 @@ module pipelined_processor (
         .ReadData2E  (ReadData2E),
         // (If decode also calculates PCTargetD or PCSrcD, those would go here too)
         .PCTargetD   (PCTargetD),
+        .PCSF        (PCSF), // it shall be PCSD
 
         // ALU control bits
         .funct3E     (funct3E),

@@ -1,9 +1,9 @@
 module ALU (
-    input  [63:0] operand1,   // First operand
-    input  [63:0] operand2,   // Second operand or immediate
+    input signed [63:0] operand1,   // First operand
+    input signed [63:0] operand2,   // Second operand or immediate
     input  [3:0]  ALUControl, // ALU operation control signal
     input         WordOp,      // 1 = 32-bit operation, 0 = 64-bit operation
-    output [63:0] ALUResult    // Result of the ALU operation
+    output signed [63:0] ALUResult    // Result of the ALU operation
 );
 
 // Intermediate signals for 32-bit operations
@@ -41,7 +41,7 @@ assign result_64 =  (ALUControl == ALU_ADD)  ? (operand1 + operand2) :
                     (ALUControl == ALU_AND)  ? (operand1 & operand2) :
                     (ALUControl == ALU_OR)   ? (operand1 | operand2) :
                     (ALUControl == ALU_XOR)  ? (operand1 ^ operand2) :
-                    (ALUControl == ALU_SLT)  ? ((operand1 < operand2) ? 64'd1 : 64'd0) :
+                    (ALUControl == ALU_SLT)  ? ((operand1 < operand2) ? 64'd1 : 64'd0) : //just for testing it have to get back to <
                     (ALUControl == ALU_SLL)  ? (operand1 << operand2[5:0]) :
                     (ALUControl == ALU_SRL)  ? (operand1 >>> operand2[5:0]) : // Arithmetic shift right
                     (ALUControl == ALU_PASS) ? operand2 : // PASS operation for LUI
