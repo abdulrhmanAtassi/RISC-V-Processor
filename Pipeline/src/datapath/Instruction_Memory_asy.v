@@ -1,22 +1,31 @@
-module Instruction_Memory_asy(rst, A, RD);
+module Instruction_Memory_asy(
+  input rst,                // Reset signal
+  input [9:0] A,            // 10-bit address (word-aligned for 1024 locations)
+  output  [31:0] RD          // 32-bit read data
+);
 
-  input rst;
-  input [9:0] A;         // 10-bit address for 1024 locations
-  output [31:0] RD;
+  // Declare 1KB memory (1024 words, each 32 bits)
+  reg [31:0] mem [1023:0];
+  
+  // Combinational read: RD directly reflects mem[A]
+  // always @(*) begin
+  //   if (rst)
+  //     RD <= 32'b0;
+  //   else
+  //     RD <= mem[A];
+  // end
+  assign RD = (rst) ? {32{1'b0}} : mem[A];
 
-  reg [31:0] mem [1023:0];  // 1KB memory
-
-  assign RD = (rst == 1'b0) ? 32'b0 : mem[A];  // Output zero if reset is active
-
+// assign RD = RD_reg;
+  // Memory initialization
   integer i;
   initial begin
-    // Initialize all memory to zero
+    // Default all memory to zero
     for (i = 0; i < 1024; i = i + 1) begin
       mem[i] = 32'b0;
     end
-    // Load specific instructions
-    mem[0] = 32'hFFC4A303;  // Example instruction
-    mem[1] = 32'h11111111;  // Example instruction
+    // Load instructions from an external file (e.g., "instructions.hex")
+    $readmemh("../../instructions.hex", mem);
   end
 
 endmodule

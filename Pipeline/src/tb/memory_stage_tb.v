@@ -72,52 +72,52 @@ module memory_stage_tb();
         ALUResultM = 64'b0;
 
         // Apply reset
-        #20 rst = 0;
+        #10 rst = 0;
 
         // Test case 1: Write 1 byte (SB)
         MemWriteEnM = 1;
         MemSizeM = 2'b00; // SB
         ALUResultM = 64'h0000000000000010; // Address
         ReadData2M = 64'h00000000000000AA; // Data to write
-        #20;
+        #10;
 
         // Test case 2: Write 2 bytes (SH)
         MemSizeM = 2'b01; // SH
         ALUResultM = 64'h0000000000000020; // Address
         ReadData2M = 64'h000000000000AABB; // Data to write
-        #20;
+        #10;
 
         // Test case 3: Write 4 bytes (SW)
         MemSizeM = 2'b10; // SW
         ALUResultM = 64'h0000000000000030; // Address
         ReadData2M = 64'h00000000AABBCCDD; // Data to write
-        #20;
+        #10;
 
         // Test case 4: Read 1 byte (LB)
         MemWriteEnM = 0;
         MemReadEnM = 1;
         LoadSizeM = 2'b00; // LB
         ALUResultM = 64'h0000000000000010; // Address
-        #20;
+        #10;
 
         // Test case 5: Read 2 bytes (LH)
         LoadSizeM = 2'b01; // LH
         ALUResultM = 64'h0000000000000020; // Address
-        #20;
+        #10;
 
         // Test case 6: Read 4 bytes (LW)
             LoadSizeM = 2'b10; // LW
             ALUResultM = 64'h0000000000000030; // Address
-        #20;
-        #20
+        #10;
+        #10
         // End simulation
         $finish;
     end
 
     // Monitor outputs
     initial begin
-        $monitor("Time=%0dns, RegWriteEnW=%b, MemtoRegW=%b, JALW=%b, PcPlus4W=%h, ALUResultW=%h, ReadDataW=%h, RdW=%b",
-            $time, RegWriteEnW, MemtoRegW, JALW, PcPlus4W, ALUResultW, ReadDataW, RdW);
+        $monitor("Time=%0dns, clk=%b, rst=%b, RegWriteEnW=%b, MemtoRegW=%b, JALW=%b, PcPlus4W=%h, ALUResultW=%h, ReadDataW=%h, RdW=%b",
+            $time, clk, rst, RegWriteEnW, MemtoRegW, JALW, PcPlus4W, ALUResultW, ReadDataW, RdW);
     end
 
 endmodule

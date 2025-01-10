@@ -7,7 +7,7 @@ module PC (
 
     reg [63:0] pc_reg; // Internal register to hold PC value
 
-    always @(posedge clk or posedge rst) begin
+    always @(negedge clk or posedge rst) begin
         if (rst) begin
             pc_reg <= 64'b0;  // Reset the PC register to zero
         end else begin

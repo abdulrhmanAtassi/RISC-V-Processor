@@ -10,16 +10,16 @@ module InstractionMemory_tb;
     // Instantiate the instruction memory module
     
     
-    InstructionMemory_IP uut1(
-		.address(address[31:2]),
-		//.clken(1'b1),
-		.clock(clock),
-		.q(q));
-    // Instruction_Memory_asy IMEM(
-    //     .rst(rst),
-    //     .A(address[9:2]),
-    //     .RD(q)
-    // );
+    // InstructionMemory_IP uut1(
+	// 	.address(address[31:2]),
+	// 	//.clken(1'b1),
+	// 	.clock(clock),
+	// 	.q(q));
+    Instruction_Memory_asy IMEM(
+        .rst(rst),
+        .A(address[9:2]),
+        .RD(q)
+    );
 
     // Clock generation
     always begin
@@ -28,10 +28,12 @@ module InstractionMemory_tb;
 
     // Initial block for test sequence
     initial begin
+        
         // Initialize signals
-        clock = 0;
+        // clock = 0;
         address = 32'b0;
-
+        rst = 1;
+        #10 rst = 0;
         // Apply test vectors
        // #20 address = 32'h00;  // Read from address 0x00
         #20 address = 32'h04;  // Read from address 0x04

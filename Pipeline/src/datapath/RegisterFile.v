@@ -27,10 +27,26 @@ module RegisterFile (
         end
     end
 
-    // Asynchronous read on negedge
-    always @(negedge clk) begin
-        ReadData1 = (ReadRegister1 == 5'd0) ? 64'b0 : registers[ReadRegister1];
-        ReadData2 = (ReadRegister2 == 5'd0) ? 64'b0 : registers[ReadRegister2];
+    // // Asynchronous read on negedge
+    // always @(negedge clk) begin
+    //     ReadData1 = (ReadRegister1 == 5'd0) ? 64'b0 : registers[ReadRegister1];
+    //     ReadData2 = (ReadRegister2 == 5'd0) ? 64'b0 : registers[ReadRegister2];
+    // end
+    // Read logic with write-through
+    always @(*) begin
+        // ReadData1: Forward the written value if WriteRegister matches ReadRegister1
+        if (WriteEnable && WriteRegister == ReadRegister1 && WriteRegister != 5'd0) begin
+            ReadData1 = WriteData;
+        end else begin
+            ReadData1 = (ReadRegister1 == 5'd0) ? 64'b0 : registers[ReadRegister1];
+        end
+
+        // ReadData2: Forward the written value if WriteRegister matches ReadRegister2
+        if (WriteEnable && WriteRegister == ReadRegister2 && WriteRegister != 5'd0) begin
+            ReadData2 = WriteData;
+        end else begin
+            ReadData2 = (ReadRegister2 == 5'd0) ? 64'b0 : registers[ReadRegister2];
+        end
     end
 
 endmodule

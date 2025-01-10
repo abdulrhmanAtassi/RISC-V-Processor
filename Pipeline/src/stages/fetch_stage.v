@@ -37,18 +37,18 @@ module fetch_stage (
     );
 
     //Instruction Memory: Fetch instruction at the current PC
-    InstructionMemory_IP IMEM (
-        //.aclr(1'b1),
-        .address(PCF[9:2]),     // Address input (current PC)
-        //.clken(1'b1),
-        .clock(clk),            // Clock signal
-        .q(InstrF)              // Instruction output
-    );
-    // Instruction_Memory_asy IMEM(
-    //     .rst(rst),
-    //     .A(PCF[9:2]),
-    //     .RD(InstrF)
+    // InstructionMemory_IP IMEM (
+    //     //.aclr(1'b1),
+    //     .address(PCF[9:2]),     // Address input (current PC)
+    //     //.clken(1'b1),
+    //     .clock(clk),            // Clock signal
+    //     .q(InstrF)              // Instruction output
     // );
+    Instruction_Memory_asy IMEM(
+        .rst(rst),
+        .A(PCF[11:2]),
+        .RD(InstrF)
+    );
 
 
     // PC Adder: Calculate PC + 4 (for sequential PC)

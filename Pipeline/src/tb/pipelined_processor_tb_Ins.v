@@ -45,9 +45,9 @@ module pipelined_processor_tb_Ins;
 
             // Decode stage signals
             $display("Decode Stage:");
-            $display("PC: %0d, Imm: %0d, ReadData1: %0d, ReadData2: %0d", 
+            $display("PC: %0d, Imm: %0d, ReadData1: %0d, ReadData2: %0d, ResultW: %0d, x2: %0d", 
                         uut.decode_stage_inst.PCD, uut.decode_stage_inst.ImmE, 
-                        uut.decode_stage_inst.ReadData1E, uut.decode_stage_inst.ReadData2E);
+                        uut.decode_stage_inst.ReadData1E, uut.decode_stage_inst.ReadData2E, uut.decode_stage_inst.ResultW, uut.decode_stage_inst.RF.registers[2]);
             $display("RegWrite: %b, ALUOp: %b, ALUSrc: %b", 
                         uut.decode_stage_inst.RegWriteEnE, uut.decode_stage_inst.ALUOpE, uut.decode_stage_inst.ALUSrcE);
 
@@ -86,7 +86,7 @@ module pipelined_processor_tb_Ins;
         reset = 0;
 
         // Wait for instructions to propagate through pipeline
-        #1700;
+        #500;
 
         // Check results
         $display("Checking results...");

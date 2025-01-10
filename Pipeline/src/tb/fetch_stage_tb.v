@@ -58,6 +58,7 @@ module fetch_stage_tb;
         // #10 PCSrcD = 1; JalD = 0; PCTargetD = 64'h00000010;  // Branch to address 0x10
 
         // End simulation
+
         #1000 $finish;
     end
 

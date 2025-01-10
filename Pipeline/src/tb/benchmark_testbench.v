@@ -65,7 +65,7 @@ module benchmark_testbench;
       // uut.instruction_memory[6] = 32'h00A01393; // ori x6, x2, 0x0A
       // uut.instruction_memory[7] = 32'h004103B3; // or x5, x3, x4
 
-      #180; // Wait for execution
+      #140; // Wait for execution
 
       if (uut.decode_stage_inst.RF.registers[1] !== 16'h00FF) $fatal("Test Case 2 Failed: x1 != 0xFF | U got %d", uut.decode_stage_inst.RF.registers[1]);
       if (uut.decode_stage_inst.RF.registers[2] !== 16'h00F0) $fatal("Test Case 2 Failed: x2 != 0xF0");
@@ -118,9 +118,9 @@ module benchmark_testbench;
       // uut.instruction_memory[7] = 32'h00000313; // addiw x6, x0, 0
       // uut.instruction_memory[8] = 32'h00218333; // sll x6, x5, x2
 
-      #170; // Wait for execution
+      #120; // Wait for execution
 
-      if (uut.decode_stage_inst.RF.registers[1] !== 16'h0040) $fatal("Test Case 4 Failed: x1 != 64");
+      if (uut.decode_stage_inst.RF.registers[1] !== 16'h0040) $fatal("Test Case 4 Failed: x1 != 64 |U got %0d", uut.decode_stage_inst.RF.registers[1]);
       if (uut.decode_stage_inst.RF.registers[2] !== 16'h0002) $fatal("Test Case 4 Failed: x2 != 2");
       if (uut.decode_stage_inst.RF.registers[3] !== 16'h0003) $fatal("Test Case 4 Failed: x3 != 3");
       if (uut.decode_stage_inst.RF.registers[4] !== 16'h0100) $fatal("Test Case 4 Failed: x4 != 256");
@@ -147,7 +147,7 @@ module benchmark_testbench;
 
       #170; // Wait for execution
 
-      if (uut.decode_stage_inst.RF.registers[1] !== 16'h0064) $fatal("Test Case 5 Failed: x1 != 100");
+      if (uut.decode_stage_inst.RF.registers[1] !== 16'h0064) $fatal("Test Case 5 Failed: x1 != 100 | U go t%0d",  uut.decode_stage_inst.RF.registers[1]);
       if (uut.decode_stage_inst.RF.registers[2] !== 16'h00C8) $fatal("Test Case 5 Failed: x2 != 200");
       if (uut.decode_stage_inst.RF.registers[3] !== 16'h0020) $fatal("Test Case 5 Failed: x3 != 32");
       if (uut.decode_stage_inst.RF.registers[4] !== 16'h0064) $fatal("Test Case 5 Failed: MEM[32] != 100 | U got %d", uut.decode_stage_inst.RF.registers[4]);

@@ -88,17 +88,78 @@ module memory_stage (
     // Lane Instantiations
     wire [7:0] readData0, readData1, readData2, readData3;
 
-    DataMemory dataMemory_lane0 (.address(baseAddress), .clken(1'b1), .clock(clk),
-        .data(writeData32[7:0]), .rden(MemReadEnM), .wren(wren_lane0), .q(readData0));
+    // DataMemory dataMemory_lane0 (
+    //     .address(baseAddress), 
+    //     .clken(1'b1), 
+    //     .clock(clk),
+    //     .data(writeData32[7:0]), 
+    //     .rden(MemReadEnM), 
+    //     .wren(wren_lane0), 
+    //     .q(readData0)
+    // );
 
-    DataMemory dataMemory_lane1 (.address(baseAddress), .clken(1'b1), .clock(clk),
-        .data(writeData32[15:8]), .rden(MemReadEnM), .wren(wren_lane1), .q(readData1));
+    // DataMemory dataMemory_lane1 (
+    //     .address(baseAddress), 
+    //     .clken(1'b1), 
+    //     .clock(clk),
+    //     .data(writeData32[15:8]), 
+    //     .rden(MemReadEnM), 
+    //     .wren(wren_lane1), 
+    //     .q(readData1)
+    // );
 
-    DataMemory dataMemory_lane2 (.address(baseAddress), .clken(1'b1), .clock(clk),
-        .data(writeData32[23:16]), .rden(MemReadEnM), .wren(wren_lane2), .q(readData2));
+    // DataMemory dataMemory_lane2 (
+    //     .address(baseAddress), 
+    //     .clken(1'b1), 
+    //     .clock(clk),
+    //     .data(writeData32[23:16]), 
+    //     .rden(MemReadEnM), 
+    //     .wren(wren_lane2), 
+    //     .q(readData2)
+    // );
 
-    DataMemory dataMemory_lane3 (.address(baseAddress), .clken(1'b1), .clock(clk),
-        .data(writeData32[31:24]), .rden(MemReadEnM), .wren(wren_lane3), .q(readData3));
+    // DataMemory dataMemory_lane3 (
+    //     .address(baseAddress), 
+    //     .clken(1'b1), 
+    //     .clock(clk),
+    //     .data(writeData32[31:24]), 
+    //     .rden(MemReadEnM), 
+    //     .wren(wren_lane3), 
+    //     .q(readData3)
+    // );
+
+    DataMemoryAsync dataMemory_lane0 (
+        .address(baseAddress), 
+        .data_in(writeData32[7:0]), 
+        .rden(MemReadEnM), 
+        .wren(wren_lane0), 
+        .data_out(readData0)
+    );
+
+    DataMemoryAsync dataMemory_lane1 (
+        .address(baseAddress + 1), 
+        .data_in(writeData32[15:8]), 
+        .rden(MemReadEnM), 
+        .wren(wren_lane1), 
+        .data_out(readData1)
+    );
+
+    DataMemoryAsync dataMemory_lane2 (
+        .address(baseAddress + 2), 
+        .data_in(writeData32[23:16]), 
+        .rden(MemReadEnM), 
+        .wren(wren_lane2), 
+        .data_out(readData2)
+    );
+
+    DataMemoryAsync dataMemory_lane3 (
+        .address(baseAddress + 3), 
+        .data_in(writeData32[31:24]), 
+        .rden(MemReadEnM), 
+        .wren(wren_lane3), 
+        .data_out(readData3)
+    );
+
 
     wire [31:0] memReadData_comb = {readData3, readData2, readData1, readData0};
     reg [31:0] loadData32;
