@@ -146,6 +146,11 @@ set_global_assignment -name VERILOG_FILE src/tb/DataMemoryAsync_tb.v
 set_global_assignment -name EDA_TEST_BENCH_NAME DataMemoryAsync_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id DataMemoryAsync_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME DataMemoryAsync_tb -section_id DataMemoryAsync_tb
+set_global_assignment -name VERILOG_FILE src/hazard/forwarding_unit.v
+set_global_assignment -name VERILOG_FILE src/tb/forwarding_unit_tb.v
+set_global_assignment -name EDA_TEST_BENCH_NAME forwarding_unit_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id forwarding_unit_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME forwarding_unit_tb -section_id forwarding_unit_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/InstractionMemory_tb.v -section_id InstractionMemory_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/fetch_stage_tb.v -section_id fetch_stage_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/RegisterFile_tb.v -section_id RegisterFile_tb
@@ -160,4 +165,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/memory_stage_tb.v -sectio
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/pipelined_processor_tb_Ins.v -section_id pipelined_processor_tb_Ins
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/benchmark_testbench.v -section_id benchmark_testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/DataMemoryAsync_tb.v -section_id DataMemoryAsync_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE src/tb/forwarding_unit_tb.v -section_id forwarding_unit_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

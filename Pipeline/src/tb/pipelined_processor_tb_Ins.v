@@ -69,9 +69,12 @@ module pipelined_processor_tb_Ins;
             $display("Writeback Stage:");
             $display("Result: %0d, Rd: ", 
                         uut.writeback_stage_inst.ResultD
-                    //  , uut.writeback_stage_inst.RDW
+                    // ,   uut.writeback_stage_inst.RDW
                     );
             // $display("RegWrite: %b", uut.writeback_stage_inst.RegWriteEnD);
+            // forwording signals
+            $display("ForwardA: %b, ForwardB: %b", uut.forwarding_unit_inst.forwardA, uut.forwarding_unit_inst.forwardB);
+            // Finish simulation
             $display("--------------------------------------------------------");
         end
     end

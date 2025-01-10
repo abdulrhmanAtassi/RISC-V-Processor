@@ -91,7 +91,7 @@ module benchmark_testbench;
       // uut.instruction_memory[7] = 32'h002082B3; // slt x4, x2, x1
       // uut.instruction_memory[8] = 32'h00218333; // slt x6, x3, x2
 
-      #140; // Wait for execution
+      #120; // Wait for execution
 
       if (uut.decode_stage_inst.RF.registers[1] !== 16'h0032) $fatal("Test Case 3 Failed: x1 != 50 | u got %d", uut.decode_stage_inst.RF.registers[1] );
       // Corrected comparison for a 64-bit register

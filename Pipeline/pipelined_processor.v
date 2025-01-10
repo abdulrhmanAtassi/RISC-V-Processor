@@ -39,7 +39,7 @@ module pipelined_processor (
 
     // Data signals going from decode to execute
     wire signed [63:0] ImmE;
-    wire [4:0]  RdE;
+    wire [4:0]  RdE, Rs1E, Rs2E;
     wire [63:0] PCPlus4E;
     wire signed [63:0] ReadData1E;
     wire signed [63:0] ReadData2E;
@@ -72,6 +72,10 @@ module pipelined_processor (
     wire signed [63:0] ReadDataW;
     wire [4:0]  RdW;
 
+    //-------------------------------------------------------------
+    //  Forwarding unit signals
+    //-------------------------------------------------------------
+    wire [1:0] forwardA, forwardB;
     //-------------------------------------------------------------
     //  Fetch stage instantiation
     //-------------------------------------------------------------
@@ -117,6 +121,8 @@ module pipelined_processor (
         .LoadSizeE   (LoadSizeE),  // <--- now hooked up
         .ImmE        (ImmE),
         .RdE         (RdE),
+        .Rs1E        (Rs1E),
+        .Rs2E        (Rs2E),
         .PCPlus4E    (PCPlus4E),
         .ReadData1E  (ReadData1E),
         .ReadData2E  (ReadData2E),
@@ -146,7 +152,7 @@ module pipelined_processor (
         .MemSizeE    (MemSizeE),
         .LoadSizeE   (LoadSizeE),
         .ALUOpE      (ALUOpE),
-
+        .ALUResultW  (ALUResultW),
         // Data signals from decode
         .RdE         (RdE),
         .ImmE        (ImmE),
@@ -157,7 +163,11 @@ module pipelined_processor (
         // ALU control bits
         .funct3E     (funct3E),
         .funct7E     (funct7E),
-
+        
+        // forwarding signals
+        .forwardA    (forwardA),
+        .forwardB    (forwardB),
+        
         // Outputs to memory
         .RdM         (RdM),
         .PcPlus4M    (PcPlus4M),
@@ -222,6 +232,20 @@ module pipelined_processor (
         // .RdD          (RDW),
         .ResultD      (ResultD)
         // .RegWriteEnD  (RegWriteEnD)
+    );
+
+    //-------------------------------------------------------------
+    // Forwarding unit instantiation
+    //-------------------------------------------------------------
+    forwarding_unit forwarding_unit_inst (
+        .EX_MEM_RegWriteEn (RegWriteEnM),
+        .MEM_WB_RegWriteEn (RegWriteEnD),
+        .EX_MEM_rd         (RdM),
+        .MEM_WB_rd         (RDW),
+        .ID_EX_rs1         (Rs1E),
+        .ID_EX_rs2         (Rs2E),
+        .forwardA          (forwardA),
+        .forwardB          (forwardB)
     );
 
 endmodule

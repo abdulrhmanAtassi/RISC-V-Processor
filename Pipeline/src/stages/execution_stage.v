@@ -9,6 +9,8 @@ module execution_stage (
     input  wire              ALUSrcE,
     input  wire [1:0]        MemSizeE,
     input  wire [1:0]        LoadSizeE,
+    input  wire [1:0]        forwardA,
+    input  wire [1:0]        forwardB,
     input  wire [2:0]        ALUOpE,
     input  wire [2:0]        funct3E,
     input  wire [4:0]        RdE,
@@ -17,6 +19,7 @@ module execution_stage (
     input  wire signed [63:0] ImmE,
     input  wire signed [63:0] ReadData1E,
     input  wire signed [63:0] ReadData2E,
+    input  wire signed [63:0] ALUResultW,
 
     output wire              RegWriteEnM,
     output wire              MemtoRegM,
@@ -44,8 +47,30 @@ module execution_stage (
     reg  signed [63:0] ReadData2E_R;
     reg  signed [63:0] ALUResultE_R;
 
+    wire signed [63:0] ALUOperand1, MuxOperand2;
+
+    // mux for selecting the ALU operand1
+    Mux4x1 mux1X4_inst1 (
+        .a (ReadData1E),
+        .b (ALUResultW),
+        .c (ALUResultM),
+        .d (ReadData1E),
+        .sel(forwardA),
+        .y (ALUOperand1)
+    );
+
+    // mux for selecting the ALU operand2
+    Mux4x1 mux1X4_inst2 (
+        .a (ReadData2E),
+        .b (ALUResultW),
+        .c (ALUResultM),
+        .d (ReadData2E),
+        .sel(forwardB),
+        .y (MuxOperand2)
+    );
+
     // Select ALU operand2 based on ALUSrcE
-    wire signed [63:0] ALUOperand2 = ALUSrcE ? ImmE : ReadData2E;
+    wire signed [63:0] ALUOperand2 = ALUSrcE ? ImmE : MuxOperand2;
 
     // ---------------
     // ALU Control Unit
@@ -62,7 +87,7 @@ module execution_stage (
     // ALU
     // ---------------
     ALU alu_inst(
-        .operand1   (ReadData1E),
+        .operand1   (ALUOperand1),
         .operand2   (ALUOperand2),
         .ALUControl (ALUControl),
         .WordOp     (WordOp),  // 1 = 32-bit operation, 0 = 64-bit operation
