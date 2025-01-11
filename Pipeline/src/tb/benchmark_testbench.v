@@ -145,13 +145,15 @@ module benchmark_testbench;
       // uut.instruction_memory[9] = 32'h00312083; // lw x4, 0(x3)
       // uut.instruction_memory[10] = 32'h00312483; // lw x5, 8(x3)
 
-      #170; // Wait for execution
+      #220; // Wait for execution
 
       if (uut.decode_stage_inst.RF.registers[1] !== 16'h0064) $fatal("Test Case 5 Failed: x1 != 100 | U go t%0d",  uut.decode_stage_inst.RF.registers[1]);
       if (uut.decode_stage_inst.RF.registers[2] !== 16'h00C8) $fatal("Test Case 5 Failed: x2 != 200");
       if (uut.decode_stage_inst.RF.registers[3] !== 16'h0020) $fatal("Test Case 5 Failed: x3 != 32");
       if (uut.decode_stage_inst.RF.registers[4] !== 16'h0064) $fatal("Test Case 5 Failed: MEM[32] != 100 | U got %d", uut.decode_stage_inst.RF.registers[4]);
       if (uut.decode_stage_inst.RF.registers[5] !== 16'h00C8) $fatal("Test Case 5 Failed: MEM[40] != 200 | U got %d", uut.decode_stage_inst.RF.registers[5]);
+      if (uut.decode_stage_inst.RF.registers[9] !== 16'h00C8) $fatal("Test Case 5 Failed: x9 != 200 | U got %d", uut.decode_stage_inst.RF.registers[9]); // additional instruction to the test bench to test hazard detection
+
     end
   endtask
 

@@ -14,7 +14,7 @@ module pipelined_processor_tb_Ins;
     // Clock generation
     initial begin
         clk = 0;
-        forever #10 clk = ~clk; // 10ns clock period
+        forever #5 clk = ~clk; // 10ns clock period
     end
 
      // Monitor Register File
@@ -35,7 +35,7 @@ module pipelined_processor_tb_Ins;
     initial begin
         $monitor("Time: %0dns", $time);
         forever begin
-            #20;
+            #10;
             $display("--------------------------------------------------------");
             $display("Time: %0dns", $time);
             
@@ -50,11 +50,14 @@ module pipelined_processor_tb_Ins;
                         uut.decode_stage_inst.ReadData1E, uut.decode_stage_inst.ReadData2E, uut.decode_stage_inst.ResultW, uut.decode_stage_inst.RF.registers[2]);
             $display("RegWrite: %b, ALUOp: %b, ALUSrc: %b", 
                         uut.decode_stage_inst.RegWriteEnE, uut.decode_stage_inst.ALUOpE, uut.decode_stage_inst.ALUSrcE);
+            // display the hazard detection unit signals
+            $display("Hazard Detection Unit: PCWriteD: %b, IF_IDWriteD: %b, MemReadEnE: %b, RdE: %0d", 
+                        uut.decode_stage_inst.PCWriteD_R, uut.decode_stage_inst.IF_IDWriteD_R, uut.decode_stage_inst.MemReadEnBE, uut.decode_stage_inst.RdBE);
 
             // Execute stage signals
             $display("Execute Stage:");
             $display("ALUResult: %0d, ReadData2: %0d, Rd: %0d", 
-                        uut.execution_stage_inst.ALUResultM, uut.execution_stage_inst.ReadData2M, uut.execution_stage_inst.RdM);
+                        uut.execution_stage_inst.ALUResultW, uut.execution_stage_inst.ReadData2M, uut.execution_stage_inst.RdM);
             $display("MemRead: %b, MemWrite: %b, RegWrite: %b", 
                         uut.execution_stage_inst.MemReadEnM, uut.execution_stage_inst.MemWriteEnM, uut.execution_stage_inst.RegWriteEnM);
 
@@ -73,7 +76,8 @@ module pipelined_processor_tb_Ins;
                     );
             // $display("RegWrite: %b", uut.writeback_stage_inst.RegWriteEnD);
             // forwording signals
-            $display("ForwardA: %b, ForwardB: %b", uut.forwarding_unit_inst.forwardA, uut.forwarding_unit_inst.forwardB);
+            $display("ForwardA: %b, ForwardB: %b, EX_MEM_RegWriteEn: %b, MEM_WB_RegWriteEN:%b ,EX_MEM_rd: %0d, MEM_WB_RD: %0d, ID_EX_rs1: %0d, ID_EX_rs2: %0d",
+                    uut.forwarding_unit_inst.forwardA, uut.forwarding_unit_inst.forwardB, uut.forwarding_unit_inst.EX_MEM_RegWriteEn,uut.forwarding_unit_inst.MEM_WB_RegWriteEn , uut.forwarding_unit_inst.EX_MEM_rd ,uut.forwarding_unit_inst.MEM_WB_rd ,uut.forwarding_unit_inst.ID_EX_rs1 ,uut.forwarding_unit_inst.ID_EX_rs2);
             // Finish simulation
             $display("--------------------------------------------------------");
         end
@@ -89,7 +93,7 @@ module pipelined_processor_tb_Ins;
         reset = 0;
 
         // Wait for instructions to propagate through pipeline
-        #500;
+        #700;
 
         // Check results
         $display("Checking results...");
@@ -138,3 +142,4 @@ module pipelined_processor_tb_Ins;
     end
 
 endmodule
+

@@ -9,6 +9,9 @@ module pipelined_processor (
     // Control signals from fetch stage
     wire PCSrcD;
     wire JalD;
+    wire PCWriteD;
+    wire IF_IDWriteD;
+    wire IF_IDFlushD;
 
     // Data signals from fetch stage
     wire [63:0] PCTargetD;
@@ -76,6 +79,7 @@ module pipelined_processor (
     //  Forwarding unit signals
     //-------------------------------------------------------------
     wire [1:0] forwardA, forwardB;
+
     //-------------------------------------------------------------
     //  Fetch stage instantiation
     //-------------------------------------------------------------
@@ -85,6 +89,9 @@ module pipelined_processor (
         //input from Decode 
         .PCSrcD      (PCSF),
         .JalD        (JALE),
+        .PCWriteF    (PCWriteD),
+        .IF_IDWriteF (IF_IDWriteD),
+        // .IF_IDFlushF (1'b0),
         .PCTargetD   (PCTargetD),
         //output to Decode
         .InstrD      (InstrD),
@@ -109,6 +116,10 @@ module pipelined_processor (
         .RDW         (RDW),
         .ResultW     (ResultD),
 
+        // Input from execute stage for hazard detection
+        .MemReadEnBE (MemReadEnE),
+        .RdBE        (RdE),
+
         // Outputs to execution
         .RegWriteEnE (RegWriteEnE),
         .MemtoRegE   (MemtoRegE),
@@ -129,6 +140,10 @@ module pipelined_processor (
         // (If decode also calculates PCTargetD or PCSrcD, those would go here too)
         .PCTargetD   (PCTargetD),
         .PCSF        (PCSF), // it shall be PCSD
+        //hazard detection signals
+        .PCWriteF    (PCWriteD),
+        .IF_IDWriteF (IF_IDWriteD),
+        .IF_IDFlushF (IF_IDFlushD),
 
         // ALU control bits
         .funct3E     (funct3E),
@@ -152,7 +167,7 @@ module pipelined_processor (
         .MemSizeE    (MemSizeE),
         .LoadSizeE   (LoadSizeE),
         .ALUOpE      (ALUOpE),
-        .ALUResultW  (ALUResultW),
+        .ALUResultW  (ResultD),
         // Data signals from decode
         .RdE         (RdE),
         .ImmE        (ImmE),

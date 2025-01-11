@@ -10,6 +10,9 @@ module decode_stage (
     input      [4:0]   RDW,
     input      [63:0]  ResultW,
 
+    input              MemReadEnBE,
+    input      [4:0]   RdBE,
+
     // Pipeline outputs to execution stage
     output             RegWriteEnE,
     output             MemtoRegE,
@@ -20,24 +23,27 @@ module decode_stage (
     output             ALUSrcE,
 
     // Additional signals you mentioned
-    output     [1:0]   MemSizeE,
-    output     [1:0]   LoadSizeE,
+    output         [1:0]   MemSizeE,
+    output         [1:0]   LoadSizeE,
 
     // Possibly a branch/PC-select flag or other condition
     output             PCSF,
 
     // Immediate, register addresses, and data going to execution
     output signed [63:0]  ImmE,
-    output     [4:0]   RdE,
-    output     [4:0]   Rs1E,
-    output     [4:0]   Rs2E,
-    output     [63:0]  PCPlus4E,
+    output        [4:0]   RdE,
+    output        [4:0]   Rs1E,
+    output        [4:0]   Rs2E,
+    output        [63:0]  PCPlus4E,
     output signed [63:0]  ReadData1E,
     output signed [63:0]  ReadData2E,
-    output     [2:0]   funct3E,
-    output     [6:0]   funct7E,
+    output        [2:0]   funct3E,
+    output        [6:0]   funct7E,
     // Branch target calculation
-    output     [63:0]  PCTargetD
+    output        [63:0]  PCTargetD,
+    output                PCWriteF,  // 1 = PC updates normally. || 0 = PC is “frozen” (stalled).
+    output                IF_IDWriteF,
+    output                IF_IDFlushF
     
 );
 
@@ -51,6 +57,8 @@ module decode_stage (
     wire IsBranch, BranchType, JALR, BranchResult;
     wire [2:0] ImmSrc;
     wire [63:0] AdderInput;
+    wire PCWriteD, IF_IDWriteD, IF_IDFlushD;
+    wire ID_EXBubble;
 
     // Declaration of Interim Register
     reg RegWriteEnD_R,MemtoRegD_R, JALD_R, MemReadEnD_R,MemWriteEnD_R, PCSD_R, ALUSrcD_R;
@@ -61,6 +69,7 @@ module decode_stage (
     reg [63:0] PCTargetD_R, PCPlus4D_R;
     reg [2:0]   funct3D_R;
     reg [6:0]   funct7D_R;
+    reg PCWriteD_R, IF_IDWriteD_R, IF_IDFlushD_R;
 
 
     // ---------------
@@ -73,6 +82,21 @@ module decode_stage (
     wire [4:0] rs2    = InstrD[24:20];
     wire [4:0] rd     = InstrD[11:7];
     
+
+    // ---------------
+    // hazard_detection_unit
+    // ---------------
+    hazard_detection_unit HDU (
+        .ID_EX_MemReadEn(MemReadEnBE),
+        .ID_EX_rdE(RdBE),
+        .rs1D(rs1),
+        .rs2D(rs2),
+        // .Branch_Detected(),
+        .PCWrite(PCWriteD),
+        .IF_IDWrite(IF_IDWriteD),
+        .ID_EXBubble(ID_EXBubble),
+        .IF_IDFlush(IF_IDFlushD)    
+    );
 
     // ---------------
     // CONTROL UNIT
@@ -93,7 +117,8 @@ module decode_stage (
         .ImmSrc(ImmSrc),
         .alu_op(ALUOpD),
         .MemSize(MemSizeD),
-        .LoadSize(LoadSizeD)
+        .LoadSize(LoadSizeD),
+        .ID_EXBubble(ID_EXBubble)
     );
 
     // ---------------
@@ -109,7 +134,7 @@ module decode_stage (
         .WriteEnable(RegWriteEnW),      // Control signal for enabling write
         .ReadData1(ReadData1D), 
         .ReadData2(ReadData2D)
-);
+    );
 
     // ---------------
     // SIGN-EXTENSION
@@ -178,6 +203,9 @@ always @(posedge clk or posedge rst) begin
         funct7D_R <= 7'b0;
         Rs1D_R <= 5'b0;
         Rs2D_R <= 5'b0;
+        PCWriteD_R <= 0;
+        IF_IDWriteD_R <= 0;
+        IF_IDFlushD_R <= 0;
     end else begin
         RegWriteEnD_R <= RegWriteEnD;
         MemtoRegD_R <= MemtoRegD;
@@ -199,6 +227,9 @@ always @(posedge clk or posedge rst) begin
         funct7D_R <= funct7;
         Rs1D_R <= rs1;
         Rs2D_R <= rs2;
+        PCWriteD_R <= PCWriteD;
+        IF_IDWriteD_R <= IF_IDWriteD;
+        IF_IDFlushD_R <= IF_IDFlushD;
 
     end
 end
@@ -224,6 +255,9 @@ end
         assign PCTargetD = PCTargetD_R;
         assign funct3E = funct3D_R;
         assign funct7E = funct7D_R;
+        assign PCWriteF = PCWriteD_R;
+        assign IF_IDWriteF = IF_IDWriteD;
+        assign IF_IDFlushF = IF_IDFlushD;
 
 
 

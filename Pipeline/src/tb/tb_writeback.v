@@ -21,16 +21,13 @@ module tb_writeback();
     writeback_stage dut (
         .clk(clk),
         .rst(rst),
-        .RDM(RDM),
-        .RegWriteEnM(RegWriteEnM),
+
         .MemtoRegM(MemtoRegM),
         .JALM(JALM),
         .PCPlus4W(PCPlus4W),
         .ALU_ResultW(ALU_ResultW),
         .ReadDataW(ReadDataW),
-        .RdD(RdD),
-        .ResultD(ResultD),
-        .RegWriteEnD(RegWriteEnD)
+        .ResultD(ResultD)
     );
 
     // Clock generation

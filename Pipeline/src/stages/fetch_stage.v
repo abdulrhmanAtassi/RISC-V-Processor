@@ -3,6 +3,9 @@ module fetch_stage (
     input rst,                  // Reset signal
     input PCSrcD,               // PC Source control (for branches/jumps)
     input JalD,                 // Jump signal (for jump link)
+    input PCWriteF,              // Enable signal for PC update (from hazard detection)
+    input IF_IDWriteF,                // Stall signal (from hazard detection)
+    input IF_IDFlushF,
     input [63:0] PCTargetD,     // Target address for branching/jumping
     output [31:0] InstrD,       // Instruction at current PC
     output [63:0] PCD,          // Current PC value
@@ -32,6 +35,8 @@ module fetch_stage (
     PC Program_Counter (
         .clk(clk),              // Clock signal
         .rst(rst),              // Reset signal
+        .PCWrite(PCWriteF),      // Enable PC update (hazard detection)
+        // .PCWrite(1'b1),
         .pc_in(PC_F),           // Next PC (either PC + 4 or jump/branch target)
         .pc_out(PCF)            // Current PC
     );
@@ -61,18 +66,28 @@ module fetch_stage (
     // Initialize the pipeline
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            InstrF_reg <= 32'h00000000;
-            PCF_reg <= 64'h00000000;
-            PCPlus4F_reg <= 64'h00000000;
-        end else begin
-            InstrF_reg <= InstrF;
-            PCF_reg <= PCF;
-            PCPlus4F_reg <= PCPlus4F;
+            // On global reset
+            InstrF_reg    <= 32'h00000000; 
+            PCF_reg       <= 64'h00000000;
+            PCPlus4F_reg  <= 64'h00000000;
+        end 
+        else if (IF_IDFlushF) begin
+            // Flush: turn the fetched instruction into a NOP (or 0)
+            InstrF_reg    <= 32'h00000193;  // e.g., RISC-V NOP is 0x00000013 (ADDI x0,x0,0)
+            PCF_reg       <= 64'h00000000;
+            PCPlus4F_reg  <= 64'h00000000;
         end
+        else if (IF_IDWriteF) begin    // IF_IDWriteF
+            // Normal operation: latch new instruction and PC
+            InstrF_reg    <= InstrF;  
+            PCF_reg       <= PCF;
+            PCPlus4F_reg  <= PCPlus4F;
+        end
+        // else if IF_IDWriteF=0 => stall (keep old values)
     end
 
     // Assign outputs
-    assign InstrD = (rst) ? 32'h00000000 : InstrF_reg;
-    assign PCD = (rst) ? 64'h00000000 : PCF_reg;
-    assign PCPlus4D = (rst) ? 64'h00000000 : PCPlus4F_reg;
+    assign InstrD = InstrF_reg;
+    assign PCD = PCF_reg;
+    assign PCPlus4D = PCPlus4F_reg;
 endmodule

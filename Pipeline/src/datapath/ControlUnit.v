@@ -2,6 +2,7 @@ module ControlUnit(
     input  [6:0] op,
     input  [6:0] funct7,
     input  [2:0] funct3,
+    input        ID_EXBubble,
 
     output reg RegWriteEn,
     output reg MemtoReg,
@@ -90,128 +91,131 @@ always @(*) begin
     MemSize     = 2'b00;     
     LoadSize    = 2'b00; 
 
-    case(op)
+    if (!ID_EXBubble) begin
+        
+        case(op)
 
-        // ------------
-        // R-Type
-        // ------------
-        OP_R: begin
+            // ------------
+            // R-Type
+            // ------------
+            OP_R: begin
+                    RegWriteEn = 1;
+                    alu_op       = ALU_OP_R_TYPE;
+                end
+
+            // ------------
+            // I-Type #1 (e.g., addiw, ori, etc.)
+            // ------------
+            OP_I1: begin
                 RegWriteEn = 1;
-                alu_op       = ALU_OP_R_TYPE;
+                ALUSrc     = 1;
+                ImmSrc     = IMM_I;
+                alu_op      = ALU_OP_I_TYPE;
             end
 
-        // ------------
-        // I-Type #1 (e.g., addiw, ori, etc.)
-        // ------------
-        OP_I1: begin
-            RegWriteEn = 1;
-            ALUSrc     = 1;
-            ImmSrc     = IMM_I;
-            alu_op      = ALU_OP_I_TYPE;
-        end
+            // ------------
+            // I-Type #2 (andi => 1B/6)
+            // ------------
+            OP_I2: begin
+                RegWriteEn = 1;
+                ALUSrc     = 1;
+                ImmSrc     = IMM_I;
+                // Only one option in your table => andi
+                alu_op      = ALU_OP_I_TYPE; 
+            end
 
-        // ------------
-        // I-Type #2 (andi => 1B/6)
-        // ------------
-        OP_I2: begin
-            RegWriteEn = 1;
-            ALUSrc     = 1;
-            ImmSrc     = IMM_I;
-            // Only one option in your table => andi
-            alu_op      = ALU_OP_I_TYPE; 
-        end
+            // ------------
+            // Branch (beq, bne => 63/0 or 63/1)
+            // ------------
+            OP_B: begin
+                IsBranch = 1;
+                ImmSrc   = IMM_SB;
+                alu_op    = ALU_OP_BRANCH;
+                case(funct3)
+                    FUNCT3_BEQ: BranchType = 1; // beq => branch if equal
+                    FUNCT3_BNE: BranchType = 0; // bne => branch if not equal
+                    default:    BranchType = 1; // safe default
+                endcase
+            end
 
-        // ------------
-        // Branch (beq, bne => 63/0 or 63/1)
-        // ------------
-        OP_B: begin
-            IsBranch = 1;
-            ImmSrc   = IMM_SB;
-            alu_op    = ALU_OP_BRANCH;
-            case(funct3)
-                FUNCT3_BEQ: BranchType = 1; // beq => branch if equal
-                FUNCT3_BNE: BranchType = 0; // bne => branch if not equal
-                default:    BranchType = 1; // safe default
-            endcase
-        end
+            // ------------
+            // JAL => 6F
+            // ------------
+            OP_JAL: begin
+                JAL        = 1;
+                RegWriteEn = 1;
+                MemtoReg   = 1;
+                ImmSrc     = IMM_UJ;
+                alu_op      = ALU_OP_JAL;
+            end
 
-        // ------------
-        // JAL => 6F
-        // ------------
-        OP_JAL: begin
-            JAL        = 1;
-            RegWriteEn = 1;
-            MemtoReg   = 1;
-            ImmSrc     = IMM_UJ;
-            alu_op      = ALU_OP_JAL;
-        end
+            // ------------
+            // JALR => 67/0
+            // ------------
+            OP_JALR: begin
+                JALR       = 1;
+                JAL        = 1;
+                RegWriteEn = 1;
+                MemtoReg   = 1;
+                ALUSrc     = 1;
+                ImmSrc     = IMM_I;
+                alu_op      = ALU_OP_JAL;
+            end
 
-        // ------------
-        // JALR => 67/0
-        // ------------
-        OP_JALR: begin
-            JALR       = 1;
-            JAL        = 1;
-            RegWriteEn = 1;
-            MemtoReg   = 1;
-            ALUSrc     = 1;
-            ImmSrc     = IMM_I;
-            alu_op      = ALU_OP_JAL;
-        end
+            // ------------
+            // Loads (lw => 03/0, lh => 03/2, etc.)
+            // ------------
+            OP_L: begin
+                RegWriteEn = 1;
+                MemReadEn  = 1;
+                MemtoReg   = 1;
+                ALUSrc     = 1;
+                alu_op     = ALU_OP_LOAD_TYPE; // base + offset
+                case(funct3)
+                    3'h0: begin // lw
+                    MemSize = 2'b10; // word
+                    LoadSize = 2'b10; // lw (32-bit)
+                    end
+                    3'h2: begin // lh
+                        MemSize = 2'b01; // halfword
+                        LoadSize = 2'b01; // lh (16-bit)
+                    end
+                    // etc. (lb, lhu, etc. if you extend)
+                endcase
+            end
 
-        // ------------
-        // Loads (lw => 03/0, lh => 03/2, etc.)
-        // ------------
-        OP_L: begin
-            RegWriteEn = 1;
-            MemReadEn  = 1;
-            MemtoReg   = 1;
-            ALUSrc     = 1;
-            alu_op     = ALU_OP_LOAD_TYPE; // base + offset
-            case(funct3)
-                3'h0: begin // lw
-                MemSize = 2'b10; // word
-                LoadSize = 2'b10; // lw (32-bit)
-                end
-                3'h2: begin // lh
-                    MemSize = 2'b01; // halfword
-                    LoadSize = 2'b01; // lh (16-bit)
-                end
-                // etc. (lb, lhu, etc. if you extend)
-            endcase
-        end
+            // ------------
+            // Stores (sw => 23/2, sb => 23/0, etc.)
+            // ------------
+            OP_S: begin
+                MemWriteEn = 1;
+                ALUSrc     = 1;
+                ImmSrc     = IMM_S;
+                alu_op     = ALU_OP_S_TYPE; // base + offset
+                case(funct3)
+                    3'h0: MemSize = 2'b00; // sb
+                    3'h1: MemSize = 2'b01; // sh
+                    3'h2: MemSize = 2'b10; // sw
+                endcase
+            end
 
-        // ------------
-        // Stores (sw => 23/2, sb => 23/0, etc.)
-        // ------------
-        OP_S: begin
-            MemWriteEn = 1;
-            ALUSrc     = 1;
-            ImmSrc     = IMM_S;
-            alu_op     = ALU_OP_S_TYPE; // base + offset
-            case(funct3)
-                3'h0: MemSize = 2'b00; // sb
-                3'h1: MemSize = 2'b01; // sh
-                3'h2: MemSize = 2'b10; // sw
-            endcase
-        end
+            // ------------
+            // LUI => 38
+            // ------------
+            OP_LUI: begin
+                RegWriteEn = 1;
+                ALUSrc     = 1;
+                ImmSrc     = IMM_U;
+                alu_op     = ALU_OP_U_TYPE;
+                // LUI itself does not really need an ALU operation; 
+                // but you can keep alu_op=ALU_OP_ADD or something safe
+            end
 
-        // ------------
-        // LUI => 38
-        // ------------
-        OP_LUI: begin
-            RegWriteEn = 1;
-            ALUSrc     = 1;
-            ImmSrc     = IMM_U;
-            alu_op     = ALU_OP_U_TYPE;
-            // LUI itself does not really need an ALU operation; 
-            // but you can keep alu_op=ALU_OP_ADD or something safe
-        end
-
-        default: begin
-            // No action
-        end
-    endcase
+            default: begin
+                // No action
+            end
+        endcase
+    end
 end
 
 endmodule
