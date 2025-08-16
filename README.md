@@ -9,7 +9,7 @@ A 5-stage pipelined RISC-V processor implementation in Verilog HDL.
 | **Course** | Computer Architecture 2 |
 | **Institution** | Princess Sumaya University for Technology |
 | **Supervisor** | Dr. Rajaa Alqudah |
-| **Authors** | Abdulrhman Atassi (20210651)<br>Sarah Al-Shobaki (20220188) |
+| **Authors** | Abdulrhman Atassi <br>Sarah Al-Shobaki  |
 | **Date** | December 20, 2024 |
 
 ## Architecture Overview
